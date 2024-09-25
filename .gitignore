@@ -1,0 +1,7 @@
+# .gitignore 파일
+...
+# OS Generated Files #
+######################
+**/.DS_Store
+**/._*
+...
