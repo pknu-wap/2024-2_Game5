@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         Player = gameObject.GetComponent<GameObject>();
         PlayerRigidBody = gameObject.GetComponent<Rigidbody2D>();
         playerHP = 100;
-
+        
         _hpBar.maxValue = playerHP;
         _hpBar.value = playerHP;
         PlayerTransform = gameObject.GetComponent<Transform>();
