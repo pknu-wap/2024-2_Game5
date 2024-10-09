@@ -4,86 +4,41 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class DialogueManager : MonoBehaviour, IPointerDownHandler
+public class DialogueManager : MonoBehaviour //, IPointerDownHandler //클릭 또는 물리 충돌 시 사용
 {
-    public Text DialogueText;
+    public GameObject CurrentText;
     public GameObject NextText;
+    public GameObject ThirdText;
     public CanvasGroup DialogueGroup;
-    public Queue<string> Sentences;
 
-    public string currentSentence;
-
-    public float typingSpeed = 0.1f;
-    private bool istyping;
-
-    public static DialogueManager instance;   //영상에선 있던데
     private void Awake()
     {
-        instance = this;
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Sentences = new Queue<string>(); //초기화
+        DialogueGroup = GetComponent<CanvasGroup>();         
     }
 
-    public void Ondialogue(string[] lines) 
+    //------------버튼으로 작동 시키는 기능------------------
+    public void ToNextText()
     {
-        Sentences.Clear();
-        foreach (string line in lines)
+        if (CurrentText != NextText) //마지막엔 현재 == 다음이 됨
         {
-            Sentences.Enqueue(line);
-        }
-        DialogueGroup.alpha = 1;
-        //DialogueGroup.Block_Raycasts = true; 이개외않되
-
-        NextSentence();
-
-    }
-
-    public void NextSentence()
-    {
-        if(Sentences.Count != 0)
-        {
-            currentSentence = Sentences.Dequeue();
-            //대화시작, 다음대화 비활성화
-            istyping = true;
-            NextText.SetActive(false); 
-            //코루틴
-            StartCoroutine(Typing(currentSentence));
-        }
-        else
-        {
-            DialogueGroup.alpha = 1;
-            //DialogueGroup.blockRaycasts = false;
-        }
-    }
-
-    IEnumerator Typing(string line)
-    {
-        DialogueText.text = ""; //초기화
-        foreach(char letter in line.ToCharArray()) //한 글자씩 더함
-        {
-            DialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if(DialogueText.text.Equals(currentSentence)) //현재 대사가 다 출력되면
-        {
-            //대화 끝, 다음대화 활성화
+            CurrentText.SetActive(false);
             NextText.SetActive(true);
-            istyping = false;
+            CurrentText = NextText;
+            NextText = ThirdText;
+            //ThirdText = 
+       }
+       else  //마지막인 경우 투명화 시킴, 텍스트 전체 비활성화
+        {
+            DialogueGroup.alpha = 0;
+            CurrentText.SetActive(false);
+            //NextText.SetActive(false);
         }
-    }
 
-    //마우스클릭 시 또는 물리충돌 시 출력시키기, NPC스크립트랑 연결
-    public void OnPointerDown(PointerEventData eventData) 
-    {
-        if(!istyping)
-        NextSentence();
     }
 }

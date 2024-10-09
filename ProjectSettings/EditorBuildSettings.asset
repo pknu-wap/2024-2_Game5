@@ -10,8 +10,14 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/LJK/MainMenu.unity
-    guid: 2ad59387a50ec0944af24888b1309c74
+    guid: 908513686aa1a374ea1dc14e1744073d
   - enabled: 1
+    path: Assets/Scenes/LJK/BeltScroll_tuto.unity
+    guid: 5c40b9837d683f74284ebbcdd5213917
+  - enabled: 0
     path: Assets/Scenes/LJK/BeltScroll.unity
     guid: 4bc96c9e8cbbdbb4bb97e2e3a9a9e42e
+  - enabled: 1
+    path: Assets/Scenes/LJK/BossBattle.unity
+    guid: b50bf4b0ecda24f4d99755ceb08b35fa
   m_configObjects: {}

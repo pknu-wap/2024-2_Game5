@@ -9,7 +9,7 @@ public class NPCSentence : MonoBehaviour
 
     private void OnmouseDown()  //마우스 눌렸을 때
     {
-        if(DialogueManager.instance.DialogueGroup.alpha == 0)
-        DialogueManager.instance.Ondialogue(Senetences);
+        //if(DialogueManager.instance.DialogueGroup.alpha == 0)
+        //DialogueManager.instance.Ondialogue(Senetences);
     }
 }
