@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NPCSentence : MonoBehaviour
 {
-
     public string[] Senetences; //대화 저장
 
     private void OnmouseDown()  //마우스 눌렸을 때
