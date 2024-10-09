@@ -5,145 +5,221 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameObject Player;
     private Rigidbody2D PlayerRigidBody;
     private Vector3 movement;
     
-    public float movePower = 1f;
-    public float jumpPower = 1f;
-    private float playerHP;
-    private float monsterDamage;
-    private float playerDamage;
+    public float movePower = 8f;
+    public float jumpPower = 8f;
+    public int playerHP;
+    public int monsterDamage;
+    public int playerDamage; // (임시) 플레이어가 받는 데미지
+    public Animator playerAnimator;
 
-    bool isJumping = false;
-    bool isGround = false;
-    bool isAttacking = false;
+    public bool isWalking = false;
+    public bool isJumping = false;
+    public bool isGround = false;
+    public bool isAttacking = false;
+    public bool isGuarding = false;
+    public bool isUsingSkill = false;
+    public bool ishitted = false;
+    public bool isInvincible = false;
+    public bool isKnockedDown = false;
+    public float knockDownDuration = 3f;
+    public float knockBackForce= 5f;
+    public int knockDownThreshold = 30;
 
-    //커맨드(스킬) 해금 테스트 용 불
+    public event System.Action<int> OnDamageTaken;
+
     public bool isStage1 = true;
     public bool isStage2 = false;
     public bool isStage3 = false;
-    //
 
     int[] commandArray = new int[4];
-
     private Coroutine resetCoroutine;
 
-    //커맨드 입력을 위한 네임드 튜플
-    private (KeyCode key, int value) W = (KeyCode.W, 1);
-    private (KeyCode key, int value) A = (KeyCode.A, 2);
-    private (KeyCode key, int value) S = (KeyCode.S, 3);
-    private (KeyCode key, int value) D = (KeyCode.D, 4);
+    public (KeyCode key, int value) W = (KeyCode.W, 1);
+    public (KeyCode key, int value) A = (KeyCode.A, 2);
+    public (KeyCode key, int value) S = (KeyCode.S, 3);
+    public (KeyCode key, int value) D = (KeyCode.D, 4);
+
+    void Awake()
+    {
+        PlayerRigidBody = this.GetComponent<Rigidbody2D>();
+        playerAnimator = this.GetComponent<Animator>();
+    }
 
     void Start()
     {
         playerHP = 100;
-
-        Player = gameObject.GetComponent<GameObject>();
-        PlayerRigidBody = gameObject.GetComponent<Rigidbody2D>();
-
-        InitCommandArray(); //커맨드 배열 초기화
-    }
-
-
-    void Update()
-    {
-        CheckAndAddCommand(W);
-        CheckAndAddCommand(A);
-        CheckAndAddCommand(S);
-        CheckAndAddCommand(D);
-
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
-        {
-            isJumping = true;
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            isAttacking = true;
-        }
-    }
-
-    void FixedUpdate()
-    {
-        Move();
-        Jump();
-        NormalAttack();
+        InitCommandArray();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
         {
-            if (collision.gameObject.tag == "Ground")
-            {
-                isGround = true;
-            }
-                
+            isGround = true;
+            isJumping = false;
         }
+    }
 
-
-    void Move()
+    public void Move()
     {   
+        // 공격 중에는 이동 불가
+        if (isAttacking) return;
+
         Vector3 moveVelocity = Vector3.zero;
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            isWalking = true;
             moveVelocity = Vector3.left;
         }
-
         else if (Input.GetKey(KeyCode.RightArrow))
         {
+            isWalking = true;
             moveVelocity = Vector3.right;
         }
-
+        else
+        {
+            isWalking = false;
+        }
+        
+        playerAnimator.SetBool("isWalking", isWalking);
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
 
-
-    void Jump()
+    public void Jump()
     {
-        if (!isJumping)
-        {
+        if (isJumping || isAttacking || isUsingSkill)
             return;
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        {
+            isJumping = true;
+            PlayerRigidBody.velocity = Vector2.zero;
+            Vector2 jumpVelocity = new Vector2(0, jumpPower);
+            PlayerRigidBody.AddForce(jumpVelocity, ForceMode2D.Impulse);
+            isGround = false;
         }
 
+    }
+
+   public void NormalAttack((KeyCode key, int value) keyValuePair)
+    {
+        // 이미 공격 중이거나 스킬 사용 중이면 새로운 공격 불가
+        if (isAttacking || isUsingSkill) return;
+
+        // 공격 시작
+        isAttacking = true;
+
+        // 트리거 설정
+        switch(keyValuePair.value)
+        {
+            case 1:
+                playerAnimator.SetTrigger("W");
+                Debug.Log("W공격");
+                break;
+            case 2:
+                playerAnimator.SetTrigger("A");
+                Debug.Log("A공격");
+                break;
+            case 3:
+                playerAnimator.SetTrigger("S");
+                Debug.Log("S공격");
+                break;
+            case 4:
+                playerAnimator.SetTrigger("D");
+                Debug.Log("D공격");
+                break;
+        }
+
+        // 데미지 계산
+        monsterDamage = !isGround ? 8 : 5;
+        Debug.Log("공격 데미지: " + monsterDamage);
+    }
+
+    public void Guard()
+    {
+        if (isJumping || isAttacking || isUsingSkill) return;
+
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            isGuarding = true; 
+            playerAnimator.SetBool("isGuarding", true); 
+        }
+        else
+        {
+            isGuarding = false; 
+            playerAnimator.SetBool("isGuarding", false); 
+        }
+    }
+
+    public void TakeDamage(int damage, Vector2 monsterPosition)
+    {
+        if (isInvincible) return;
+
+        if(isGuarding)
+        {
+            ApplyKnockBackDown(monsterPosition, knockBackForce);
+        }
+
+        OnDamageTaken?.Invoke(damage);
         
+        ishitted = true;
+
+        if(damage >= knockDownThreshold && !isKnockedDown)
+        {
+            StartCoroutine(KnockDownSequence(monsterPosition));
+        }
+        else
+        {
+            playerAnimator.SetTrigger("Hit");
+            ApplyKnockBackDown(monsterPosition, knockBackForce);
+        }
+    }
+
+    private IEnumerator KnockDownSequence(Vector2 monsterPosition)
+    {
+        isKnockedDown = true;
+        isInvincible = true;
+
+        playerAnimator.SetTrigger("KnockDown");
+        ApplyKnockBackDown(monsterPosition, knockBackForce * 1.5f);
+
+        yield return new WaitForSeconds(knockDownDuration);
+
+        playerAnimator.SetTrigger("GetUp");
+    }
+
+    public void ApplyKnockBackDown(Vector2 monsterPosition, float force)
+    {
+        Vector2 knockBackDirection = ((Vector2)transform.position - monsterPosition).normalized;
         PlayerRigidBody.velocity = Vector2.zero;
-
-        Vector2 jumpVelocity = new Vector2(0, jumpPower);
-        PlayerRigidBody.AddForce(jumpVelocity, ForceMode2D.Impulse);
-
-        isJumping = false;
-        isGround = false;
+        PlayerRigidBody.AddForce(knockBackDirection * force, ForceMode2D.Impulse);
     }
-
-    void NormalAttack() // 일반 공격
+    public void OnGetUpFinished()
     {
-        if (!isAttacking)
-        {
-            return;
-        }
+        isInvincible = false;
+        isKnockedDown = false;
+    }
+    
 
-        if (!isGround) //점프공격
-        {
-            monsterDamage = 8;
-        }
-        else //일반공격
-        {
-            monsterDamage = 5;
-        }
-        
 
-        PlayerRigidBody.AddForce(Vector3.right * movePower / 2, ForceMode2D.Impulse);
-        Debug.Log("일반(약) 공격, 몬스터 HP -" + monsterDamage);
+    // 애니메이션 이벤트로 호출될 메서드
+    public void OnAttackFinished()
+    {
         isAttacking = false;
+        ishitted = false;
+        if (isUsingSkill)
+        {
+            isUsingSkill = false;
+            Debug.Log("스킬 사용 종료");
+        }
+        Debug.Log("공격 종료");
     }
-
-    void Guard()
-    {
-
-    }
-
-    void InitCommandArray() //커맨드 배열 초기화 함수
+    public void InitCommandArray()
     {
         for (int i = 0; i < commandArray.Length; i++)
         {
@@ -151,72 +227,72 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void CheckAndAddCommand((KeyCode key, int value) keyValuePair) // 키 확인 및 값 배열에 추가
+    public void CheckAndAddCommand((KeyCode key, int value) keyValuePair)
     {
+        if (isUsingSkill || isAttacking || isKnockedDown) return;
         if (Input.GetKeyDown(keyValuePair.key))
         {
             AddValue(keyValuePair.value);
+            NormalAttack(keyValuePair);
             Debug.Log("커맨드 배열에 추가: " + keyValuePair.value + " 배열: " + string.Join(", ", commandArray));
         }
     }
 
-    void AddValue(int newValue) // 값 추가
+    void AddValue(int newValue)
     {
-
         for (int i = 0; i < commandArray.Length - 1; i++)
         {
-            commandArray[i]  = commandArray[i+1];
-
+            commandArray[i] = commandArray[i+1];
         }
         commandArray[commandArray.Length - 1] = newValue;
 
-
         CommandInput();
-
 
         if (resetCoroutine != null)
         {
             StopCoroutine(resetCoroutine);
         }
-
-        resetCoroutine = StartCoroutine(ResetCommandArray()); //4초 지연을 위한 코루틴
+        resetCoroutine = StartCoroutine(ResetCommandArray());
     }
 
-    private IEnumerator ResetCommandArray() // 4초 지연 코루틴
+    private IEnumerator ResetCommandArray()
     {
         yield return new WaitForSeconds(3f);
-
         InitCommandArray();
         Debug.Log("커맨드 배열 초기화.");
-
     }
-
-    void CommandInput() // 강중약 공격 커맨드 확인한 후 스킬 사용
+    void CommandInput()
     {
-        if (isStage1)
+        // 이미 공격 중이거나 스킬 사용 중이면 리턴
+        if (isAttacking || isUsingSkill) return;
+
+        if (isStage1 && commandArray.SequenceEqual(new int[] { 2, 4, 2, 3 }))
         {
-            if (commandArray.SequenceEqual(new int[] { 2, 4, 2, 4 }))
-            {
-                Debug.Log("커맨드 배열이 2424입니다.");
-            }
+            Debug.Log("커맨드 배열이 2424입니다.");
+            isAttacking = true;
+            isUsingSkill = true;  // 스킬 사용 상태 설정
+            playerAnimator.SetTrigger("Skill1");
+            monsterDamage = 15;
+            InitCommandArray();
         }
         
-        if (isStage2)
+        if (isStage2 && commandArray.SequenceEqual(new int[] { 2, 4, 2, 2 }))
         {
-            if (commandArray.SequenceEqual(new int[] { 2, 4, 2, 2 }))
-            {
-                Debug.Log("커맨드 배열이 2422입니다.");
-            }            
+            Debug.Log("커맨드 배열이 2422입니다.");
+            isAttacking = true;
+            isUsingSkill = true;
+            playerAnimator.SetTrigger("Skill2");
+            monsterDamage = 20;
         }
 
-        if (isStage3)
+        if (isStage3 && commandArray.SequenceEqual(new int[] { 1, 2, 3, 4}))
         {
-            if (commandArray.SequenceEqual(new int[] { 1, 2, 3, 4}))
-            {
-                Debug.Log("커맨드 배열이 1234입니다.");
-            }            
+            Debug.Log("커맨드 배열이 1234입니다.");
+            isAttacking = true;
+            isUsingSkill = true;
+            playerAnimator.SetTrigger("Skill3");
+            monsterDamage = 25;
         }
-
     }
 
 }

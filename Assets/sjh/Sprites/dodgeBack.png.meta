@@ -1,0 +1,2380 @@
+fileFormatVersion: 2
+guid: 94412c7f519104546bb12d3f0dad5255
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dodgeBack_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1280
+        width: 37
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c856917447e43dc9ed86a77ae848ce
+      internalID: -837227151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1280
+        width: 32
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5f152c1c732e4733a7c2f8df96379e8
+      internalID: -217008338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_2
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 1280
+        width: 32
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9b07f5e3a894d258e6cd12b9db7ca8
+      internalID: 879660826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_3
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1280
+        width: 31
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5a3e754d89f4bf28e52f0a50cfd4f4
+      internalID: 1656788141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_4
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1280
+        width: 31
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5364ea534e6dc40759fe698525507ee0
+      internalID: 1325887398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_5
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1280
+        width: 31
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253436cd818474a17a2b6850219d8a19
+      internalID: -1964540965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_6
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1280
+        width: 33
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31328082526ca4dcd839b0cf49c3ee62
+      internalID: -2021123985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_7
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 1280
+        width: 35
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2ad562bee13440f92a632e21ea108d
+      internalID: -452409208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_8
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1280
+        width: 35
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb290eb91ec549acbd732f8bbd87321
+      internalID: 1008072285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_9
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1280
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e372218ed484d6b80e573eb43e7f4d
+      internalID: 1003512419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1152
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5904fcf32dfc84afba5515ffa95fff4e
+      internalID: 2024797894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_11
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1152
+        width: 38
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51acac7a38cf4b71a3d83c36b7238c5
+      internalID: 2133024035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_12
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1152
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c0fa83a6c154b9c8d4e6cb78e835a4
+      internalID: -1604605682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_13
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1152
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045d6a1347e6a48479d82e614de30713
+      internalID: -1532441405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_14
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1152
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6989ed31ba64e401a946b8b7a3fc8efa
+      internalID: -1553542635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_15
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 1152
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0643dfad4b94cd49da46ef2a94fdc8
+      internalID: 625888912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_16
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1152
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9581a1f11fed44a00923dbbd4196eb78
+      internalID: 831412080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_17
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 1152
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44c88164d522442da2461be796cbb10
+      internalID: 942444765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_18
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1152
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168076d3785c14fcea2a01033218e8ba
+      internalID: 1659389439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_19
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1152
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe2fe2ae18c14e558a93ad600b71a73
+      internalID: -1618488583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_20
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1024
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f3fab0f669b4acdaf29ee29732c66d
+      internalID: 1263387306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_21
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1024
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42581e3b905cb414c9b484402860be1b
+      internalID: 1498745827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_22
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1024
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079b0f40c4b004a688133af619fac5af
+      internalID: 1236448485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_23
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 1024
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8364738987d4e3a9c8e0ebdba86777
+      internalID: -582677823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_24
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1024
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76157be274a8545218ba8b5271eed753
+      internalID: -2087553922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_25
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 1024
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d18381a11d240ee96d97b460a832c1
+      internalID: 829564595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_26
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1024
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2402631ed94ec400e890437f85e1ae85
+      internalID: 154928585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_27
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1024
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f72a2457fae4d9289106f0b368b31a
+      internalID: 2134980693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_28
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1024
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841552a10ec7f44009664232c3a66c6e
+      internalID: -1190424092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_29
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 1024
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b581df60976c848b683d063973498eef
+      internalID: -782747969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_30
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 896
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9238deefe16647eda49ce6810d77f79
+      internalID: -1675510548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_31
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 896
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912c3134f11c6440cb201edf4bce9b3e
+      internalID: 800483938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_32
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 896
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc993f9cb897f44288994e5cff398aa5
+      internalID: -690733064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_33
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 896
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba00523b8576c4375a4c3c8d509327af
+      internalID: 1656909907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_34
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 896
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745532f0a387e4a1c9a5565e4d811efe
+      internalID: -964489559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_35
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 896
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403aa2dc102354edd8585ba07bf3ba47
+      internalID: -706978757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_36
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 896
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e78f594706684e869357f69d8699057
+      internalID: -906339309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_37
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 896
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9da62267c73f40e79c0152c971eaf40
+      internalID: 1099952289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_38
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 896
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4bd01a5b64449b7aad2e9ecffedb82
+      internalID: -180248445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_39
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 896
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e426f96d036c24776a48253cad2bf718
+      internalID: 772049234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_40
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 768
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34d51bbab7ce41b8be9489e96ddbc04
+      internalID: -139104979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_41
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 768
+        width: 51
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d50f56448bc14462a662d23dcf8ffad
+      internalID: 1534239139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_42
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 768
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b776dc13b3ee453ea1b78d133c19078
+      internalID: -842492952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_43
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 768
+        width: 53
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091ca7de8985349b2a7b9631d65e5ac6
+      internalID: 1494088303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_44
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 768
+        width: 55
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c92bf9dc1a5e4a0a90322d05d4993b3
+      internalID: -942581864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_45
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 768
+        width: 56
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da042b5dfa5646b581d36e8433b6504
+      internalID: 1667806114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_46
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 768
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1ef2b1937a64664904b14fef72995a
+      internalID: -125143121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_47
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 768
+        width: 60
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4046331aef89c46a3994746e9adbf339
+      internalID: -1564169292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_48
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 768
+        width: 68
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3307d64dff2481f91a49dd8505aec3
+      internalID: -87626353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_49
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 768
+        width: 71
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc20cd4e29ca41559ed75cd0a4e95a2
+      internalID: -1758787964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_50
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 640
+        width: 71
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57c59d5ba4074a89985f7d4f2dcee8e
+      internalID: 149372152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_51
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 640
+        width: 71
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba54d4518bc144219d7d66fa5504513
+      internalID: -1774680648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_52
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 640
+        width: 70
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70637895a4a85493f8bba2268c15cee3
+      internalID: -1367810590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_53
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 640
+        width: 69
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ad7c60f311141969fb3f32faec6d9a
+      internalID: 519734434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_54
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 640
+        width: 67
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808d50a75430548109bf9f92b30fd2f7
+      internalID: 1050204478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_55
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 640
+        width: 65
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3f11925972044ca820a1079b34b451
+      internalID: 1033884146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_56
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 640
+        width: 63
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5357beebe8a44f02abaa8872d88d88b
+      internalID: 264688445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_57
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 640
+        width: 61
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1899ea82db11c441ca435ec258e7d559
+      internalID: 1450199081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_58
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 640
+        width: 60
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ddf28bcddb942e09dc88b0dc4e6038
+      internalID: 1882414976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_59
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 640
+        width: 60
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c37d4003c3b477489c7f8f3d0b1049
+      internalID: -823852702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_60
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 512
+        width: 61
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4bf9a477775490d89e663a941259e3
+      internalID: 1551202905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_61
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 512
+        width: 62
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043ac8147e4884bdc847544801025e29
+      internalID: -87796581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_62
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 512
+        width: 63
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92d852e5f54947ec9463564df339334
+      internalID: 995455174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_63
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 512
+        width: 64
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4689f78dfc9b43fc9942b83380c0d0f
+      internalID: -2085225376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_64
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 512
+        width: 65
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023e6558a45a24fa79939ab2f32b2c5b
+      internalID: -1914342066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_65
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 512
+        width: 64
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f290b99003194d42b9111eefc87718f
+      internalID: 1769884833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_66
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 512
+        width: 65
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c25ca224173a4ba6bd49645929461b3
+      internalID: 135440475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_67
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 512
+        width: 65
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a08dc6bbec54704aa267c3c3ec9559
+      internalID: -588716609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_68
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 512
+        width: 65
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985ff6102e86c4c43a20247e4d8bd93e
+      internalID: 1426552636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_69
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 512
+        width: 64
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ca4c90280064224b02f8584f6b2212
+      internalID: -528658307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_70
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 384
+        width: 65
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05ac48c5ff2e4b83939a6f6195d8c33
+      internalID: 746227881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_71
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 384
+        width: 65
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3142d370d5147999791a142a5cb0f6
+      internalID: 1362835947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_72
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 384
+        width: 65
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de90187b492174ceea2587f0d86212df
+      internalID: 749844582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_73
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 384
+        width: 45
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50101de8983b4971a53ad3273fc043c
+      internalID: 1571893872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_74
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 384
+        width: 45
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b213588e5b754132acb048fe61a453c
+      internalID: 177481047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_75
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 384
+        width: 48
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ca343c920094f81aa3e6d7f4c6648c
+      internalID: -738042062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_76
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 384
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c248c4dff25ce495790959cab7f3a137
+      internalID: 597390875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_77
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 384
+        width: 48
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fddf3e75ea84bb6a76ec7c7ce720c1
+      internalID: 1580537754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_78
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 384
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8af8b6d61adc43a68c16aa447217c80
+      internalID: -833029947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_79
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 384
+        width: 49
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293bfb323f3ea4ec0ab0e3f104e13512
+      internalID: 150182241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_80
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 256
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633ec7d53640a4d66bd33ebe3c5bb133
+      internalID: -1988693632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_81
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 256
+        width: 50
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b9dea98d017447e928231494a0e134
+      internalID: -1038003529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_82
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 256
+        width: 51
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c367f582bf014a67ad293c2262b0b26
+      internalID: -2003258349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_83
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 256
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfbff2eed07254f9fa3fead90b5785a8
+      internalID: 972016074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_84
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 256
+        width: 48
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c5934c83a2d44418fceb8097bfc33e
+      internalID: -1514721216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_85
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 256
+        width: 47
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530dd835a62a9461c9a07b419b8c81d0
+      internalID: 1280290462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_86
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 256
+        width: 44
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff8752a37ed64b758434f537134de96
+      internalID: 338927958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_87
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 256
+        width: 44
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8014ae136fd43968d14910b382b69c
+      internalID: -1353627578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_88
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 256
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2c3d04b095f44178f2dbbdf2c76cb7
+      internalID: -1159950065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_89
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 256
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f5d1222e1014a6dae0f5593ad21e77
+      internalID: -1139348121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_90
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 128
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766b6e8fe90a144fc991596d510d459b
+      internalID: -568834228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_91
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 128
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4618feac8ac6a4f28918fe9b1943b03e
+      internalID: -1519482475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_92
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 128
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5406792c2ca744e5b8af8acd52f9625
+      internalID: -1707230166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_93
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 128
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc2dbbfe964e4ff5a034417c99e6795
+      internalID: -226535569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_94
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 128
+        width: 47
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf1ab572df2d41cea6a0b277a35161f
+      internalID: 800391053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_95
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 128
+        width: 47
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdfebed1eedc4198bf409a6ba9b8e5d
+      internalID: -595870582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_96
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 128
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbe6d76da0e44256a1a936f01b07695
+      internalID: -1887149712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_97
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 128
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4e43befea5f4ab9adfd96e60db7a62
+      internalID: -1297084168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_98
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 128
+        width: 49
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371aa82738b3e4892b1dfe54aed73b17
+      internalID: -157081068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_99
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 128
+        width: 49
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2749e8e4a7f2e4663b784053f10de06a
+      internalID: -1681948680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_100
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c7c1354d7b142e0a34f10573d102c9
+      internalID: 34598870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_101
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 50
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4af35fea09154d938d3a9fd0cdfcc60
+      internalID: 743680190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeBack_102
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13a27ba715c6430d923d5ba5b2449d8
+      internalID: -1700651019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      dodgeBack_0: -837227151
+      dodgeBack_1: -217008338
+      dodgeBack_10: 2024797894
+      dodgeBack_100: 34598870
+      dodgeBack_101: 743680190
+      dodgeBack_102: -1700651019
+      dodgeBack_11: 2133024035
+      dodgeBack_12: -1604605682
+      dodgeBack_13: -1532441405
+      dodgeBack_14: -1553542635
+      dodgeBack_15: 625888912
+      dodgeBack_16: 831412080
+      dodgeBack_17: 942444765
+      dodgeBack_18: 1659389439
+      dodgeBack_19: -1618488583
+      dodgeBack_2: 879660826
+      dodgeBack_20: 1263387306
+      dodgeBack_21: 1498745827
+      dodgeBack_22: 1236448485
+      dodgeBack_23: -582677823
+      dodgeBack_24: -2087553922
+      dodgeBack_25: 829564595
+      dodgeBack_26: 154928585
+      dodgeBack_27: 2134980693
+      dodgeBack_28: -1190424092
+      dodgeBack_29: -782747969
+      dodgeBack_3: 1656788141
+      dodgeBack_30: -1675510548
+      dodgeBack_31: 800483938
+      dodgeBack_32: -690733064
+      dodgeBack_33: 1656909907
+      dodgeBack_34: -964489559
+      dodgeBack_35: -706978757
+      dodgeBack_36: -906339309
+      dodgeBack_37: 1099952289
+      dodgeBack_38: -180248445
+      dodgeBack_39: 772049234
+      dodgeBack_4: 1325887398
+      dodgeBack_40: -139104979
+      dodgeBack_41: 1534239139
+      dodgeBack_42: -842492952
+      dodgeBack_43: 1494088303
+      dodgeBack_44: -942581864
+      dodgeBack_45: 1667806114
+      dodgeBack_46: -125143121
+      dodgeBack_47: -1564169292
+      dodgeBack_48: -87626353
+      dodgeBack_49: -1758787964
+      dodgeBack_5: -1964540965
+      dodgeBack_50: 149372152
+      dodgeBack_51: -1774680648
+      dodgeBack_52: -1367810590
+      dodgeBack_53: 519734434
+      dodgeBack_54: 1050204478
+      dodgeBack_55: 1033884146
+      dodgeBack_56: 264688445
+      dodgeBack_57: 1450199081
+      dodgeBack_58: 1882414976
+      dodgeBack_59: -823852702
+      dodgeBack_6: -2021123985
+      dodgeBack_60: 1551202905
+      dodgeBack_61: -87796581
+      dodgeBack_62: 995455174
+      dodgeBack_63: -2085225376
+      dodgeBack_64: -1914342066
+      dodgeBack_65: 1769884833
+      dodgeBack_66: 135440475
+      dodgeBack_67: -588716609
+      dodgeBack_68: 1426552636
+      dodgeBack_69: -528658307
+      dodgeBack_7: -452409208
+      dodgeBack_70: 746227881
+      dodgeBack_71: 1362835947
+      dodgeBack_72: 749844582
+      dodgeBack_73: 1571893872
+      dodgeBack_74: 177481047
+      dodgeBack_75: -738042062
+      dodgeBack_76: 597390875
+      dodgeBack_77: 1580537754
+      dodgeBack_78: -833029947
+      dodgeBack_79: 150182241
+      dodgeBack_8: 1008072285
+      dodgeBack_80: -1988693632
+      dodgeBack_81: -1038003529
+      dodgeBack_82: -2003258349
+      dodgeBack_83: 972016074
+      dodgeBack_84: -1514721216
+      dodgeBack_85: 1280290462
+      dodgeBack_86: 338927958
+      dodgeBack_87: -1353627578
+      dodgeBack_88: -1159950065
+      dodgeBack_89: -1139348121
+      dodgeBack_9: 1003512419
+      dodgeBack_90: -568834228
+      dodgeBack_91: -1519482475
+      dodgeBack_92: -1707230166
+      dodgeBack_93: -226535569
+      dodgeBack_94: 800391053
+      dodgeBack_95: -595870582
+      dodgeBack_96: -1887149712
+      dodgeBack_97: -1297084168
+      dodgeBack_98: -157081068
+      dodgeBack_99: -1681948680
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1698 @@
+fileFormatVersion: 2
+guid: ab6073352160143b0a9fc300ba534d16
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dodgeForward_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 896
+        width: 65
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e46c52d635b4e568910b4e16f1363b
+      internalID: -670617219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 896
+        width: 45
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6eff5cb8af94ad78c040304a521066
+      internalID: -1810356488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_2
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 896
+        width: 45
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c867a860f45345069360ee149e12b7e
+      internalID: 1411617215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_3
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 896
+        width: 48
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd28ca16fb68485b973c85bc7c3bed4
+      internalID: 1484965444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_4
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 896
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bed45e3898c648ca861fad364629e2e
+      internalID: -374613675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_5
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 896
+        width: 48
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894f37b1c69ba49c0b388b6834e5cb5f
+      internalID: 723380903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_6
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 896
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6fd614ed6b44080a2abbf01cb9dd3d
+      internalID: -563442242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_7
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 896
+        width: 49
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7dc2eb9a6484af1866f0de5d1e15e6
+      internalID: 129059047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_8
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 896
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fa208a6461b466cba514462a64e5f0
+      internalID: 1803321442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_9
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 896
+        width: 50
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be90a52756fcb4fd7b997ce7d42405ba
+      internalID: 513334396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 768
+        width: 51
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66f6791386e84c04ae738d664b12338
+      internalID: 192553256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_11
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 768
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12af3db882f14e83bfc52bb9b649d2f
+      internalID: 1063322305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_12
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 768
+        width: 48
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d48632e3b1424e63b56c245e88c6cb7
+      internalID: 921950631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 768
+        width: 47
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc6bb4994e26474eb90a05408ec226a
+      internalID: 295098801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_14
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 768
+        width: 44
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8b423af3f5c4089b0cadee2afc3191
+      internalID: -1022022985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_15
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 768
+        width: 44
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb1160848ca44e1ab0b6d3d1921dec4
+      internalID: -259963057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_16
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 768
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e686a5f23334f80956b77ea52024df
+      internalID: -1606986853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_17
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 768
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1937249c1014fafa27d499f7b53c33
+      internalID: 718822109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_18
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 768
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a22343bb0d04e97a5b2afcc1ee799f
+      internalID: 1495555870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_19
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 768
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1f04157be5d4542a8246028ef4ec0e
+      internalID: -1684683761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_20
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 640
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e2302a5d1054bd29ac0e278cb7e067
+      internalID: 1860265578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_21
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 640
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c120eb7e6774721a950e942fd3dc6d
+      internalID: 2031906596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 640
+        width: 47
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427297485ad6d4377a34aebd3260cedf
+      internalID: -1290519055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_23
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 640
+        width: 47
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097ce8855bc144bab863dfd9193f576e
+      internalID: 696447283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_24
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 640
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b7491c45aaa4b9dac787c3c2065acf
+      internalID: -2039709010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_25
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 640
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9074af0e575e42f5be0e2cc5d5c828b
+      internalID: 831603648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_26
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 640
+        width: 49
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7318bf5c1a037465884adfc11e9cbaa3
+      internalID: -263201405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_27
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 640
+        width: 49
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ddfe718884d4ac286dcdd096255780
+      internalID: -1840193084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_28
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 640
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81c2690815024562903ef3487111b65
+      internalID: 441961238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_29
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 640
+        width: 50
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f394900af344fc989e6f7b318e8fbe
+      internalID: 926357953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_30
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 512
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d330fadc1d64f34a257a4414cd105f
+      internalID: -421747092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_31
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 512
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de45048f93d364f43a8b7bfad3819290
+      internalID: -1162445174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_32
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 512
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc84c8c76ba0491ca68ace094c0ca8c
+      internalID: -1096582321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_33
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 512
+        width: 50
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e3102d4d6714e4fbf007af332559c6
+      internalID: 1631984947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_34
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 512
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e12016616e934c41b9029abd061894f
+      internalID: 1578986753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_35
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 512
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24478a9b778704c3584fb5c4cc95436e
+      internalID: 822193424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_36
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 512
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5752216d6a8c1430486f2186804a6c9c
+      internalID: -1012877397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_37
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 512
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3190d7741f47240069d8731bd0434358
+      internalID: 1818365045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_38
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 512
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7bce47caf2e4b30a1e0134384a132c
+      internalID: -740162106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_39
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 512
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56664133adb444ad6aced1bc7eaad07a
+      internalID: -282719454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_40
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 384
+        width: 61
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad4d4dac6a7e417aa0d27f760a04bc9
+      internalID: 2018426358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 384
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d290d803eb5ca4be09c752f905da7836
+      internalID: 1556134287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_42
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 384
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a586dd8998bc4468b3fdf48d7107172
+      internalID: 865381006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_43
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 384
+        width: 66
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342e0693a85b94ef1a2470e36bacd39d
+      internalID: 1571794238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_44
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 384
+        width: 69
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5936f5c19dd4cdfb15daef4b9500f1
+      internalID: 1686899580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_45
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 384
+        width: 71
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb5300d11bf14bf9a36bf83f9329469
+      internalID: 1221849265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_46
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 384
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9c90384dc7545e8bee6bee1e7072b1
+      internalID: -1138950707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_47
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 384
+        width: 77
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860d03bade8a446438f0c6a6c60bfb23
+      internalID: -432384362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_48
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 384
+        width: 78
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3edf67fbdf8f24420a9a93c210934063
+      internalID: -1479771669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_49
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 384
+        width: 76
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7841c0cbe92e5493da3598d460a34b32
+      internalID: 1666063674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_50
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 256
+        width: 77
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a45d4d879e1442b4bfd87b3a73015d4
+      internalID: -1576319577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_51
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 256
+        width: 78
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35576f0334ade4f83bde8075759c6c16
+      internalID: 1476692028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_52
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 256
+        width: 75
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633ca2cb5cd0f41dcad0afc4d7d21ba5
+      internalID: -374539254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_53
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 256
+        width: 72
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353e716c66cae44c984ae1dde40c3ca8
+      internalID: 836374730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_54
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 256
+        width: 71
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf9fdd9aaa194d7b926e05a4d3c39ed
+      internalID: -1768382785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_55
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 256
+        width: 71
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e9292906bce4a39992d3969dba7c66
+      internalID: -1576558189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_56
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 256
+        width: 72
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d966c043573046edb002cc92670ea6a
+      internalID: -1354706749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_57
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 256
+        width: 73
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf5cefa5377b4c6a98e13a726c2cf68
+      internalID: 444334638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_58
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 256
+        width: 75
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9b9c4100329478ba4597362d48c29b
+      internalID: 269858107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_59
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 256
+        width: 76
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa76c62a4b13d4b8492bc6c7f9aadea8
+      internalID: 1324847005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_60
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 128
+        width: 77
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7e3502a3787468d8b478ef2b46c27b
+      internalID: 1739499505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_61
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 128
+        width: 77
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc121c0af40554fa1b04c4a6fff79f6f
+      internalID: 751406892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_62
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 128
+        width: 78
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4787e341fd4444ee80b8d0726262f20
+      internalID: 1728823731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_63
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 128
+        width: 78
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656a77733c740483b91a34643b8464b9
+      internalID: 35706057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_64
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 128
+        width: 77
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ea64a0bd652443f96c8bc74f10d6ed
+      internalID: 1985322623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_65
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 128
+        width: 77
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10006008c5cd24225bff56b67dac7186
+      internalID: 364237919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_66
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 128
+        width: 77
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba0414519a094f298cb391ac523c400
+      internalID: 1753223786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_67
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 128
+        width: 78
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fadd163b6c4fb4ee9b6ed0c7efabc162
+      internalID: -1716475002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_68
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 128
+        width: 79
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a23266689594184b96ed1e9557287e
+      internalID: -194598453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_69
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 128
+        width: 79
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665cc6ae7f68d49d4afc081b8dfed491
+      internalID: 984689397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_70
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 79
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc0d1f0dbcfc4ae9a6690adc0de754c
+      internalID: 1563557013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dodgeForward_71
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 79
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ddd094a92e7a43a7b932c3f627085c4
+      internalID: 2102334545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      dodgeForward_0: -670617219
+      dodgeForward_1: -1810356488
+      dodgeForward_10: 192553256
+      dodgeForward_11: 1063322305
+      dodgeForward_12: 921950631
+      dodgeForward_13: 295098801
+      dodgeForward_14: -1022022985
+      dodgeForward_15: -259963057
+      dodgeForward_16: -1606986853
+      dodgeForward_17: 718822109
+      dodgeForward_18: 1495555870
+      dodgeForward_19: -1684683761
+      dodgeForward_2: 1411617215
+      dodgeForward_20: 1860265578
+      dodgeForward_21: 2031906596
+      dodgeForward_22: -1290519055
+      dodgeForward_23: 696447283
+      dodgeForward_24: -2039709010
+      dodgeForward_25: 831603648
+      dodgeForward_26: -263201405
+      dodgeForward_27: -1840193084
+      dodgeForward_28: 441961238
+      dodgeForward_29: 926357953
+      dodgeForward_3: 1484965444
+      dodgeForward_30: -421747092
+      dodgeForward_31: -1162445174
+      dodgeForward_32: -1096582321
+      dodgeForward_33: 1631984947
+      dodgeForward_34: 1578986753
+      dodgeForward_35: 822193424
+      dodgeForward_36: -1012877397
+      dodgeForward_37: 1818365045
+      dodgeForward_38: -740162106
+      dodgeForward_39: -282719454
+      dodgeForward_4: -374613675
+      dodgeForward_40: 2018426358
+      dodgeForward_41: 1556134287
+      dodgeForward_42: 865381006
+      dodgeForward_43: 1571794238
+      dodgeForward_44: 1686899580
+      dodgeForward_45: 1221849265
+      dodgeForward_46: -1138950707
+      dodgeForward_47: -432384362
+      dodgeForward_48: -1479771669
+      dodgeForward_49: 1666063674
+      dodgeForward_5: 723380903
+      dodgeForward_50: -1576319577
+      dodgeForward_51: 1476692028
+      dodgeForward_52: -374539254
+      dodgeForward_53: 836374730
+      dodgeForward_54: -1768382785
+      dodgeForward_55: -1576558189
+      dodgeForward_56: -1354706749
+      dodgeForward_57: 444334638
+      dodgeForward_58: 269858107
+      dodgeForward_59: 1324847005
+      dodgeForward_6: -563442242
+      dodgeForward_60: 1739499505
+      dodgeForward_61: 751406892
+      dodgeForward_62: 1728823731
+      dodgeForward_63: 35706057
+      dodgeForward_64: 1985322623
+      dodgeForward_65: 364237919
+      dodgeForward_66: 1753223786
+      dodgeForward_67: -1716475002
+      dodgeForward_68: -194598453
+      dodgeForward_69: 984689397
+      dodgeForward_7: 129059047
+      dodgeForward_70: 1563557013
+      dodgeForward_71: 2102334545
+      dodgeForward_8: 1803321442
+      dodgeForward_9: 513334396
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

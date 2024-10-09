@@ -1,0 +1,1038 @@
+fileFormatVersion: 2
+guid: ae4b923c808294d2488a27fa783d393a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 512
+        width: 40
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4473c4c876f4e4d49b2ee844535ad9d7
+      internalID: 1245200451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 512
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3713d8da1eb94ed4833188ef194fc21
+      internalID: 1586795736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_2
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 512
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0221cc08a2a94b9790aa7e609b26790
+      internalID: 696448647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_3
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 512
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2424af5634bfb4e01858b219e3c8b778
+      internalID: -2098428598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_4
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 512
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd70e75feb694917922cacfa92b1248
+      internalID: 1097012545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_5
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 512
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aebab7e5ac604c929509cb9373f2bf5
+      internalID: -1667108553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_6
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 512
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb10815c5adb4451b259f1b092a56e0
+      internalID: -973454385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_7
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 512
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54f670c2c33b404c81fa500b1c41708
+      internalID: -1389348279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_8
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 512
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e5741166b564a4fbe19670ed593f81
+      internalID: 737908247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_9
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 512
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fad5253676c049dba14b7b90e4f3bd8
+      internalID: -1470505484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_10
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 384
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cefa33303559047d5b694b1d2122ae40
+      internalID: -987612212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_11
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 384
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302a856e2c03247528b82639b16ac617
+      internalID: -1830740644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_12
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 384
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72485a5fb5f843baa361d7ccee4a02d
+      internalID: -724940529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_13
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 384
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f360f0cad56b4b5982dad9768a6f2c7
+      internalID: -546560509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_14
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 384
+        width: 57
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd8c8f6786651403dac926bec47c146c
+      internalID: -1901107268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_15
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 384
+        width: 57
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc418a0cb8ee41d68e6aa4d66b889d2
+      internalID: -1100354107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_16
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 384
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5309439cf98d5498b8ade115b336cdbc
+      internalID: -1982737918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_17
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 384
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb9b5d2fe09242e5aec474500ade925
+      internalID: 98781949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_18
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 384
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7134640502ee64afebc2c322166e2460
+      internalID: -2092531556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_19
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 384
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd246b04fa7734d469f52539d03d943b
+      internalID: -1296035297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_20
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 256
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5477fe9f8331747b88383e38d617c6f5
+      internalID: 1051545828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_21
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 256
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c59f82aeccf434d9f197720f32d60c
+      internalID: -1442783095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_22
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 256
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bc6642b432d43ceb6c4148449c8877
+      internalID: 1152389813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_23
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 256
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493d728c0704541bab375977b9a5d770
+      internalID: 1160344541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_24
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 256
+        width: 57
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6813f708dfd04c8a9a3ef9acbbd3aba
+      internalID: -1453207903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_25
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 256
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c95bbd9640e145c29738398c7bbbea3
+      internalID: -2043225731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_26
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 256
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a908f2a8b2f4a2bb7c5e716a6e07a0
+      internalID: -124333956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_27
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 256
+        width: 66
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615a38f0da1a74acbaf9820828559f42
+      internalID: 1029683342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_28
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 256
+        width: 66
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b570f8e793c447da51233c48a6d74a
+      internalID: -1496289174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_29
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 256
+        width: 65
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258aea1874d66430baab5ec89abaee46
+      internalID: -1027812461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_30
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 128
+        width: 63
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2dd1f17909645a381a8a5ee109fb63
+      internalID: -2039946635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_31
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 128
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57abdf980e5644b98b2be4a081746cb
+      internalID: -1774966982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_32
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 128
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef98d61406b1421c94d4125d1ad052f
+      internalID: -756129026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_33
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 128
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b28fe80b383403697d16de6ad60f44
+      internalID: -146566484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_34
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 128
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cf650d23ce24136821a18f7eccb741
+      internalID: -135234855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_35
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 128
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9909e20f8a5ea434a96a222bbf6c7b7c
+      internalID: -1234785140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_36
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 128
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7706357bbcc43458f82c4d0b7225b0af
+      internalID: -1730727900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_37
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 128
+        width: 61
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635efdf3f9e2c469e8bd806c06530897
+      internalID: -698304601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_38
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 128
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8094fbdb3994ca586b6c60ecc5360a
+      internalID: -593118806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_39
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 128
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57569ebf7e9f647b59d194715787b4c9
+      internalID: 1377113978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_40
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56561d29457ba4f5c8e9491c985e4c9c
+      internalID: 1972579664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_spritesheet_crouch_walk_41
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928c1301a0f234778902b3195e504e58
+      internalID: -1109282070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Male_spritesheet_crouch_walk_0: 1245200451
+      Male_spritesheet_crouch_walk_1: 1586795736
+      Male_spritesheet_crouch_walk_10: -987612212
+      Male_spritesheet_crouch_walk_11: -1830740644
+      Male_spritesheet_crouch_walk_12: -724940529
+      Male_spritesheet_crouch_walk_13: -546560509
+      Male_spritesheet_crouch_walk_14: -1901107268
+      Male_spritesheet_crouch_walk_15: -1100354107
+      Male_spritesheet_crouch_walk_16: -1982737918
+      Male_spritesheet_crouch_walk_17: 98781949
+      Male_spritesheet_crouch_walk_18: -2092531556
+      Male_spritesheet_crouch_walk_19: -1296035297
+      Male_spritesheet_crouch_walk_2: 696448647
+      Male_spritesheet_crouch_walk_20: 1051545828
+      Male_spritesheet_crouch_walk_21: -1442783095
+      Male_spritesheet_crouch_walk_22: 1152389813
+      Male_spritesheet_crouch_walk_23: 1160344541
+      Male_spritesheet_crouch_walk_24: -1453207903
+      Male_spritesheet_crouch_walk_25: -2043225731
+      Male_spritesheet_crouch_walk_26: -124333956
+      Male_spritesheet_crouch_walk_27: 1029683342
+      Male_spritesheet_crouch_walk_28: -1496289174
+      Male_spritesheet_crouch_walk_29: -1027812461
+      Male_spritesheet_crouch_walk_3: -2098428598
+      Male_spritesheet_crouch_walk_30: -2039946635
+      Male_spritesheet_crouch_walk_31: -1774966982
+      Male_spritesheet_crouch_walk_32: -756129026
+      Male_spritesheet_crouch_walk_33: -146566484
+      Male_spritesheet_crouch_walk_34: -135234855
+      Male_spritesheet_crouch_walk_35: -1234785140
+      Male_spritesheet_crouch_walk_36: -1730727900
+      Male_spritesheet_crouch_walk_37: -698304601
+      Male_spritesheet_crouch_walk_38: -593118806
+      Male_spritesheet_crouch_walk_39: 1377113978
+      Male_spritesheet_crouch_walk_4: 1097012545
+      Male_spritesheet_crouch_walk_40: 1972579664
+      Male_spritesheet_crouch_walk_41: -1109282070
+      Male_spritesheet_crouch_walk_5: -1667108553
+      Male_spritesheet_crouch_walk_6: -973454385
+      Male_spritesheet_crouch_walk_7: -1389348279
+      Male_spritesheet_crouch_walk_8: 737908247
+      Male_spritesheet_crouch_walk_9: -1470505484
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
