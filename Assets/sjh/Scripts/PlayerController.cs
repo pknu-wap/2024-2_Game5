@@ -11,8 +11,7 @@ public class PlayerController : MonoBehaviour
     public float movePower = 8f;
     public float jumpPower = 8f;
     public int playerHP;
-    public int monsterDamage;
-    public int playerDamage; // (임시) 플레이어가 받는 데미지
+    public int playerDamage;
     public Animator playerAnimator;
 
     public bool isWalking = false;
@@ -25,10 +24,9 @@ public class PlayerController : MonoBehaviour
     public bool isInvincible = false;
     public bool isKnockedDown = false;
     public float knockDownDuration = 3f;
-    public float knockBackForce= 5f;
+    public float knockBackForce= 20f;
     public int knockDownThreshold = 30;
 
-    public event System.Action<int> OnDamageTaken;
 
     public bool isStage1 = true;
     public bool isStage2 = false;
@@ -42,10 +40,15 @@ public class PlayerController : MonoBehaviour
     public (KeyCode key, int value) S = (KeyCode.S, 3);
     public (KeyCode key, int value) D = (KeyCode.D, 4);
 
+    private BattleManager battleManager;
+
+    public float attackRange = 2f;
+
     void Awake()
     {
         PlayerRigidBody = this.GetComponent<Rigidbody2D>();
         playerAnimator = this.GetComponent<Animator>();
+        battleManager = FindObjectOfType<BattleManager>();
     }
 
     void Start()
@@ -61,7 +64,16 @@ public class PlayerController : MonoBehaviour
             isGround = true;
             isJumping = false;
         }
+
+        // 플레이어의 공격이 몬스터에게 히트
+        if (collision.gameObject.CompareTag("Monster") && isAttacking)
+        {
+            Vector2 hitPosition = transform.position;
+            battleManager.HandleCombatCollision(gameObject, collision.gameObject, playerDamage, hitPosition);
+        }
     }
+
+    
 
     public void Move()
     {   
@@ -89,10 +101,9 @@ public class PlayerController : MonoBehaviour
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
 
-    public void Jump()
+    public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
     {
-        if (isJumping || isAttacking || isUsingSkill)
-            return;
+        if (isJumping || isAttacking || isUsingSkill) return;
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
@@ -135,8 +146,8 @@ public class PlayerController : MonoBehaviour
         }
 
         // 데미지 계산
-        monsterDamage = !isGround ? 8 : 5;
-        Debug.Log("공격 데미지: " + monsterDamage);
+        playerDamage = !isGround ? 8 : 5;
+        Debug.Log("공격 데미지: " + playerDamage);
     }
 
     public void Guard()
@@ -159,13 +170,12 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage, Vector2 monsterPosition)
     {
         if (isInvincible) return;
+        ApplyKnockBackDown(monsterPosition, knockBackForce);
 
         if(isGuarding)
         {
             ApplyKnockBackDown(monsterPosition, knockBackForce);
         }
-
-        OnDamageTaken?.Invoke(damage);
         
         ishitted = true;
 
@@ -186,7 +196,7 @@ public class PlayerController : MonoBehaviour
         isInvincible = true;
 
         playerAnimator.SetTrigger("KnockDown");
-        ApplyKnockBackDown(monsterPosition, knockBackForce * 1.5f);
+        ApplyKnockBackDown(monsterPosition, knockBackForce * 10f);
 
         yield return new WaitForSeconds(knockDownDuration);
 
@@ -211,7 +221,6 @@ public class PlayerController : MonoBehaviour
     public void OnAttackFinished()
     {
         isAttacking = false;
-        ishitted = false;
         if (isUsingSkill)
         {
             isUsingSkill = false;
@@ -219,6 +228,12 @@ public class PlayerController : MonoBehaviour
         }
         Debug.Log("공격 종료");
     }
+    
+    public void OnHitFinished()
+    {
+        ishitted = false;
+    }
+
     public void InitCommandArray()
     {
         for (int i = 0; i < commandArray.Length; i++)
@@ -272,7 +287,7 @@ public class PlayerController : MonoBehaviour
             isAttacking = true;
             isUsingSkill = true;  // 스킬 사용 상태 설정
             playerAnimator.SetTrigger("Skill1");
-            monsterDamage = 15;
+            playerDamage = 15;
             InitCommandArray();
         }
         
@@ -282,7 +297,7 @@ public class PlayerController : MonoBehaviour
             isAttacking = true;
             isUsingSkill = true;
             playerAnimator.SetTrigger("Skill2");
-            monsterDamage = 20;
+            playerDamage = 20;
         }
 
         if (isStage3 && commandArray.SequenceEqual(new int[] { 1, 2, 3, 4}))
@@ -291,7 +306,7 @@ public class PlayerController : MonoBehaviour
             isAttacking = true;
             isUsingSkill = true;
             playerAnimator.SetTrigger("Skill3");
-            monsterDamage = 25;
+            playerDamage = 25;
         }
     }
 
