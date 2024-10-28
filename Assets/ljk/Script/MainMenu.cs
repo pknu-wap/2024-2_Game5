@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject Mainmenu;
     public GameObject Start_Btn;
     public GameObject Load_Btn;
     public GameObject Exit_Btn;
@@ -25,10 +24,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    private void Start()
-    {
-        
-    }
+
 
 
 }
