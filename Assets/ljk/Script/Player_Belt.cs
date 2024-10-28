@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerBelt : MonoBehaviour
 {
     // HpBar Slider를 연동하기 위한 Slider 객체
     [SerializeField] private Slider _hpBar;
