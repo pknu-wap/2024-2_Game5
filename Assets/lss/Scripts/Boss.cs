@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public Transform player;             // ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®ÀÇ Transform
-    public float walkSpeed = 2f;         // °È±â ¼Óµµ
-    public float runSpeed = 4f;          // ´Þ¸®±â ¼Óµµ
-    private float currentSpeed = 0f;     // ÇöÀç ¼Óµµ (0ÀÏ ¶§ °¡¸¸È÷)
-    private int nextMove;                // ¹«ÀÛÀ§ ¿òÁ÷ÀÓ ¼³Á¤
-    public float decisionTime = 2f;      // Çàµ¿ °áÁ¤ ÁÖ±â
+    public Transform player;             // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transform
+    public float walkSpeed = 2f;         // ï¿½È±ï¿½ ï¿½Óµï¿½
+    public float runSpeed = 4f;          // ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½Óµï¿½
+    private float currentSpeed = 0f;     // ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ (0ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+    private int nextMove;                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public float decisionTime = 2f;      // ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
     public float bossHP;
     public float attackRange = 7f;
     public float distance;
@@ -18,30 +18,33 @@ public class Boss : MonoBehaviour
     private Animator barbarianAnimator;
     private SpriteRenderer barbarianSpriteRenderer;
 
-    private bool isFacingLeft = true;    // ÀûÀÌ ¿ÞÂÊÀ» ¹Ù¶óº¸´ÂÁö ¿©ºÎ
+    private bool isFacingLeft = true;    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player").transform;
+
         bossHP = 100;
+
 
         barbarianRigidBody = GetComponent<Rigidbody2D>();
         barbarianAnimator = GetComponent<Animator>();
         barbarianSpriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Çàµ¿ °áÁ¤ ¹Ýº¹
+        // ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
         InvokeRepeating("DecideNextAction", 0f, decisionTime);
     }
 
     void Update()
     {
-        FacePlayer();  // ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÔ
+        FacePlayer();  // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½ï¿½
 
-        // ¾Ö´Ï¸ÞÀÌ¼Ç »óÅÂ ¾÷µ¥ÀÌÆ®
-        barbarianAnimator.SetBool("isGround", true);  // Ç×»ó Áö¸é¿¡ ÀÖ´Ù°í °¡Á¤
-        barbarianAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // °È±â ¾Ö´Ï¸ÞÀÌ¼Ç Á¶°Ç
+        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+        barbarianAnimator.SetBool("isGround", true);  // ï¿½×»ï¿½ ï¿½ï¿½ï¿½é¿¡ ï¿½Ö´Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½
+        barbarianAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // ï¿½È±ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
      
 
-        distance = Vector3.Distance(this.transform.position, player.position); // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸® °è»ê
+        distance = Vector3.Distance(this.transform.position, player.position); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½
         Debug.Log("Distance to player: " + distance);
         Debug.Log("Attack Range: " + attackRange);
 
@@ -53,33 +56,33 @@ public class Boss : MonoBehaviour
         else
         {
             Debug.Log("Outside attack range");
-            barbarianAnimator.SetBool("isAttack2", false); // °ø°Ý ¹üÀ§ ¹ÛÀÏ °æ¿ì °ø°Ý ÁßÁö
+            barbarianAnimator.SetBool("isAttack2", false); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
 
     private void FixedUpdate()
     {
-        // ÀÌµ¿
+        // ï¿½Ìµï¿½
         barbarianRigidBody.velocity = new Vector2(currentSpeed * (isFacingLeft ? -1 : 1), barbarianRigidBody.velocity.y);
     }
 
-    // ¹«ÀÛÀ§·Î Çàµ¿ °áÁ¤
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½
     void DecideNextAction()
     {
-        nextMove = Random.Range(0, 2);  // 0: °¡¸¸È÷, 1: °È±â
+        nextMove = Random.Range(0, 2);  // 0: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 1: ï¿½È±ï¿½
 
         switch (nextMove)
         {
             case 0:
-                currentSpeed = 0f;  // °¡¸¸È÷ ÀÖÀ½
+                currentSpeed = 0f;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 break;
             case 1:
-                currentSpeed = walkSpeed;  // °È±â
+                currentSpeed = walkSpeed;  // ï¿½È±ï¿½
                 break;
         }
     }
 
-        // ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÏ´Â ÇÔ¼ö
+        // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     void FacePlayer()
     {
         if (player != null)
@@ -91,7 +94,7 @@ public class Boss : MonoBehaviour
         }
     }
 
-        // ¹æÇâÀ» ¹Ù²Ù´Â ÇÔ¼ö (½ºÇÁ¶óÀÌÆ® ¹ÝÀü)
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù´ï¿½ ï¿½Ô¼ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½)
     void Flip()
     {
         isFacingLeft = !isFacingLeft;
