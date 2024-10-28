@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Slider _hpBar;
     private Transform PlayerTransform;
 
-
+    public GameObject Gameover;  //Hierarchy에서 게임오버화면 붙여줘야함
     private GameObject Player;
     private Rigidbody2D PlayerRigidBody;
     private Vector3 movement;
@@ -38,7 +38,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       /// _hpBar.value -= 1;
+        _hpBar.value -= 1;
+        if (_hpBar.value <= 0)
+        {
+            Gameover.SetActive(true);   //게임오버 띄우기
+        }
+
     }
 
     void FixedUpdate()
