@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
     public void Guard()
     {
-        if (isJumping || isAttacking || isUsingSkill) return;
+        if (isJumping || isAttacking || isUsingSkill || isWalking) return;
 
 
         if (Input.GetKey(KeyCode.E))
@@ -188,6 +188,27 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetTrigger("Hit");
             ApplyKnockBackDown(monsterPosition, knockBackForce);
         }
+    }
+
+    void AttackMonstersInRange()
+    {
+        // 플레이어의 공격 범위 내 몬스터 감지
+        Collider2D[] monsters = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        
+        foreach (var monster in monsters)
+        {
+            if (monster.CompareTag("Monster"))
+            {
+                // 몬스터에게 데미지 입히기
+                battleManager.HandleCombatCollision(this.gameObject, monster.gameObject,playerDamage, transform.position);
+            }
+        }
+    }
+
+    void DrawGizmons()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
     private IEnumerator KnockDownSequence(Vector2 monsterPosition)
