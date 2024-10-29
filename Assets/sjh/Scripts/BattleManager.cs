@@ -57,7 +57,7 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        playerSpawnPos = new Vector3(-5, 2, -2);
+        isBossScene = System.Convert.ToBoolean(PlayerPrefs.GetInt("isBossScene"));
         InitGame();
     }
 
@@ -67,9 +67,9 @@ public class BattleManager : MonoBehaviour
         ChangeState(State.Ready); 
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
-        player.transform.localPosition = playerSpawnPos;
+        player.transform.position = new Vector3(-5, 2, -2);
         limitTime = defaultLimittime;
-        playerController.playerAnimator.SetTrigger("Start");
+        if (isBossScene) playerController.playerAnimator.SetTrigger("Start");
     }
 
     void ChangeState(State state)
@@ -79,22 +79,9 @@ public class BattleManager : MonoBehaviour
 
     void Decision() // 승자 판정
     {
-        if (playerHP == 0)
-        {
-            playerController.playerAnimator.SetTrigger("Death");
-            winner = Winner.Monster;
-            ChangeState(State.KO);
-            GameOver();
-    
-        }
-        else if (MonsterHP == 0)
-        {
-            winner = Winner.Player;
-            GameOver();
-            ChangeState(State.KO);
-        }
+        if (!isBossScene) return; 
 
-        else if (limitTime == 0) // TKO 판정
+        if (limitTime == 0) // TKO 판정
         {
             winner = playerHP > MonsterHP ? Winner.Player : Winner.Monster;
             GameOver();
@@ -118,6 +105,8 @@ public class BattleManager : MonoBehaviour
 
     void TimeCount()
     {
+        if (!isBossScene) return;
+
         limitTime -= Time.deltaTime;       
         //Debug.Log(limitTime);
         if (limitTime <= 0)
@@ -139,11 +128,16 @@ public class BattleManager : MonoBehaviour
             if (MonsterHP <= 0)
             {
                 MonsterHP = 0;
-                winner = Winner.Player;
-                ChangeState(State.KO);
-                GameOver();
+                
+                if (isBossScene)
+                {
+                    winner = Winner.Player;
+                    ChangeState(State.KO);
+                    GameOver();
+                }
             }
             Debug.Log($"Player hit Monster for {damage} damage. Monster HP: {MonsterHP}");
+        
         }
         // 몬스터가 플레이어를 공격
         else if (attacker.CompareTag("Monster") && defender.CompareTag("Player"))
@@ -152,14 +146,20 @@ public class BattleManager : MonoBehaviour
             if (playerHP <= 0)
             {
                 playerHP = 0;
-                winner = Winner.Monster;
+
                 playerController.playerAnimator.SetTrigger("Death");
-                ChangeState(State.KO);
-                GameOver();
+
+                if (isBossScene)
+                {
+                    winner = Winner.Monster;
+                    ChangeState(State.KO);
+                    GameOver();
+                }
             }
             playerController.TakeDamage(damage, hitPosition);  // 넉백 등 시각적 효과용
             Debug.Log($"Monster hit Player for {damage} damage. Player HP: {playerHP}");
         }
+        return; 
     }
 
   
@@ -177,6 +177,7 @@ public class BattleManager : MonoBehaviour
                   break;
             case State.Play:
                 TimeCount();
+                playerController.AttackMonstersInRange();
                 if (curState != State.Play || playerController == null || playerController.isKnockedDown) return;
                 playerController.Move();
                 playerController.Guard();

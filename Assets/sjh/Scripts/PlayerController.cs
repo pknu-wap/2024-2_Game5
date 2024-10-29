@@ -21,16 +21,20 @@ public class PlayerController : MonoBehaviour
     public bool isGuarding = false;
     public bool isUsingSkill = false;
     public bool ishitted = false;
+    public bool ishitting = false;
     public bool isInvincible = false;
     public bool isKnockedDown = false;
     public float knockDownDuration = 3f;
     public float knockBackForce= 20f;
     public int knockDownThreshold = 30;
+    private float lastAttackTime = 0f;
+    private float attackCooldown = 0.7f; // 데미지가 들어가는 간격 (초)
 
 
-    public bool isStage1 = true;
-    public bool isStage2 = false;
-    public bool isStage3 = false;
+    private bool isBossScene;
+    private bool isStage1;
+    private bool isStage2;
+    private bool isStage3;
 
     int[] commandArray = new int[4];
     private Coroutine resetCoroutine;
@@ -53,6 +57,11 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        isBossScene = System.Convert.ToBoolean(PlayerPrefs.GetInt("isBossScene"));
+        isStage1 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage1"));
+        isStage2 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage2"));
+        isStage3 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage3"));
+
         playerHP = 100;
         InitCommandArray();
     }
@@ -65,8 +74,9 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
 
+
         // 플레이어의 공격이 몬스터에게 히트
-        if (collision.gameObject.CompareTag("Monster") && isAttacking)
+        if (isBossScene &&collision.gameObject.CompareTag("Monster") && isAttacking)
         {
             Vector2 hitPosition = transform.position;
             battleManager.HandleCombatCollision(gameObject, collision.gameObject, playerDamage, hitPosition);
@@ -92,6 +102,16 @@ public class PlayerController : MonoBehaviour
             isWalking = true;
             moveVelocity = Vector3.right;
         }
+        else if (Input.GetKey(KeyCode.DownArrow) && !isBossScene)
+        {
+            isWalking = true;
+            moveVelocity = Vector3.down;
+        }
+        else if (Input.GetKey(KeyCode.UpArrow) && !isBossScene)
+        {
+            isWalking = true;
+            moveVelocity = Vector3.up;
+        }
         else
         {
             isWalking = false;
@@ -103,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
     {
-        if (isJumping || isAttacking || isUsingSkill) return;
+        if (isJumping || isAttacking || isUsingSkill || isBossScene) return;
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
@@ -152,6 +172,8 @@ public class PlayerController : MonoBehaviour
 
     public void Guard()
     {
+        if (!isAttacking) return;
+
         if (isJumping || isAttacking || isUsingSkill || isWalking) return;
 
 
@@ -190,22 +212,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void AttackMonstersInRange()
+    public void AttackMonstersInRange()
     {
+        if(isBossScene) return;
+
+        // 쿨다운 체크
+        if (Time.time - lastAttackTime < attackCooldown) return;
+
         // 플레이어의 공격 범위 내 몬스터 감지
         Collider2D[] monsters = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        Debug.Log(monsters.Length);
         
         foreach (var monster in monsters)
         {
-            if (monster.CompareTag("Monster"))
+            if (monster.CompareTag("Monster") && isAttacking)
             {
                 // 몬스터에게 데미지 입히기
-                battleManager.HandleCombatCollision(this.gameObject, monster.gameObject,playerDamage, transform.position);
+                battleManager.HandleCombatCollision(this.gameObject, monster.gameObject,playerDamage, Vector2.zero);
             }
         }
+
+        lastAttackTime = Time.time;
     }
 
-    void DrawGizmons()
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
@@ -226,9 +256,20 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyKnockBackDown(Vector2 monsterPosition, float force)
     {
-        Vector2 knockBackDirection = ((Vector2)transform.position - monsterPosition).normalized;
+        // 몬스터가 오른쪽에서 때렸으면 왼쪽으로, 왼쪽에서 때렸으면 오른쪽으로
+        float direction = transform.position.x < monsterPosition.x ? -1f : 1f;
+        
+        // x축으로만 속도 적용
+        PlayerRigidBody.velocity = new Vector2(direction * force, 0f);
+        
+        // 짧은 시간 후에 속도를 0으로 만들어서 미끄러지지 않게 함
+        StartCoroutine(StopKnockback());
+    }
+
+    private IEnumerator StopKnockback()
+    {
+        yield return new WaitForSeconds(0.2f);
         PlayerRigidBody.velocity = Vector2.zero;
-        PlayerRigidBody.AddForce(knockBackDirection * force, ForceMode2D.Impulse);
     }
     public void OnGetUpFinished()
     {
@@ -245,8 +286,10 @@ public class PlayerController : MonoBehaviour
         if (isUsingSkill)
         {
             isUsingSkill = false;
+            playerAnimator.SetBool("IsUsingSkill", isUsingSkill);
             Debug.Log("스킬 사용 종료");
         }
+        playerAnimator.SetBool("isAttacking", isAttacking);
         Debug.Log("공격 종료");
     }
     
