@@ -14,19 +14,18 @@ public class PlayerController : MonoBehaviour
     public int playerDamage;
     public Animator playerAnimator;
 
-    public bool isWalking = false;
-    public bool isJumping = false;
-    public bool isGround = false;
+    private bool isWalking = false;
+    private bool isJumping = false;
+    private bool isGround = false;
     public bool isAttacking = false;
-    public bool isGuarding = false;
-    public bool isUsingSkill = false;
+    private bool isGuarding = false;
+    private bool isUsingSkill = false;
     public bool ishitted = false;
-    public bool ishitting = false;
-    public bool isInvincible = false;
+    private bool isInvincible = false;
     public bool isKnockedDown = false;
-    public float knockDownDuration = 3f;
-    public float knockBackForce= 20f;
-    public int knockDownThreshold = 30;
+    private float knockDownDuration = 3f;
+    private float knockBackForce= 20f;
+    private int knockDownThreshold = 30;
     private float lastAttackTime = 0f;
     private float attackCooldown = 0.7f; // 데미지가 들어가는 간격 (초)
 
@@ -46,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private BattleManager battleManager;
 
-    public float attackRange = 2f;
+    private float attackRange = 1.6f;
 
     void Awake()
     {

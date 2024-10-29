@@ -1,3 +1,4 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -116,7 +117,26 @@ public class BattleManagerNormal : MonoBehaviour
         }
     }
 
+    void AttackMonstersInRange()
+    {
+        // 플레이어의 공격 범위 내 몬스터 감지
+        Collider2D[] monsters = Physics2D.OverlapCircleAll(player.transform.position, playerController.attackRange);
+        
+        foreach (var monster in monsters)
+        {
+            if (monster.CompareTag("Monster"))
+            {
+                // 몬스터에게 데미지 입히기
+                HandleCombatCollision(player, monster.gameObject, playerController.playerDamage, Vector2.zero);
+            }
+        }
+    }
 
+    void DrawGizmons()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
 
 
   
@@ -161,3 +181,6 @@ public class BattleManagerNormal : MonoBehaviour
         
     }
 }
+
+
+*/

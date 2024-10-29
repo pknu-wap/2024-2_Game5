@@ -23,7 +23,7 @@ public class BattleManager : MonoBehaviour
     private bool isBossScene;
 
     // 플레이어 변수
-    public GameObject player;
+    private GameObject player;
     private PlayerController playerController; 
     public int defaultPlayerHP;
     public int playerHP;
@@ -46,18 +46,22 @@ public class BattleManager : MonoBehaviour
 
     void Awake()
     {
+
         sceneSetting = FindObjectOfType<SceneSetting>();
-        playerController = player.GetComponent<PlayerController>();
-        monsterController = monster.GetComponent<MonsterController>();
-        MonsterHP = 100; // 나중에 보스 스크립트에서 가져오는 아래 코드로 수정
-        MonsterHP = monsterController.monsterHP;
+        isBossScene = System.Convert.ToBoolean(PlayerPrefs.GetInt("isBossScene"));
+        
     }
 
     
 
     void Start()
     {
-        isBossScene = System.Convert.ToBoolean(PlayerPrefs.GetInt("isBossScene"));
+        player = GameObject.FindWithTag("Player");
+        if (isBossScene) monster = GameObject.FindWithTag("Monster");
+        playerController = player.GetComponent<PlayerController>();
+        monsterController = monster.GetComponent<MonsterController>();
+        MonsterHP = monsterController.monsterHP;
+        
         InitGame();
     }
 
