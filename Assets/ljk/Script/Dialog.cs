@@ -63,7 +63,7 @@ public class Dialog : MonoBehaviour
                 else
                 {
                     ONOFF(false); //대사가 끝남
-                    SceneManager.LoadScene(Seen.buildIndex+1); //여기 위에 페이드아웃 넣어주고 로드씬 천천히 하면 좋을 듯
+                    //SceneManager.LoadScene(Seen.buildIndex+1); //여기 위에 페이드아웃 넣어주고 로드씬 천천히 하면 좋을 듯
                 }
             }
         }

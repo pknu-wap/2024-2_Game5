@@ -1,3 +1,4 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,9 @@ public class BattleManagerNormal : MonoBehaviour
         Play,  // 1
         End,
     }
-}
 
-/*
+
+
 
     private SceneSetting sceneSetting;
     private bool isBossScene;
@@ -32,7 +33,7 @@ public class BattleManagerNormal : MonoBehaviour
     public int  MonsterHP;
     public int monsterDamage;
     private Vector3 MonsterSpawnPos;
-    public int curState;
+    public State curState;
 
 
     void Awake()
@@ -71,8 +72,7 @@ public class BattleManagerNormal : MonoBehaviour
         if (playerHP == 0)
         {
             playerController.playerAnimator.SetTrigger("Death");
-            winner = Winner.Monster;
-            ChangeState(State.KO);
+            ChangeState(State.End);
             GameOver();
     
         }        
@@ -96,8 +96,8 @@ public class BattleManagerNormal : MonoBehaviour
             if (monster.monsterHP <= 0)
             {
                 monster.monsterHP = 0;
-                ChangeState(State.End);
                 GameOver();
+                ChangeState(State.End);
             }
             Debug.Log($"Player hit Monster for {damage} damage. Monster HP: {monster.monsterHP}");
         }
@@ -109,27 +109,33 @@ public class BattleManagerNormal : MonoBehaviour
             {
                 playerHP = 0;
                 playerController.playerAnimator.SetTrigger("Death");
-                ChangeState(State.End);
                 GameOver();
+                ChangeState(State.End);
             }
             playerController.TakeDamage(damage, hitPosition);  // 넉백 등 시각적 효과용
             Debug.Log($"Monster hit Player for {damage} damage. Player HP: {playerHP}");
         }
     }
 
-        void AttackMonstersInRange()
+    void AttackMonstersInRange()
     {
         // 플레이어의 공격 범위 내 몬스터 감지
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(player.transform.position, playerController.attackRange);
+        Collider2D[] monsters = Physics2D.OverlapCircleAll(player.transform.position, playerController.attackRange);
         
-        foreach (var hitCollider in hitColliders)
+        foreach (var monster in monsters)
         {
-            if (hitCollider.CompareTag("Monster"))
+            if (monster.CompareTag("Monster"))
             {
                 // 몬스터에게 데미지 입히기
-                HandleCombatCollision(player, hitCollider.gameObject, playerController.playerDamage, Vector2.zero);
+                HandleCombatCollision(player, monster.gameObject, playerController.playerDamage, Vector2.zero);
             }
         }
+    }
+
+    void DrawGizmons()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
 
@@ -174,6 +180,7 @@ public class BattleManagerNormal : MonoBehaviour
     {
         
     }
-    
 }
+
+
 */
