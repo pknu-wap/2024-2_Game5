@@ -243,11 +243,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e36d5bfb73454f2e955f5990d51339c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1076607610}
   defaultPlayerHP: 100
   playerHP: 0
   playerDamage: 0
-  monster: {fileID: 1248359832}
+  playerSpawnPos: {x: -6, y: 0, z: -2}
   MonsterHP: 110
   monsterDamage: 0
   defaultLimittime: 100
@@ -297,6 +296,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBossScene: 1
+  isStage1: 0
+  isStage2: 0
+  isStage3: 0
 --- !u!4 &482884953
 Transform:
   m_ObjectHideFlags: 0
@@ -312,11 +314,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &630009091 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2131835535877990364, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-  m_PrefabInstance: {fileID: 7936581055436657546}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039894390
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,22 +719,9 @@ MonoBehaviour:
   playerHP: 100
   playerDamage: 0
   playerAnimator: {fileID: 0}
-  isWalking: 0
-  isJumping: 0
-  isGround: 0
   isAttacking: 0
-  isGuarding: 0
-  isUsingSkill: 0
   ishitted: 0
-  isInvincible: 0
   isKnockedDown: 0
-  knockDownDuration: 3
-  knockBackForce: 5
-  knockDownThreshold: 30
-  isStage1: 1
-  isStage2: 0
-  isStage3: 0
-  attackRange: 2
 --- !u!1 &1248359832
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,127 +858,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1622113935 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 9000830814164649228, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-  m_PrefabInstance: {fileID: 7936581055436657546}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1622113940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630009091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc389a0eb1c8b4a38b9e589bd27921bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movePower: 8
-  jumpPower: 8
-  playerHP: 100
-  playerDamage: 0
-  playerAnimator: {fileID: 0}
-  isWalking: 0
-  isJumping: 0
-  isGround: 0
-  isAttacking: 0
-  isGuarding: 0
-  isUsingSkill: 0
-  ishitted: 0
-  isInvincible: 0
-  isKnockedDown: 0
-  knockDownDuration: 3
-  knockBackForce: 5
-  knockDownThreshold: 30
-  isStage1: 1
-  isStage2: 0
-  isStage3: 0
-  attackRange: 2
---- !u!1001 &7936581055436657546
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2131835535877990364, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131835535877990364, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131835535877990364, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951295111547911531, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8529685646121544591, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: playerHP
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8529685646121544591, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      propertyPath: PlayerRigidBody
-      value: 
-      objectReference: {fileID: 1622113935}
-    m_RemovedComponents:
-    - {fileID: 8529685646121544591, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2131835535877990364, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1622113940}
-  m_SourcePrefab: {fileID: 100100000, guid: c91e85f4567744c39b9a56e230e9115b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 325879049}
-  - {fileID: 7936581055436657546}
   - {fileID: 1039894393}
   - {fileID: 1063401295}
   - {fileID: 345355512}
