@@ -50,11 +50,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject monster;
     private MonsterController monsterController;
-
+    private BossController bossController;
     private float attackRange = 1.6f;
     public LayerMask objectLayer;
 
     [SerializeField] private Slider _hpBar;
+
+    public GameObject gameOvereUI;
+    public GameObject gameClearUI;
 
 
     void Awake()
@@ -68,12 +71,13 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        gameOvereUI.SetActive(false);
         isBossScene = System.Convert.ToBoolean(PlayerPrefs.GetInt("isBossScene"));
         isStage1 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage1"));
         isStage2 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage2"));
         isStage3 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage3"));
 
-        if(isBossScene) monsterController = monster.GetComponent<MonsterController>();
+        if(isBossScene) bossController = monster.GetComponent<BossController>();
 
         playerHP = 100;
         _hpBar.maxValue = playerHP;
@@ -143,17 +147,17 @@ public class PlayerController : MonoBehaviour
         transform.position += moveVelocity * movePower * Time.deltaTime;
         Vector3 newPosition = transform.position;
     
-        //float minY = -4.0f; // 예시로 설정한 최소값
-        //float maxY = -2.0f;  // 예시로 설정한 최대값
-        //newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+        float minX = -6.0f; // 예시로 설정한 최소값
+        float maxX = 7.0f;  // 예시로 설정한 최대값
+        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
 
         // 새로운 위치로 이동
-        //transform.position = newPosition;
+        transform.position = newPosition;
     }
 
     public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
     {
-        if (isJumping || isAttacking || isUsingSkill || isBossScene) return;
+        if (isJumping || isAttacking || isUsingSkill || !isBossScene) return;
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
@@ -199,7 +203,8 @@ public class PlayerController : MonoBehaviour
         playerDamage = !isGround ? 8 : 5;
         if(ishitting)
         {
-            monsterController.TakeDamage(5, transform.position);
+            if(isBossScene)bossController.TakeDamage(5, transform.position);
+            if(!isBossScene)monsterController.TakeDamage(5, transform.position);
             ishitting = false;
         }
         
@@ -208,7 +213,6 @@ public class PlayerController : MonoBehaviour
 
     public void Guard()
     {
-        if (!isAttacking) return;
 
         if (isJumping || isAttacking || isUsingSkill || isWalking) return;
 
@@ -257,6 +261,8 @@ public class PlayerController : MonoBehaviour
         if (playerHP <= 0)
         {
             playerAnimator.SetTrigger("Death");
+            gameOvereUI.SetActive(true);
+            
         }
     }
 

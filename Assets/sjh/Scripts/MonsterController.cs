@@ -15,8 +15,6 @@ public class MonsterController : MonoBehaviour
     public bool ishitted = false;
     public float knockBackForce = 3f;
 
-    private BattleManager battleManager;
-
     public void TakeDamage(int damage, Vector2 playerPosition)
     {
  

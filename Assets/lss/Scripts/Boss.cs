@@ -4,86 +4,97 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public Transform player;             // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transform
-    public float walkSpeed = 2f;         // ï¿½È±ï¿½ ï¿½Óµï¿½
-    public float runSpeed = 4f;          // ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½Óµï¿½
-    private float currentSpeed = 0f;     // ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ (0ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
-    private int nextMove;                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-    public float decisionTime = 2f;      // ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
+    public Transform player;             // ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®ÀÇ Transform
+    public float walkSpeed = 2f;         // °È±â ¼Óµµ
+    private float currentSpeed = 0f;     // ÇöÀç ¼Óµµ (0ÀÏ ¶§ °¡¸¸È÷)
+    private int nextMove;                // ¹«ÀÛÀ§ ¿òÁ÷ÀÓ ¼³Á¤
+    public float decisionTime = 2f;      // Çàµ¿ °áÁ¤ ÁÖ±â
     public float bossHP;
     public float attackRange = 7f;
     public float distance;
+    private bool isAttacking = false;
 
     private Rigidbody2D barbarianRigidBody;
     private Animator barbarianAnimator;
     private SpriteRenderer barbarianSpriteRenderer;
 
-    private bool isFacingLeft = true;    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private bool isFacingLeft = true;    // ÀûÀÌ ¿ÞÂÊÀ» ¹Ù¶óº¸´ÂÁö ¿©ºÎ
 
+    public class Player : MonoBehaviour
+    {
+        public float playerHP = 100f;  // ÇÃ·¹ÀÌ¾îÀÇ HP
+
+        // ÇÃ·¹ÀÌ¾îÀÇ HP¸¦ ±ð´Â ÇÔ¼ö
+        public void TakeDamage(float damage)
+        {
+            playerHP -= damage;
+            Debug.Log("Player HP: " + playerHP);
+
+            if (playerHP <= 0) // HP°¡ 0ÀÌ µÇ¸é game over
+            {
+                Debug.Log("Player is dead!");
+            }
+        }
+    }
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
-
-        bossHP = 100;
-
+        bossHP = 100f;
 
         barbarianRigidBody = GetComponent<Rigidbody2D>();
         barbarianAnimator = GetComponent<Animator>();
         barbarianSpriteRenderer = GetComponent<SpriteRenderer>();
 
-        // ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+        // Çàµ¿ °áÁ¤ ¹Ýº¹
         InvokeRepeating("DecideNextAction", 0f, decisionTime);
     }
 
     void Update()
     {
-        FacePlayer();  // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½ï¿½
+        FacePlayer();  // ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÔ
 
-        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
-        barbarianAnimator.SetBool("isGround", true);  // ï¿½×»ï¿½ ï¿½ï¿½ï¿½é¿¡ ï¿½Ö´Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½
-        barbarianAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // ï¿½È±ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+        // ¾Ö´Ï¸ÞÀÌ¼Ç »óÅÂ ¾÷µ¥ÀÌÆ®
+        barbarianAnimator.SetBool("isGround", true);  // Ç×»ó Áö¸é¿¡ ÀÖ´Ù°í °¡Á¤
+        barbarianAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // °È±â ¾Ö´Ï¸ÞÀÌ¼Ç Á¶°Ç
      
 
-        distance = Vector3.Distance(this.transform.position, player.position); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½
-        Debug.Log("Distance to player: " + distance);
-        Debug.Log("Attack Range: " + attackRange);
+        distance = Vector3.Distance(this.transform.position, player.position); // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸® °è»ê
 
-        if (distance <= attackRange)
+        if (distance <= attackRange && !isAttacking)
         {
             Debug.Log("Attack triggered!");
-            Attack();
+            StartCoroutine(DelayedAttack());
         }
-        else
+        else if(isAttacking)
         {
-            Debug.Log("Outside attack range");
-            barbarianAnimator.SetBool("isAttack2", false); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            ResetAttackAnimations();
         }
     }
 
     private void FixedUpdate()
     {
-        // ï¿½Ìµï¿½
+        // ÀÌµ¿
         barbarianRigidBody.velocity = new Vector2(currentSpeed * (isFacingLeft ? -1 : 1), barbarianRigidBody.velocity.y);
     }
 
-    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½
+    // ¹«ÀÛÀ§·Î Çàµ¿ °áÁ¤
     void DecideNextAction()
     {
-        nextMove = Random.Range(0, 2);  // 0: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 1: ï¿½È±ï¿½
-
-        switch (nextMove)
+        nextMove = Random.Range(0, 2);  // 0: °¡¸¸È÷, 1: °È±â
+        currentSpeed = nextMove == 1 ? walkSpeed : 0f;
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && isAttacking)
         {
-            case 0:
-                currentSpeed = 0f;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-                break;
-            case 1:
-                currentSpeed = walkSpeed;  // ï¿½È±ï¿½
-                break;
+            Player player = collision.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(4f);
+                Debug.Log("Player HP -= 4");
+            }
         }
     }
-
-        // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
-    void FacePlayer()
+    void FacePlayer()// ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÏ´Â ÇÔ¼ö
     {
         if (player != null)
         {
@@ -94,17 +105,43 @@ public class Boss : MonoBehaviour
         }
     }
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù´ï¿½ ï¿½Ô¼ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½)
-    void Flip()
+    void Flip() // ¹æÇâÀ» ¹Ù²Ù´Â ÇÔ¼ö (½ºÇÁ¶óÀÌÆ® ¹ÝÀü)
     {
         isFacingLeft = !isFacingLeft;
         barbarianSpriteRenderer.flipX = !barbarianSpriteRenderer.flipX;
     }
-    
+    IEnumerator DelayedAttack() // °ø°Ý ÄÚ·çÆ¾(2ÃÊ µô·¹ÀÌ ÈÄ °ø°Ý)
+    {
+        isAttacking = true;  // °ø°Ý Áß »óÅÂ·Î º¯°æ
+        Attack();        // ¹«ÀÛÀ§ °ø°Ý
+
+        yield return new WaitForSeconds(2f);  // 1ÃÊ ´ë±â
+        isAttacking = false;  // °ø°Ý ¿Ï·á ÈÄ ´Ù½Ã °ø°Ý °¡´É »óÅÂ·Î º¯°æ
+    }
     void Attack()
     {
-        barbarianAnimator.SetBool("isAttack2", true);
+        int attackType = Random.Range(0, 3);  // 0: ±âº» °ø°Ý, 1: Å±, 2: ¾îÆÛÄÆ
 
-
+        switch (attackType) // ¹«ÀÛÀ§·Î °ø°Ý ¾Ö´Ï¸ÞÀÌ¼Ç ¼±ÅÃ
+        {
+            case 0:
+                barbarianAnimator.SetBool("isAttack2", true);
+                Debug.Log("Basic Attack");
+                break;
+            case 1:
+                barbarianAnimator.SetBool("isKick", true);
+                Debug.Log("Kick Attack");
+                break;
+            case 2:
+                barbarianAnimator.SetBool("isUppercut", true);
+                Debug.Log("Uppercut Attack");
+                break;
+        }
+    }
+    void ResetAttackAnimations()
+    {
+        barbarianAnimator.SetBool("isAttack2", false);
+        barbarianAnimator.SetBool("isKick", false);
+        barbarianAnimator.SetBool("isUppercut", false);
     }
 }
