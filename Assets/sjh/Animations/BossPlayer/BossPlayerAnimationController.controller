@@ -366,12 +366,6 @@ AnimatorController:
   m_Name: BossPlayerAnimationController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: MoveSpeed
-    m_Type: 3
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: isWalking
     m_Type: 4
     m_DefaultFloat: 0
@@ -699,7 +693,7 @@ AnimatorStateMachine:
     m_Position: {x: -530, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3339520217593430062}
-    m_Position: {x: 250, y: 100, z: 0}
+    m_Position: {x: 260, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3954792060216192905}
     m_Position: {x: -140, y: -280, z: 0}
