@@ -29,11 +29,11 @@ public class BattleManager : MonoBehaviour
     public int playerHP;
     public int playerDamage;
     //private Rigidbody2D PlayerRigidBody;
-    private Vector3 playerSpawnPos;
+    public Vector3 playerSpawnPos;
     
 
     // 보스 변수 
-    public GameObject monster;
+    private GameObject monster;
     private MonsterController monsterController;
     public int  MonsterHP;
     public int monsterDamage;
@@ -71,7 +71,7 @@ public class BattleManager : MonoBehaviour
         ChangeState(State.Ready); 
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
-        player.transform.position = new Vector3(-5, 2, -2);
+        player.transform.position = playerSpawnPos;
         limitTime = defaultLimittime;
         if (isBossScene) playerController.playerAnimator.SetTrigger("Start");
     }
