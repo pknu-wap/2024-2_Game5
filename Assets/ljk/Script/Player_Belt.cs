@@ -38,7 +38,7 @@ public class PlayerBelt : MonoBehaviour
 
     void Update()
     {
-        _hpBar.value -= 1;
+        //_hpBar.value -= 1;
         if (_hpBar.value <= 0)
         {
             Gameover.SetActive(true);   //게임오버 띄우기
