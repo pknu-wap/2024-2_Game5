@@ -7,15 +7,15 @@ public class Boss_move : MonoBehaviour
     private Rigidbody2D bossRigidBody;
     private Animator bossAnimator;
 
-    public float moveSpeed = 2f; // BossÀÇ ÀÌµ¿ ¼Óµµ
-    public float distance = 7f;  // Boss¿Í player »çÀÌÀÇ °Å¸®
+    public float moveSpeed = 2f; // Bossï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½
+    public float distance = 7f;  // Bossï¿½ï¿½ player ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
     private float BossHP;
     public int nextMove;
 
     public SpriteRenderer bossSpriteRenderer;
     public Transform player;
 
-    private bool isFacingLeft = true;    // ÀûÀÌ ¿ÞÂÊÀ» ¹Ù¶óº¸´ÂÁö È®ÀÎ
+    private bool isFacingLeft = true;    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 
 
     void Start()
@@ -42,7 +42,7 @@ public class Boss_move : MonoBehaviour
         FacePlayer();
     }
     void RandomMove()
-    {   // ¿ÞÂÊÀ¸·Î ¿òÁ÷ÀÌ±â, ¸ØÃß±â, ¿À¸¥ÂÊÀ¸·Î ¿òÁ÷ÀÌ±â ·£´ý ÁöÁ¤
+    {   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½, ï¿½ï¿½ï¿½ß±ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         nextMove = Random.Range(-1, 1);
     }
     void FacePlayer()
@@ -59,7 +59,7 @@ public class Boss_move : MonoBehaviour
     {
         isFacingLeft = !isFacingLeft;
 
-        // ½ºÇÁ¶óÀÌÆ®¸¦ ¹ÝÀü½ÃÄÑ º¸½º°¡ ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÔ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½ï¿½
         bossSpriteRenderer.flipX = !bossSpriteRenderer.flipX;
     }
 }
