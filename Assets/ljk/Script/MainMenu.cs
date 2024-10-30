@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void Start_Btn_click()
     {
-        
+        //메인메뉴가 씬0이라는 가정
         SceneManager.LoadScene(1);
     }
 
