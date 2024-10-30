@@ -123,6 +123,14 @@ public class PlayerController : MonoBehaviour
         
         playerAnimator.SetBool("isWalking", isWalking);
         transform.position += moveVelocity * movePower * Time.deltaTime;
+        Vector3 newPosition = transform.position;
+    
+        float minY = -4.0f; // 예시로 설정한 최소값
+        float maxY = -2.0f;  // 예시로 설정한 최대값
+        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+
+        // 새로운 위치로 이동
+        transform.position = newPosition;
     }
 
     public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
