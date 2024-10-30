@@ -9,7 +9,7 @@ public class ImagSizeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //È­¸éºñÀ²¸¸Å­ ±âº» Å©±â¿¡ °öÇÏ±â - ÀÌ¹ÌÁö Å©±â Á¶Àý(´Ù¾çÇÑ È­¸é Å©±â¿¡¼­ ¿Ïº®ÇÏÁø ¾ÊÁö¸¸, ´ëÃ¼ÀûÀ¸·Î ºñ½ÁÇÏ°Ô º¸ÀÓ)
+        //È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­ ï¿½âº» Å©ï¿½â¿¡ ï¿½ï¿½ï¿½Ï±ï¿½ - ï¿½Ì¹ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½Ù¾ï¿½ï¿½ï¿½ È­ï¿½ï¿½ Å©ï¿½â¿¡ï¿½ï¿½ ï¿½Ïºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½)
         transform.localScale = new Vector2(transform.localScale.x * (Screen_w / Screen_h), transform.localScale.y * (Screen_w / Screen_h));
 
     }

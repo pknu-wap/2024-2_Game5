@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public int playerHP;
     public int playerDamage;
     public Animator playerAnimator;
+    private SpriteRenderer playerSpriteRenderer;
 
     private bool isWalking = false;
     private bool isJumping = false;
@@ -51,7 +52,9 @@ public class PlayerController : MonoBehaviour
     {
         PlayerRigidBody = this.GetComponent<Rigidbody2D>();
         playerAnimator = this.GetComponent<Animator>();
+        playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         battleManager = FindObjectOfType<BattleManager>();
+
     }
 
     void Start()
@@ -95,11 +98,13 @@ public class PlayerController : MonoBehaviour
         {
             isWalking = true;
             moveVelocity = Vector3.left;
+            playerSpriteRenderer.flipX = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             isWalking = true;
             moveVelocity = Vector3.right;
+            playerSpriteRenderer.flipX = false;
         }
         else if (Input.GetKey(KeyCode.DownArrow) && !isBossScene)
         {
@@ -118,6 +123,14 @@ public class PlayerController : MonoBehaviour
         
         playerAnimator.SetBool("isWalking", isWalking);
         transform.position += moveVelocity * movePower * Time.deltaTime;
+        Vector3 newPosition = transform.position;
+    
+        float minY = -4.0f; // 예시로 설정한 최소값
+        float maxY = -2.0f;  // 예시로 설정한 최대값
+        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+
+        // 새로운 위치로 이동
+        transform.position = newPosition;
     }
 
     public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
