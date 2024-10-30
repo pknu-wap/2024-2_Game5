@@ -36,8 +36,8 @@ public class BattleManager : MonoBehaviour
 
     // 보스 변수 
     private GameObject monster;
-    private BossController monsterController;
-    public int  bossHP;
+    private MonsterController monsterController;
+    public int  monsterHP;
     public int monsterDamage;
     private Vector3 MonsterSpawnPos;
 
@@ -61,8 +61,8 @@ public class BattleManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         if (isBossScene) monster = GameObject.FindWithTag("Monster");
         playerController = player.GetComponent<PlayerController>();
-        monsterController = monster.GetComponent<BossController>();
-        bossHP = monsterController.bossHP;
+        monsterController = monster.GetComponent<MonsterController>();
+        monsterHP = monsterController.monsterHP;
         
         InitGame();
     }
@@ -70,7 +70,7 @@ public class BattleManager : MonoBehaviour
     void InitGame()
     {
         // 게임 상태를 Ready로 전환
-        ChangeState(State.Play); 
+        ChangeState(State.Ready); 
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
         player.transform.position = playerSpawnPos;
@@ -94,7 +94,7 @@ public class BattleManager : MonoBehaviour
 
         if (limitTime == 0) // TKO 판정
         {
-            winner = playerController.playerHP > monsterController.bossHP ? Winner.Player : Winner.Monster;
+            winner = playerController.playerHP > monsterController.monsterHP ? Winner.Player : Winner.Monster;
             GameOver();
             ChangeState(State.TKO);
         }
@@ -137,17 +137,16 @@ public class BattleManager : MonoBehaviour
         switch(curState)
         {
              case State.Ready:
-                //if (Input.GetKeyDown(KeyCode.LeftShift))
-                //{
-                //    ChangeState(State.Play);
-                //    Debug.Log("Pressed : Play");
-                //    Debug.Log(curState);   
-                //}
-                ChangeState(State.Play);
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    ChangeState(State.Play);
+                    Debug.Log("Pressed : Play");
+                    Debug.Log(curState);   
+                }
                   break;
             case State.Play:
                 TimeCount();
-                playerController.AttackMonstersInRange();
+                if (!isBossScene)playerController.AttackMonstersInRange();
                 if (curState != State.Play || playerController == null || playerController.isKnockedDown) return;
                 playerController.Move();
                 playerController.Guard();

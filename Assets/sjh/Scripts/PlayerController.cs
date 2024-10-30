@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D PlayerRigidBody;
-    private Vector3 movement;
     
     public float movePower = 8f;
     public float jumpPower = 8f;
@@ -18,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isWalking = false;
     private bool isJumping = false;
-    private bool isGround = false;
+    public bool isGround = false;
     public bool isAttacking = false;
     private bool isGuarding = false;
     private bool isUsingSkill = false;
@@ -158,13 +157,19 @@ public class PlayerController : MonoBehaviour
         
         playerAnimator.SetBool("isWalking", isWalking);
         transform.position += moveVelocity * movePower * Time.deltaTime;
-        Vector3 newPosition = transform.position;
+        
     
-        newPosition.x= Mathf.Clamp(newPosition.x, minPos.x, maxPos.x);
-        if(!isBossScene) newPosition.y = Mathf.Clamp(newPosition.y, minPos.y, maxPos.y);
+        if(!isBossScene)
+        {
+            Vector3 newPosition = transform.position;
+            newPosition.x= Mathf.Clamp(newPosition.x, minPos.x, maxPos.x);
+            newPosition.y = Mathf.Clamp(newPosition.y, minPos.y, maxPos.y);
 
-        // 새로운 위치로 이동
-        transform.position = newPosition;
+            // 새로운 위치로 이동
+            transform.position = newPosition;
+        }
+        
+        
     }
 
     public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
