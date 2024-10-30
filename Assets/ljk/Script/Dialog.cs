@@ -4,25 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-[System.Serializable] //Á÷Á¢ ¸¸µç class¿¡ Á¢±ÙÇÒ ¼ö ÀÖµµ·Ï ÇØÁÜ. 
-public class DialogueList //´ëÈ­ ÀúÀåÇÒ ¸®½ºÆ®ÀÓ. ´Ù¸¥ °ÔÀÓ¿ÀºêÁ§Æ®°°Àº °Å ³ÖÁö¸»±â
+[System.Serializable] //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. 
+public class DialogueList //ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½. ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {     
-    [TextArea]//ÇÑÁÙ ¸»°í ¿©·¯ ÁÙ ¾µ ¼ö ÀÖ°Ô ÇØÁÜ
+    [TextArea]//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½
     public string dialogue;
 }
 public class Dialog : MonoBehaviour
 {
-    //SerializeField : inspectorÃ¢¿¡¼­ Á÷Á¢ Á¢±ÙÇÒ ¼ö ÀÖµµ·Ï ÇÏ´Â º¯¼öÀÓ.
-    [SerializeField] private Image sprite_DialogueBox; //´ë»çÃ¢ ÀÌ¹ÌÁö(crop)¸¦ Á¦¾îÇÏ±â À§ÇÑ º¯¼ö
-    [SerializeField] private Text txt_Dialogue; // ÅØ½ºÆ®¸¦ Á¦¾îÇÏ±â À§ÇÑ º¯¼ö
+    //SerializeField : inspectorÃ¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+    [SerializeField] private Image sprite_DialogueBox; //ï¿½ï¿½ï¿½Ã¢ ï¿½Ì¹ï¿½ï¿½ï¿½(crop)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] private Text txt_Dialogue; // ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    private bool isDialogue = false; //´ëÈ­°¡ ÁøÇàÁßÀÎÁö ¾Ë·ÁÁÙ º¯¼ö
-    private int count = 0; //´ë»ç°¡ ¾ó¸¶³ª ÁøÇàµÆ´ÂÁö ¾Ë·ÁÁÙ º¯¼ö
+    private bool isDialogue = false; //ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private int count = 0; //ï¿½ï¿½ç°¡ ï¿½ó¸¶³ï¿½ ï¿½ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     
 
-    [SerializeField] private DialogueList[] dialogue; //À§¿¡ ¸®½ºÆ® °¡Á®¿À±â 
-    private Scene Seen; //ÇöÀç ¾ÀÀ» ÀúÀåÇÒ ÇÔ¼ö
+    [SerializeField] private DialogueList[] dialogue; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+    private Scene Seen; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
 
     void Start()
     {
@@ -31,9 +31,9 @@ public class Dialog : MonoBehaviour
     }
     public void ShowDialogue()
     {
-        ONOFF(true); //´ëÈ­°¡ ½ÃÀÛµÊ
+        ONOFF(true); //ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½Ûµï¿½
         count = 0;
-        NextDialogue(); //È£ÃâµÇÀÚ¸¶ÀÚ ´ë»ç°¡ ÁøÇàµÉ ¼ö ÀÖµµ·Ï 
+        NextDialogue(); //È£ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ 
     }
 
     private void ONOFF(bool _flag)
@@ -44,9 +44,9 @@ public class Dialog : MonoBehaviour
     }
 
     private void NextDialogue() { 
-        //Ã¹¹øÂ° ´ë»ç¿Í Ã¹¹øÂ° cgºÎÅÍ °è¼Ó ´ÙÀ½ cg·Î ÁøÇàµÇ¸é¼­ È­¸é¿¡ º¸ÀÌ°Ô µÈ´Ù. 
+        //Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â° cgï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ cgï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¸é¼­ È­ï¿½é¿¡ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½È´ï¿½. 
         txt_Dialogue.text = dialogue[count].dialogue;
-        count++; //´ÙÀ½ ´ë»ç¿Í cg°¡ ³ª¿Àµµ·Ï 
+        count++; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ cgï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
     }
  
 
@@ -54,16 +54,16 @@ public class Dialog : MonoBehaviour
     void Update()
     {
         
-        if (isDialogue) //È°¼ºÈ­°¡ µÇ¾úÀ» ¶§¸¸ ´ë»ç°¡ ÁøÇàµÇµµ·Ï
+        if (isDialogue) //È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½
         {
-            if (Input.GetKeyDown(KeyCode.Space)) //spacebar ´©¸¦ ¶§¸¶´Ù ´ë»ç°¡ ÁøÇàµÇµµ·Ï
+            if (Input.GetKeyDown(KeyCode.Space)) //spacebar ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½
             { 
-                //´ëÈ­°¡ ¾È ³¡³µ´Â°¡
-                if (count < dialogue.Length) NextDialogue(); //´ÙÀ½ ´ë»ç°¡ ÁøÇàµÊ
+                //ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â°ï¿½
+                if (count < dialogue.Length) NextDialogue(); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½ï¿½
                 else
                 {
-                    ONOFF(false); //´ë»ç°¡ ³¡³²
-                    //SceneManager.LoadScene(Seen.buildIndex+1); //¿©±â À§¿¡ ÆäÀÌµå¾Æ¿ô ³Ö¾îÁÖ°í ·Îµå¾À ÃµÃµÈ÷ ÇÏ¸é ÁÁÀ» µí
+                    ONOFF(false); //ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½
+                    SceneManager.LoadScene("NormalScene1"); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ ï¿½Ö¾ï¿½ï¿½Ö°ï¿½ ï¿½Îµï¿½ï¿½ ÃµÃµï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
                 }
             }
         }

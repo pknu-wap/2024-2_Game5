@@ -246,9 +246,8 @@ MonoBehaviour:
   timeText: {fileID: 0}
   defaultPlayerHP: 100
   playerHP: 0
-  playerDamage: 0
   playerSpawnPos: {x: -6, y: 0, z: -2}
-  MonsterHP: 110
+  monsterHP: 0
   monsterDamage: 0
   defaultLimittime: 100
   limitTime: 100
@@ -721,6 +720,7 @@ MonoBehaviour:
   playerHP: 100
   playerDamage: 0
   playerAnimator: {fileID: 0}
+  isGround: 0
   isAttacking: 0
   ishitted: 1
   isKnockedDown: 0
@@ -729,6 +729,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _hpBar: {fileID: 0}
+  gameOvereUI: {fileID: 0}
+  gameClearUI: {fileID: 0}
+  minPos: {x: -30, y: -30, z: 0}
+  maxPos: {x: 30, y: 30, z: 0}
 --- !u!61 &1076607617
 BoxCollider2D:
   m_ObjectHideFlags: 0
