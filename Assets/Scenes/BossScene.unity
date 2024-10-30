@@ -439,10 +439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e36d5bfb73454f2e955f5990d51339c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 217007254}
+  timeText: {fileID: 0}
   defaultPlayerHP: 100
   playerHP: 0
-  playerDamage: 0
   playerSpawnPos: {x: 0, y: 0, z: 0}
   MonsterHP: 110
   monsterDamage: 0
@@ -561,7 +560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBossScene: 1
-  isStage1: 1
+  isStage1: 0
   isStage2: 0
   isStage3: 0
 --- !u!4 &482884953
@@ -1039,7 +1038,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   walkSpeed: 2
-  runSpeed: 4
   decisionTime: 2
   bossHP: 0
   attackRange: 7
@@ -1614,11 +1612,11 @@ MonoBehaviour:
   isAttacking: 0
   ishitted: 0
   isKnockedDown: 0
-  monster: {fileID: 1023293666}
+  monster: {fileID: 0}
   objectLayer:
     serializedVersion: 2
     m_Bits: 0
-  _hpBar: {fileID: 1430154328}
+  _hpBar: {fileID: 0}
 --- !u!1 &1152016125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,17 +2007,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381963761}
   m_CullTransparentMesh: 1
---- !u!114 &1430154328 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7491033885602867621, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
-  m_PrefabInstance: {fileID: 1834196645}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1471434112
 GameObject:
   m_ObjectHideFlags: 0
