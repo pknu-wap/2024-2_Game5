@@ -20,6 +20,11 @@ public class MonsterController : MonoBehaviour
             Debug.LogError("BattleManager를 찾을 수 없습니다.");
         }
     }
+
+    void Update()
+    {
+        monsterHP = battleManager.MonsterHP;
+    }
     
     void OnCollisionEnter2D(Collision2D collision)
     {
