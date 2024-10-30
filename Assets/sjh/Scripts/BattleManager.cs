@@ -30,7 +30,6 @@ public class BattleManager : MonoBehaviour
     private PlayerController playerController; 
     public int defaultPlayerHP;
     public int playerHP;
-    public int playerDamage;
     //private Rigidbody2D PlayerRigidBody;
     public Vector3 playerSpawnPos;
     
@@ -90,7 +89,7 @@ public class BattleManager : MonoBehaviour
 
         if (limitTime == 0) // TKO 판정
         {
-            winner = playerHP > MonsterHP ? Winner.Player : Winner.Monster;
+            winner = playerController.playerHP > monsterController.monsterHP ? Winner.Player : Winner.Monster;
             GameOver();
             ChangeState(State.TKO);
         }
@@ -114,7 +113,6 @@ public class BattleManager : MonoBehaviour
     {
         if (!isBossScene) return;
 
-
         int previousTime = Mathf.FloorToInt(limitTime);
         limitTime -= Time.deltaTime;
         int currentTime = Mathf.FloorToInt(limitTime);
@@ -127,50 +125,6 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void HandleCombatCollision(GameObject attacker, GameObject defender, int damage, Vector2 hitPosition)
-    {
-        if (curState != State.Play) return;
-
-        // 플레이어가 몬스터를 공격
-        if (attacker.CompareTag("Player") && defender.CompareTag("Monster"))
-        {
-            MonsterHP -= damage;
-            if (MonsterHP <= 0)
-            {
-                MonsterHP = 0;
-                
-                if (isBossScene)
-                {
-                    winner = Winner.Player;
-                    ChangeState(State.KO);
-                    GameOver();
-                }
-            }
-            Debug.Log($"Player hit Monster for {damage} damage. Monster HP: {MonsterHP}");
-        
-        }
-        // 몬스터가 플레이어를 공격
-        else if (attacker.CompareTag("Monster") && defender.CompareTag("Player"))
-        {
-            playerHP -= damage;  
-            if (playerHP <= 0)
-            {
-                playerHP = 0;
-
-                playerController.playerAnimator.SetTrigger("Death");
-
-                if (isBossScene)
-                {
-                    winner = Winner.Monster;
-                    ChangeState(State.KO);
-                    GameOver();
-                }
-            }
-            playerController.TakeDamage(damage, hitPosition);  // 넉백 등 시각적 효과용
-            Debug.Log($"Monster hit Player for {damage} damage. Player HP: {playerHP}");
-        }
-        return; 
-    }
 
   
     void Update()

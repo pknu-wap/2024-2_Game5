@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private bool isGuarding = false;
     private bool isUsingSkill = false;
     public bool ishitted = false;
+    private bool ishitting = false;
     private bool isInvincible = false;
     public bool isKnockedDown = false;
     private float knockDownDuration = 3f;
@@ -47,7 +48,11 @@ public class PlayerController : MonoBehaviour
 
     private BattleManager battleManager;
 
+    public GameObject monster;
+    private MonsterController monsterController;
+
     private float attackRange = 1.6f;
+    public LayerMask objectLayer;
 
     [SerializeField] private Slider _hpBar;
 
@@ -68,18 +73,21 @@ public class PlayerController : MonoBehaviour
         isStage2 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage2"));
         isStage3 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage3"));
 
+        if(isBossScene) monsterController = monster.GetComponent<MonsterController>();
+
         playerHP = 100;
         _hpBar.maxValue = playerHP;
+        _hpBar.value = playerHP;
         
         InitCommandArray();
     }
 
     void Update()
     {
-        _hpBar.value = playerHP;
+        
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
@@ -89,10 +97,9 @@ public class PlayerController : MonoBehaviour
 
 
         // 플레이어의 공격이 몬스터에게 히트
-        if (isBossScene &&collision.gameObject.CompareTag("Monster") && isAttacking)
+        if (isBossScene &&collision.gameObject.CompareTag("Monster")&&isAttacking)
         {
-            Vector2 hitPosition = transform.position;
-            battleManager.HandleCombatCollision(gameObject, collision.gameObject, playerDamage, hitPosition);
+            ishitting = true;
         }
     }
 
@@ -190,6 +197,12 @@ public class PlayerController : MonoBehaviour
 
         // 데미지 계산
         playerDamage = !isGround ? 8 : 5;
+        if(ishitting)
+        {
+            monsterController.TakeDamage(5, transform.position);
+            ishitting = false;
+        }
+        
         Debug.Log("공격 데미지: " + playerDamage);
     }
 
@@ -214,6 +227,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage, Vector2 monsterPosition)
     {
+        
         if (isInvincible) return;
         ApplyKnockBackDown(monsterPosition, knockBackForce);
 
@@ -223,6 +237,8 @@ public class PlayerController : MonoBehaviour
         }
         
         ishitted = true;
+        playerHP -= damage;
+        _hpBar.value = playerHP;
 
         if(damage >= knockDownThreshold && !isKnockedDown)
         {
@@ -232,6 +248,15 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetTrigger("Hit");
             ApplyKnockBackDown(monsterPosition, knockBackForce);
+        }
+        Decision();
+    }
+
+    private void Decision()
+    {
+        if (playerHP <= 0)
+        {
+            playerAnimator.SetTrigger("Death");
         }
     }
 
@@ -243,7 +268,7 @@ public class PlayerController : MonoBehaviour
         if (Time.time - lastAttackTime < attackCooldown) return;
 
         // 플레이어의 공격 범위 내 몬스터 감지
-        Collider2D[] monsters = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        Collider2D[] monsters = Physics2D.OverlapCircleAll(transform.position, attackRange, objectLayer);
         Debug.Log(monsters.Length);
         
         foreach (var monster in monsters)
@@ -251,7 +276,9 @@ public class PlayerController : MonoBehaviour
             if (monster.CompareTag("Monster") && isAttacking)
             {
                 // 몬스터에게 데미지 입히기
-                battleManager.HandleCombatCollision(this.gameObject, monster.gameObject,playerDamage, Vector2.zero);
+                monsterController = monster.GetComponent<MonsterController>();
+                monsterController.TakeDamage(playerDamage, transform.position);
+                //battleManager.HandleCombatCollision(this.gameObject, monster.gameObject,playerDamage, Vector2.zero);
             }
         }
 
@@ -312,6 +339,7 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("IsUsingSkill", isUsingSkill);
             Debug.Log("스킬 사용 종료");
         }
+
         playerAnimator.SetBool("isAttacking", isAttacking);
         Debug.Log("공격 종료");
     }

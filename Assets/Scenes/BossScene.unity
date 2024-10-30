@@ -167,7 +167,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217007251}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 365a14025b3495e47b5dd12cfa48e968, type: 3}
   m_Name: 
@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e36d5bfb73454f2e955f5990d51339c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeText: {fileID: 217007254}
   defaultPlayerHP: 100
   playerHP: 0
   playerDamage: 0
@@ -546,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &482884952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,6 +1614,11 @@ MonoBehaviour:
   isAttacking: 0
   ishitted: 0
   isKnockedDown: 0
+  monster: {fileID: 1023293666}
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _hpBar: {fileID: 1430154328}
 --- !u!1 &1152016125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1732,11 @@ MonoBehaviour:
   isAttacking: 0
   monsterHP: 200
   monsterDamage: 10
+  player: {fileID: 0}
+  isInvincible: 0
+  isGuarding: 0
+  ishitted: 0
+  knockBackForce: 3
 --- !u!58 &1248359834
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1998,6 +2009,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381963761}
   m_CullTransparentMesh: 1
+--- !u!114 &1430154328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7491033885602867621, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+  m_PrefabInstance: {fileID: 1834196645}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1471434112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2353,14 @@ PrefabInstance:
     - target: {fileID: 2485539795451288686, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
       propertyPath: m_Name
       value: RealHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491033885602867621, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491033885602867621, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
