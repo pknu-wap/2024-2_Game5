@@ -442,7 +442,7 @@ MonoBehaviour:
   timeText: {fileID: 217007254}
   defaultPlayerHP: 100
   playerHP: 0
-  playerSpawnPos: {x: -4, y: 0, z: -2}
+  playerSpawnPos: {x: -5.9, y: 0, z: -2}
   bossHP: 0
   monsterDamage: 0
   defaultLimittime: 100
@@ -1519,7 +1519,7 @@ Transform:
   m_GameObject: {fileID: 1076607610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.88, y: -1.04, z: -2}
+  m_LocalPosition: {x: -6, y: -2, z: -2}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1625,6 +1625,8 @@ MonoBehaviour:
   _hpBar: {fileID: 816373491}
   gameOvereUI: {fileID: 2100839709}
   gameClearUI: {fileID: 1372560326}
+  minPos: {x: -6, y: -5, z: 0}
+  maxPos: {x: 6, y: 10, z: 0}
 --- !u!61 &1076607617
 BoxCollider2D:
   m_ObjectHideFlags: 0

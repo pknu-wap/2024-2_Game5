@@ -59,6 +59,12 @@ public class PlayerController : MonoBehaviour
     public GameObject gameOvereUI;
     public GameObject gameClearUI;
 
+    public Vector3 minPos;
+    public Vector3 maxPos;
+
+    private GameObject dummy;
+    private bool isDummy=false;
+
 
     void Awake()
     {
@@ -66,6 +72,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = this.GetComponent<Animator>();
         playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         battleManager = FindObjectOfType<BattleManager>();
+        dummy = GameObject.FindWithTag("Dummy");
 
     }
 
@@ -107,7 +114,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    void DummyCall()
+    {
+        Debug.Log("Dummy Hit");
+        DummyHit dummyHit = dummy.GetComponent<DummyHit>();
+        dummyHit.OnHit();
+        isDummy = false;
+    }
 
     public void Move()
     {   
@@ -131,12 +144,12 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.DownArrow) && !isBossScene)
         {
             isWalking = true;
-            moveVelocity = Vector3.back;
+            moveVelocity = Vector3.down;
         }
         else if (Input.GetKey(KeyCode.UpArrow) && !isBossScene)
         {
             isWalking = true;
-            moveVelocity = Vector3.forward;
+            moveVelocity = Vector3.up;
         }
         else
         {
@@ -147,9 +160,8 @@ public class PlayerController : MonoBehaviour
         transform.position += moveVelocity * movePower * Time.deltaTime;
         Vector3 newPosition = transform.position;
     
-        float minX = -6.0f; // 예시로 설정한 최소값
-        float maxX = 7.0f;  // 예시로 설정한 최대값
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+        newPosition.x= Mathf.Clamp(newPosition.x, minPos.x, maxPos.x);
+        if(!isBossScene) newPosition.y = Mathf.Clamp(newPosition.y, minPos.y, maxPos.y);
 
         // 새로운 위치로 이동
         transform.position = newPosition;
@@ -207,6 +219,7 @@ public class PlayerController : MonoBehaviour
             if(!isBossScene)monsterController.TakeDamage(5, transform.position);
             ishitting = false;
         }
+
         
         Debug.Log("공격 데미지: " + playerDamage);
     }
@@ -279,8 +292,13 @@ public class PlayerController : MonoBehaviour
         
         foreach (var monster in monsters)
         {
-            if (monster.CompareTag("Monster") && isAttacking)
+            if ((monster.CompareTag("Monster") || monster.CompareTag("Dummy"))&& isAttacking &&!isDummy)
             {
+                if (monster.CompareTag("Dummy"))
+                {
+                    isDummy = true;
+                    DummyCall();
+                }
                 // 몬스터에게 데미지 입히기
                 monsterController = monster.GetComponent<MonsterController>();
                 monsterController.TakeDamage(playerDamage, transform.position);
@@ -429,6 +447,7 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetTrigger("Skill3");
             playerDamage = 25;
         }
+        playerAnimator.SetBool("IsUsingSkill", isUsingSkill);
     }
 
 }

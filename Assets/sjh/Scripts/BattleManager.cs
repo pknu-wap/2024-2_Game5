@@ -70,7 +70,7 @@ public class BattleManager : MonoBehaviour
     void InitGame()
     {
         // 게임 상태를 Ready로 전환
-        ChangeState(State.Ready); 
+        ChangeState(State.Play); 
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
         player.transform.position = playerSpawnPos;
@@ -137,12 +137,13 @@ public class BattleManager : MonoBehaviour
         switch(curState)
         {
              case State.Ready:
-                if (Input.GetKeyDown(KeyCode.LeftShift))
-                {
-                    ChangeState(State.Play);
-                    Debug.Log("Pressed : Play");
-                    Debug.Log(curState);   
-                }
+                //if (Input.GetKeyDown(KeyCode.LeftShift))
+                //{
+                //    ChangeState(State.Play);
+                //    Debug.Log("Pressed : Play");
+                //    Debug.Log(curState);   
+                //}
+                ChangeState(State.Play);
                   break;
             case State.Play:
                 TimeCount();
