@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public int playerHP;
     public int playerDamage;
     public Animator playerAnimator;
+    private SpriteRenderer playerSpriteRenderer;
 
     private bool isWalking = false;
     private bool isJumping = false;
@@ -51,7 +52,9 @@ public class PlayerController : MonoBehaviour
     {
         PlayerRigidBody = this.GetComponent<Rigidbody2D>();
         playerAnimator = this.GetComponent<Animator>();
+        playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         battleManager = FindObjectOfType<BattleManager>();
+
     }
 
     void Start()
@@ -95,11 +98,13 @@ public class PlayerController : MonoBehaviour
         {
             isWalking = true;
             moveVelocity = Vector3.left;
+            playerSpriteRenderer.flipX = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             isWalking = true;
             moveVelocity = Vector3.right;
+            playerSpriteRenderer.flipX = false;
         }
         else if (Input.GetKey(KeyCode.DownArrow) && !isBossScene)
         {
