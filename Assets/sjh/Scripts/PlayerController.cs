@@ -109,13 +109,13 @@ public class PlayerController : MonoBehaviour
         {
             isWalking = true;
             moveVelocity = Vector3.left;
-            playerSpriteRenderer.flipX = true;
+            if(!isBossScene) playerSpriteRenderer.flipX = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             isWalking = true;
             moveVelocity = Vector3.right;
-            playerSpriteRenderer.flipX = false;
+            if(!isBossScene) playerSpriteRenderer.flipX = false;
         }
         else if (Input.GetKey(KeyCode.DownArrow) && !isBossScene)
         {

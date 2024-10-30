@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
     public enum State
@@ -22,6 +23,8 @@ public class BattleManager : MonoBehaviour
     private SceneSetting sceneSetting;
     private bool isBossScene;
 
+
+    public Text timeText;
     // 플레이어 변수
     private GameObject player;
     private PlayerController playerController; 
@@ -111,13 +114,16 @@ public class BattleManager : MonoBehaviour
     {
         if (!isBossScene) return;
 
-        limitTime -= Time.deltaTime;       
-        //Debug.Log(limitTime);
+
+        int previousTime = Mathf.FloorToInt(limitTime);
+        limitTime -= Time.deltaTime;
+        int currentTime = Mathf.FloorToInt(limitTime);
+        timeText.text = currentTime.ToString();
         if (limitTime <= 0)
         {
             limitTime = 0;
             Debug.Log("Time is Over.");
-            Decision(); // 시간이 다 되면 승자 결정
+            Decision();
         }
     }
 
