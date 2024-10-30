@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -48,6 +49,9 @@ public class PlayerController : MonoBehaviour
 
     private float attackRange = 1.6f;
 
+    [SerializeField] private Slider _hpBar;
+
+
     void Awake()
     {
         PlayerRigidBody = this.GetComponent<Rigidbody2D>();
@@ -65,7 +69,14 @@ public class PlayerController : MonoBehaviour
         isStage3 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage3"));
 
         playerHP = 100;
+        _hpBar.maxValue = playerHP;
+        
         InitCommandArray();
+    }
+
+    void Update()
+    {
+        _hpBar.value = playerHP;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
