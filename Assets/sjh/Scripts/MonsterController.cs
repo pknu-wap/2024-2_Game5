@@ -13,6 +13,7 @@ public class MonsterController : MonoBehaviour
     public bool isInvincible = false;
     public bool isGuarding = false;
     public bool ishitted = false;
+    public bool isHitting = false;
     public float knockBackForce = 3f;
 
     public void TakeDamage(int damage, Vector2 playerPosition)
@@ -36,8 +37,11 @@ public class MonsterController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isHitting) return;
         if (collision.gameObject.CompareTag("Player") && isAttacking)
         {
+            isHitting = true;
+            isAttacking = false;
             Debug.Log("플레이어와 공격 중 충돌");
             Vector2 hitPosition = transform.position;
 
@@ -45,6 +49,14 @@ public class MonsterController : MonoBehaviour
             {
                 playerController.TakeDamage(monsterDamage, hitPosition);
             }
+            isHitting= false;
+            StartCoroutine(TempCooldown());
         }
+    }
+
+    private IEnumerator TempCooldown()
+    {
+        yield return new WaitForSeconds(0.1f); // 설정한 시간 대기
+        isAttacking = true; // 쿨다운 후 충돌 허용
     }
 }

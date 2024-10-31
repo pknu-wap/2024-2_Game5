@@ -218,6 +218,7 @@ public class PlayerController : MonoBehaviour
 
         // 데미지 계산
         playerDamage = !isGround ? 8 : 5;
+
         if(ishitting)
         {
             if(isBossScene)bossController.TakeDamage(5, transform.position);
