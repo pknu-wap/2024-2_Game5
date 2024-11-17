@@ -22,6 +22,8 @@ public class PlayerBelt : MonoBehaviour
     private float monsterDamage;
     private float playerDamage;
 
+    [SerializeField] private GameObject PauseScreen;
+
 
     void Start()
     {
@@ -43,7 +45,14 @@ public class PlayerBelt : MonoBehaviour
         {
             Gameover.SetActive(true);   //게임오버 띄우기
         }
+        //active pause screen with 'esc' key
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Escape key was pressed");
 
+            PauseScreen.gameObject.SetActive(true);
+            Time.timeScale = 0; 
+        }
     }
 
     void FixedUpdate()
