@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eea9e9617f1e12e46ae8e3a706d76bbd
+guid: 158c1e0a0523c6f4c8f566139f207442
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Barbarian_pixel_art_walk_forward_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e4eb125e7686614f94a1e8407c4e494
-      internalID: 68615987
+      spriteID: aaac38eb0b85ce94f8facb4b95330fc5
+      internalID: 330380536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Barbarian_pixel_art_walk_forward_1
       rect:
         serializedVersion: 2
         x: 128
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c596131bc2459e48a92a31eae6cabaa
-      internalID: 608547209
+      spriteID: 493bd07be7746224c901d6ae0648c0ad
+      internalID: -745294538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Barbarian_pixel_art_walk_forward_2
       rect:
         serializedVersion: 2
         x: 256
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6db0ccc7cbeb89142bf2a7ff9afd5dcb
-      internalID: -166888447
+      spriteID: d24ba365fcf78d347a3adf4226c0c306
+      internalID: -1215033033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: Barbarian_pixel_art_walk_forward_3
       rect:
         serializedVersion: 2
         x: 384
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd80f28e41ba81640b8939e492a2f4e4
-      internalID: 241385114
+      spriteID: a4cfbf9f9a84f4b4da03afdb86d03c62
+      internalID: 302075954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_4
+      name: Barbarian_pixel_art_walk_forward_4
       rect:
         serializedVersion: 2
         x: 512
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 888cbc0be6099a14596f1d50e418ea2d
-      internalID: -1114920623
+      spriteID: 2eeb8300736eeb44091746c1dcfc969f
+      internalID: -2067673624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_5
+      name: Barbarian_pixel_art_walk_forward_5
       rect:
         serializedVersion: 2
         x: 640
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a48e6fcee3c46494fb3f1f616c67e7c5
-      internalID: 1496337297
+      spriteID: c7732768836680d4ebb9a114ab6c041a
+      internalID: -550715352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_6
+      name: Barbarian_pixel_art_walk_forward_6
       rect:
         serializedVersion: 2
         x: 768
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf8264de1a0414940878119308a252bb
-      internalID: 1886430965
+      spriteID: 54b3b85eabc108943a23e32631b2628c
+      internalID: 1366621375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_7
+      name: Barbarian_pixel_art_walk_forward_7
       rect:
         serializedVersion: 2
         x: 896
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5647e7e09c1a9c84aaa1cfaf2a0b51c8
-      internalID: 352162520
+      spriteID: 0df663117754b754cafb6e6e92ac8fa1
+      internalID: -642251518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_8
+      name: Barbarian_pixel_art_walk_forward_8
       rect:
         serializedVersion: 2
         x: 1024
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fb2be978eec6f745b252b142bd3acd8
-      internalID: 2144875806
+      spriteID: bf4a0da19055d13488979ffeea75d0e2
+      internalID: 1486431760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_9
+      name: Barbarian_pixel_art_walk_forward_9
       rect:
         serializedVersion: 2
         x: 1152
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c591a0bc4ce2bca478b90fe0c2659922
-      internalID: 1134786607
+      spriteID: 8f260bbb45064854c9aac885b6b84562
+      internalID: 1462400683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_10
+      name: Barbarian_pixel_art_walk_forward_10
       rect:
         serializedVersion: 2
         x: 0
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bece5ee5df3b0d748b88ae7fb003c16f
-      internalID: 1667828385
+      spriteID: 92be09febf4827d45b5a2276f9adc19c
+      internalID: 1487458776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_11
+      name: Barbarian_pixel_art_walk_forward_11
       rect:
         serializedVersion: 2
         x: 128
@@ -342,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e584a7eb389c1847bd41ff0f602c7a4
-      internalID: -241698750
+      spriteID: 65b964180f239fd409bcbbe24ac8f8fd
+      internalID: -1659797462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_12
+      name: Barbarian_pixel_art_walk_forward_12
       rect:
         serializedVersion: 2
         x: 256
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5309a9d09f71daa4b920920f293375d4
-      internalID: 930546949
+      spriteID: 6650af2fc575b5845948c52b586ef545
+      internalID: -1321231914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_13
+      name: Barbarian_pixel_art_walk_forward_13
       rect:
         serializedVersion: 2
         x: 384
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4430c9d0454b76246ab905faf6acf27e
-      internalID: 1436894497
+      spriteID: 055827867f79fe644b50a4bbc22e5124
+      internalID: -1608293137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_14
+      name: Barbarian_pixel_art_walk_forward_14
       rect:
         serializedVersion: 2
         x: 512
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d95c37d85aa1f4c45aa915a021c928a1
-      internalID: 1207602535
+      spriteID: 0297410099a589d4abfd5a1d7e2fdae0
+      internalID: -1167427020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_15
+      name: Barbarian_pixel_art_walk_forward_15
       rect:
         serializedVersion: 2
         x: 640
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e1d65981eff4fe49a193dc1e4ff670b
-      internalID: 945577191
+      spriteID: 4f30f6cccbc55824d952e1166919e042
+      internalID: 1987979063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_16
+      name: Barbarian_pixel_art_walk_forward_16
       rect:
         serializedVersion: 2
         x: 768
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00b8d564ef681ab4593660389ae91145
-      internalID: 1933456894
+      spriteID: da5a867aaf9f0ad4f85c4cd7eabd3d4b
+      internalID: -213742954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_17
+      name: Barbarian_pixel_art_walk_forward_17
       rect:
         serializedVersion: 2
         x: 896
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08445aeb2c143e542ab2cf52e67b40b1
-      internalID: -1408073226
+      spriteID: fb7b3d7e5ee92d541b8fdda024c73a5d
+      internalID: 80614497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_18
+      name: Barbarian_pixel_art_walk_forward_18
       rect:
         serializedVersion: 2
         x: 1024
@@ -489,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7a707a2401099a4a81abe58d469a996
-      internalID: 321366525
+      spriteID: cd1ee2625cd2d234e91eace5e1bc4451
+      internalID: 1120307409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_19
+      name: Barbarian_pixel_art_walk_forward_19
       rect:
         serializedVersion: 2
         x: 1152
@@ -510,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b01778091e635e45b3b400b191b34f9
-      internalID: -805165327
+      spriteID: 9786ff7193c1c694185ef242299c2765
+      internalID: 317743003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_20
+      name: Barbarian_pixel_art_walk_forward_20
       rect:
         serializedVersion: 2
         x: 0
@@ -531,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 202b532585b6de44e98d90e332f97537
-      internalID: -32664361
+      spriteID: fc02ad5c03a4590459ecf9817c7ed4da
+      internalID: 1589337693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_21
+      name: Barbarian_pixel_art_walk_forward_21
       rect:
         serializedVersion: 2
         x: 128
@@ -552,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a201449344b69d0438c4bfd9bd2dc7fb
-      internalID: -405263726
+      spriteID: bd3ae47b890352849964abdbe10d9fff
+      internalID: 1690376260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_22
+      name: Barbarian_pixel_art_walk_forward_22
       rect:
         serializedVersion: 2
         x: 256
@@ -573,14 +573,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42f2ea60259a58241b17ad3b90a711ce
-      internalID: -1212213766
+      spriteID: 7b697814bc261d84ca8161c054983cec
+      internalID: -899683079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_23
+      name: Barbarian_pixel_art_walk_forward_23
       rect:
         serializedVersion: 2
         x: 384
@@ -594,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85ad138f5c3caeb428bb595b1c9bb3db
-      internalID: -1220709218
+      spriteID: 92b73dd7bd495aa46a26c1dfbfabaa87
+      internalID: 873426667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_24
+      name: Barbarian_pixel_art_walk_forward_24
       rect:
         serializedVersion: 2
         x: 512
@@ -615,14 +615,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b32bf61299a54a547a4d0eda0b65e813
-      internalID: 36577861
+      spriteID: 326506720f3f26a4da95fff7fcc58b42
+      internalID: 1663712737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_25
+      name: Barbarian_pixel_art_walk_forward_25
       rect:
         serializedVersion: 2
         x: 640
@@ -636,14 +636,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cda4e527e564f3c4aa5b0ffe2fb431a8
-      internalID: 127362834
+      spriteID: bd9309e242c837e4eaa833fb5cf1e1a2
+      internalID: 2023038808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_26
+      name: Barbarian_pixel_art_walk_forward_26
       rect:
         serializedVersion: 2
         x: 768
@@ -657,14 +657,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c9142b5fd6b8324c87ed16a0f566ddd
-      internalID: 638786659
+      spriteID: 469789d38f09ad04cb8f1237371aa616
+      internalID: 1015711027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_27
+      name: Barbarian_pixel_art_walk_forward_27
       rect:
         serializedVersion: 2
         x: 896
@@ -678,14 +678,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f86fccb638d598b4bbbed65aaad7760d
-      internalID: -1028560235
+      spriteID: a2ba1d3639a5e7b4f8afea98be152612
+      internalID: -1557742431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_28
+      name: Barbarian_pixel_art_walk_forward_28
       rect:
         serializedVersion: 2
         x: 1024
@@ -699,14 +699,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cbe9a801d39a9743911934cbba673f5
-      internalID: 667751675
+      spriteID: 933b7d0ece185e94d8132ab033a01582
+      internalID: -2131389013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_29
+      name: Barbarian_pixel_art_walk_forward_29
       rect:
         serializedVersion: 2
         x: 1152
@@ -720,14 +720,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c6a3447affebaf4c902f275b5e55886
-      internalID: 695300636
+      spriteID: 619f2b11d00a23448a4c6e2319d0f557
+      internalID: 1519011906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_30
+      name: Barbarian_pixel_art_walk_forward_30
       rect:
         serializedVersion: 2
         x: 0
@@ -741,8 +741,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3181fa1b624df774fbe9110b822af534
-      internalID: 1369873042
+      spriteID: fce6ef80b8054dd4e8b9fe24759d7ece
+      internalID: 1723925881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_pixel_art_walk_forward_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdba82813a9d013458eb948568957561
+      internalID: -216729613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_pixel_art_walk_forward_32
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a999e07f2c8dd34d94e9a8aca7d1fe2
+      internalID: -501382537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_pixel_art_walk_forward_33
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527ae8f79b4c1d54ab5d72180490b813
+      internalID: 1506843674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_pixel_art_walk_forward_34
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d76a44abba9074a8b3737fda4ab860
+      internalID: -2095860580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_pixel_art_walk_forward_35
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18498e883349074ab7e7eea63243782
+      internalID: -1476268889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_pixel_art_walk_forward_36
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a1767a0dbfb9840a72b148db86539a
+      internalID: -1244558653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_pixel_art_walk_forward_37
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2390ef231404ef64cbd0cb725ec14c40
+      internalID: -239555662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_pixel_art_walk_forward_38
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d35c0a5dc3af14bbf5747147b5c7c2
+      internalID: -907276737
       vertices: []
       indices: 
       edges: []
@@ -758,37 +926,45 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_0: 68615987
-      Idle_1: 608547209
-      Idle_10: 1667828385
-      Idle_11: -241698750
-      Idle_12: 930546949
-      Idle_13: 1436894497
-      Idle_14: 1207602535
-      Idle_15: 945577191
-      Idle_16: 1933456894
-      Idle_17: -1408073226
-      Idle_18: 321366525
-      Idle_19: -805165327
-      Idle_2: -166888447
-      Idle_20: -32664361
-      Idle_21: -405263726
-      Idle_22: -1212213766
-      Idle_23: -1220709218
-      Idle_24: 36577861
-      Idle_25: 127362834
-      Idle_26: 638786659
-      Idle_27: -1028560235
-      Idle_28: 667751675
-      Idle_29: 695300636
-      Idle_3: 241385114
-      Idle_30: 1369873042
-      Idle_4: -1114920623
-      Idle_5: 1496337297
-      Idle_6: 1886430965
-      Idle_7: 352162520
-      Idle_8: 2144875806
-      Idle_9: 1134786607
+      Barbarian_pixel_art_walk_forward_0: 330380536
+      Barbarian_pixel_art_walk_forward_1: -745294538
+      Barbarian_pixel_art_walk_forward_10: 1487458776
+      Barbarian_pixel_art_walk_forward_11: -1659797462
+      Barbarian_pixel_art_walk_forward_12: -1321231914
+      Barbarian_pixel_art_walk_forward_13: -1608293137
+      Barbarian_pixel_art_walk_forward_14: -1167427020
+      Barbarian_pixel_art_walk_forward_15: 1987979063
+      Barbarian_pixel_art_walk_forward_16: -213742954
+      Barbarian_pixel_art_walk_forward_17: 80614497
+      Barbarian_pixel_art_walk_forward_18: 1120307409
+      Barbarian_pixel_art_walk_forward_19: 317743003
+      Barbarian_pixel_art_walk_forward_2: -1215033033
+      Barbarian_pixel_art_walk_forward_20: 1589337693
+      Barbarian_pixel_art_walk_forward_21: 1690376260
+      Barbarian_pixel_art_walk_forward_22: -899683079
+      Barbarian_pixel_art_walk_forward_23: 873426667
+      Barbarian_pixel_art_walk_forward_24: 1663712737
+      Barbarian_pixel_art_walk_forward_25: 2023038808
+      Barbarian_pixel_art_walk_forward_26: 1015711027
+      Barbarian_pixel_art_walk_forward_27: -1557742431
+      Barbarian_pixel_art_walk_forward_28: -2131389013
+      Barbarian_pixel_art_walk_forward_29: 1519011906
+      Barbarian_pixel_art_walk_forward_3: 302075954
+      Barbarian_pixel_art_walk_forward_30: 1723925881
+      Barbarian_pixel_art_walk_forward_31: -216729613
+      Barbarian_pixel_art_walk_forward_32: -501382537
+      Barbarian_pixel_art_walk_forward_33: 1506843674
+      Barbarian_pixel_art_walk_forward_34: -2095860580
+      Barbarian_pixel_art_walk_forward_35: -1476268889
+      Barbarian_pixel_art_walk_forward_36: -1244558653
+      Barbarian_pixel_art_walk_forward_37: -239555662
+      Barbarian_pixel_art_walk_forward_38: -907276737
+      Barbarian_pixel_art_walk_forward_4: -2067673624
+      Barbarian_pixel_art_walk_forward_5: -550715352
+      Barbarian_pixel_art_walk_forward_6: 1366621375
+      Barbarian_pixel_art_walk_forward_7: -642251518
+      Barbarian_pixel_art_walk_forward_8: 1486431760
+      Barbarian_pixel_art_walk_forward_9: 1462400683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

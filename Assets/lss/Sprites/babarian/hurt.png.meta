@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5cf301d57ed16748b17e548ed6a49fc
+guid: 93b11033b68d5a24facc2d4316640290
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,427 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kick_0
+      name: Barbarian_Pixel_art_360_hurt_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb76f427f5785346813e9c1c3b8a06e
+      internalID: -1456106424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09f8c438ce67e04d924a2f7eae8bf06
+      internalID: 679544977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978ffe0562e38c04eba48a76f30fe92b
+      internalID: 1686111098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bacaeefbda32dd54f9b5cc323bd0b001
+      internalID: 1201032818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5d65114c1cb414bb86082344da289b
+      internalID: 250881240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446ae9bfc68a4f64aafaf30410ccdb5e
+      internalID: -1470209685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc21f0215a1db94cb8a9bd82c800732
+      internalID: -1697916544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975807078c35a9241ab728faa31b958f
+      internalID: 1358839474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2608a699b53b94747897a87919f17c96
+      internalID: -790168909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6203e9360720ba49affc9fab2b61a93
+      internalID: -239129586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599e73433e91726458b85471aaf8d4ec
+      internalID: -870090839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec7bc959801e6343aa75b8e6aa13d80
+      internalID: 775493954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa90435f7d3ec344997e1e5fab674a9
+      internalID: -223681651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d050203e54fbd54419166bcc12d2b0c8
+      internalID: 750164648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b797a98842b59484a82e2bc3eec07d68
+      internalID: 609575103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_15
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95bd51424745ce943be109c9c5a62201
+      internalID: -1689907094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_16
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdab44f771703a4eb4788120254d413
+      internalID: -1327830783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_17
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb2e5b96bb079b4199a52b3f0fbde5a
+      internalID: 1964079502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_18
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976af7e412622e14f90955b10713e2a9
+      internalID: -977607457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_19
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 512
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8c25f795139754bacb66d0d5c9f69f
+      internalID: 763333023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barbarian_Pixel_art_360_hurt_2_20
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70cf3335d0b36524980f213ed5b2ff55
-      internalID: -637636170
+      spriteID: f90c4936a28ef104f933cb0a626c2f6c
+      internalID: -1541935596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_1
+      name: Barbarian_Pixel_art_360_hurt_2_21
       rect:
         serializedVersion: 2
         x: 128
@@ -132,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92688fa25a511c8449e31bdcaa3556fc
-      internalID: -2703810
+      spriteID: d755284f51d37e44999977884c603903
+      internalID: 1610053957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_2
+      name: Barbarian_Pixel_art_360_hurt_2_22
       rect:
         serializedVersion: 2
         x: 256
@@ -153,14 +573,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 098435286bf87f844b75e7ae0f3164e4
-      internalID: -1716415326
+      spriteID: abf817aec7704f84292ae2e815dbad6d
+      internalID: 2146040709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_3
+      name: Barbarian_Pixel_art_360_hurt_2_23
       rect:
         serializedVersion: 2
         x: 384
@@ -174,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d399b6c5cc022cb49bff369fc61966c4
-      internalID: 996729636
+      spriteID: c62d9abb59372fc478e446ccd2db4dc4
+      internalID: 827978631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_4
+      name: Barbarian_Pixel_art_360_hurt_2_24
       rect:
         serializedVersion: 2
         x: 512
@@ -195,14 +615,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e48654f5540b8a4da8f9661e721083a
-      internalID: 1180265608
+      spriteID: d0c99aee2421f2648a1dec2fbca81cc0
+      internalID: -1028276528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_5
+      name: Barbarian_Pixel_art_360_hurt_2_25
       rect:
         serializedVersion: 2
         x: 640
@@ -216,14 +636,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4894d5c318ec9f042a9f3b11897c3015
-      internalID: 939546735
+      spriteID: 7b15cf82488bcc847a216cb0d902bee1
+      internalID: 1692557129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_6
+      name: Barbarian_Pixel_art_360_hurt_2_26
       rect:
         serializedVersion: 2
         x: 768
@@ -237,14 +657,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52ee1fc5d0cf60e49a507fd1b6da17b9
-      internalID: -1581226950
+      spriteID: 79a5c5738ac87054e9ec9e40dacf2b17
+      internalID: -126110904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_7
+      name: Barbarian_Pixel_art_360_hurt_2_27
       rect:
         serializedVersion: 2
         x: 896
@@ -258,14 +678,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70990387c3c6d8e45b27402ed9bb88e0
-      internalID: -1974922069
+      spriteID: 3e840a959c7000042a566d1519616741
+      internalID: -1411869355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_8
+      name: Barbarian_Pixel_art_360_hurt_2_28
       rect:
         serializedVersion: 2
         x: 1024
@@ -279,14 +699,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1b16a39bfd9db34798f35563100258c
-      internalID: 129574976
+      spriteID: 8b4f21bb01db3474badeac28ce46014a
+      internalID: 1692780107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_9
+      name: Barbarian_Pixel_art_360_hurt_2_29
       rect:
         serializedVersion: 2
         x: 1152
@@ -300,14 +720,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c69e3fbc003387c4fa68e7470282acfc
-      internalID: 1726826791
+      spriteID: d848f9a7f88f55b49b39f3a7d38fac32
+      internalID: 801000918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_10
+      name: Barbarian_Pixel_art_360_hurt_2_30
       rect:
         serializedVersion: 2
         x: 0
@@ -321,14 +741,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7fbcf7703bc7b94ea3bb8e98f76abd9
-      internalID: 1827114951
+      spriteID: 26f3ae25c551c114b8d1d3db0c13bd9d
+      internalID: -1514886687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_11
+      name: Barbarian_Pixel_art_360_hurt_2_31
       rect:
         serializedVersion: 2
         x: 128
@@ -342,14 +762,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0091f0c2b3442d44b87277eeb3c53f8b
-      internalID: -526868129
+      spriteID: 193273c8d5a2ff04cbf364303df9bfa4
+      internalID: 1770681055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_12
+      name: Barbarian_Pixel_art_360_hurt_2_32
       rect:
         serializedVersion: 2
         x: 256
@@ -363,14 +783,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c096fb189507c114facd6965c5369f08
-      internalID: -1770150902
+      spriteID: 75c28f2f959298b489dc266e1be766a7
+      internalID: 155428571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_13
+      name: Barbarian_Pixel_art_360_hurt_2_33
       rect:
         serializedVersion: 2
         x: 384
@@ -384,14 +804,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9cfd34f0905d66439d1f617c512ba10
-      internalID: -1104312584
+      spriteID: 02366470fe6d1be4daa4c63e7790767e
+      internalID: 445370401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_14
+      name: Barbarian_Pixel_art_360_hurt_2_34
       rect:
         serializedVersion: 2
         x: 512
@@ -405,14 +825,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b05029e02f3022840adcc2fc045dfb8f
-      internalID: 1905074021
+      spriteID: 286e647eed5834a478cf4b45a3258452
+      internalID: 452635117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_15
+      name: Barbarian_Pixel_art_360_hurt_2_35
       rect:
         serializedVersion: 2
         x: 640
@@ -426,14 +846,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d0f886df52202147b73e24b2e50095c
-      internalID: -1101821551
+      spriteID: ac85993e28262494fb1ab2cc065f6752
+      internalID: 198829203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_16
+      name: Barbarian_Pixel_art_360_hurt_2_36
       rect:
         serializedVersion: 2
         x: 768
@@ -447,14 +867,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a508e931a5e23de409d7e50d84c8a8b8
-      internalID: 1174106896
+      spriteID: 3b0aab882edca6142b6fa6bcb9cbb8a2
+      internalID: 1455198716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_17
+      name: Barbarian_Pixel_art_360_hurt_2_37
       rect:
         serializedVersion: 2
         x: 896
@@ -468,14 +888,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56dae61427aae92489508ed073133a02
-      internalID: 667296596
+      spriteID: dbe8345296b15d542a48b6c93ec3d986
+      internalID: -1018377207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_18
+      name: Barbarian_Pixel_art_360_hurt_2_38
       rect:
         serializedVersion: 2
         x: 1024
@@ -489,14 +909,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c197e2711d89e3942862d7b980d21b49
-      internalID: 2087875159
+      spriteID: b156be5a5c0939c42bb574f683d0dc6a
+      internalID: 2053064024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_19
+      name: Barbarian_Pixel_art_360_hurt_2_39
       rect:
         serializedVersion: 2
         x: 1152
@@ -510,14 +930,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9027e8e9f388f745bd720a8b0aabc76
-      internalID: -1655247783
+      spriteID: d6756092e430cb244bb65072f9caabe1
+      internalID: -145689092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_20
+      name: Barbarian_Pixel_art_360_hurt_2_40
       rect:
         serializedVersion: 2
         x: 0
@@ -531,14 +951,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2ac42c33d5884c41b0df0189e7db8a2
-      internalID: -640000395
+      spriteID: e3955af2120322a40b07d6e473a3fc45
+      internalID: 664137432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_21
+      name: Barbarian_Pixel_art_360_hurt_2_41
       rect:
         serializedVersion: 2
         x: 128
@@ -552,14 +972,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a65dc74899e7f7449a93c4ac331f0ad3
-      internalID: -589283155
+      spriteID: 5577e915d9993644c8398c4358d7ff25
+      internalID: 174780053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_22
+      name: Barbarian_Pixel_art_360_hurt_2_42
       rect:
         serializedVersion: 2
         x: 256
@@ -573,14 +993,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c480d6c964b30e2439d414d263942938
-      internalID: 645777659
+      spriteID: f40c6cbdf8abb5f4f91e679ee846c096
+      internalID: 373112617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_23
+      name: Barbarian_Pixel_art_360_hurt_2_43
       rect:
         serializedVersion: 2
         x: 384
@@ -594,14 +1014,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5fba8a753b845c46999dcc4e2a3901e
-      internalID: -412870282
+      spriteID: cb7a6caa05e2ba6449777fa241e69cfa
+      internalID: -1720104628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_24
+      name: Barbarian_Pixel_art_360_hurt_2_44
       rect:
         serializedVersion: 2
         x: 512
@@ -615,14 +1035,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2333aa7b79251954f9faf46241fa8ece
-      internalID: -2107690950
+      spriteID: ab587e815a6ed9d47960337d38758306
+      internalID: 1203571535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_25
+      name: Barbarian_Pixel_art_360_hurt_2_45
       rect:
         serializedVersion: 2
         x: 640
@@ -636,14 +1056,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb2c3285cc028d743973a7e32117a7a9
-      internalID: 2117778863
+      spriteID: f45d188c13b15d3469a144d74ad74d8e
+      internalID: -340202936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_26
+      name: Barbarian_Pixel_art_360_hurt_2_46
       rect:
         serializedVersion: 2
         x: 768
@@ -657,14 +1077,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3be2b17f1f6b5640a0c3622c7ec3302
-      internalID: 1995321321
+      spriteID: 68a505737308fdb4d91bfa2e1e6c7e50
+      internalID: 584885689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_27
+      name: Barbarian_Pixel_art_360_hurt_2_47
       rect:
         serializedVersion: 2
         x: 896
@@ -678,14 +1098,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d60d5698acaa5c4193f45cd73f0a991
-      internalID: -715357139
+      spriteID: 9b41e12f6820cfc4fb518e3577cb00b0
+      internalID: -1686098257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_28
+      name: Barbarian_Pixel_art_360_hurt_2_48
       rect:
         serializedVersion: 2
         x: 1024
@@ -699,14 +1119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ad388da7d3ded14f83035512ac7b78c
-      internalID: -1318336320
+      spriteID: fcf2f9780d903a744b5a83d08697acfa
+      internalID: 1272972623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_29
+      name: Barbarian_Pixel_art_360_hurt_2_49
       rect:
         serializedVersion: 2
         x: 1152
@@ -720,14 +1140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51a182a6f0b38c94e8ec34a8d1354ef8
-      internalID: -1854720523
+      spriteID: 4ab1ee78881baee4a94356f2fc7e7261
+      internalID: -446636815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kick_30
+      name: Barbarian_Pixel_art_360_hurt_2_50
       rect:
         serializedVersion: 2
         x: 0
@@ -741,176 +1161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9b514d2a33cf1e45a753c03154d4b10
-      internalID: 906589089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kick_31
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54e26fbb3c2466c4aa01231e5315d75c
-      internalID: -748108411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kick_32
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33e82ba0491143d48a0efcca5e7750e3
-      internalID: -144296154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kick_33
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40d1d8db21656df4aa1cbfbd910ed608
-      internalID: -933789843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kick_34
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e15e2b4e4ed6baa48a604d67e7ef020c
-      internalID: 110269524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kick_35
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d6732a64a213ac41906b5a449e9887f
-      internalID: -1440021644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kick_36
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30f3cbd365f19e34bb83a7ff98b6a86c
-      internalID: 1821565383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kick_37
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb99e99c82e19964ebfc34fcc71edf66
-      internalID: -2047936495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kick_38
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65acd142262f2fd4885f97719f875b7d
-      internalID: -820251827
+      spriteID: 09eb01281b132664ca6271367e50e1f5
+      internalID: -1942366422
       vertices: []
       indices: 
       edges: []
@@ -926,45 +1178,57 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Kick_0: -637636170
-      Kick_1: -2703810
-      Kick_10: 1827114951
-      Kick_11: -526868129
-      Kick_12: -1770150902
-      Kick_13: -1104312584
-      Kick_14: 1905074021
-      Kick_15: -1101821551
-      Kick_16: 1174106896
-      Kick_17: 667296596
-      Kick_18: 2087875159
-      Kick_19: -1655247783
-      Kick_2: -1716415326
-      Kick_20: -640000395
-      Kick_21: -589283155
-      Kick_22: 645777659
-      Kick_23: -412870282
-      Kick_24: -2107690950
-      Kick_25: 2117778863
-      Kick_26: 1995321321
-      Kick_27: -715357139
-      Kick_28: -1318336320
-      Kick_29: -1854720523
-      Kick_3: 996729636
-      Kick_30: 906589089
-      Kick_31: -748108411
-      Kick_32: -144296154
-      Kick_33: -933789843
-      Kick_34: 110269524
-      Kick_35: -1440021644
-      Kick_36: 1821565383
-      Kick_37: -2047936495
-      Kick_38: -820251827
-      Kick_4: 1180265608
-      Kick_5: 939546735
-      Kick_6: -1581226950
-      Kick_7: -1974922069
-      Kick_8: 129574976
-      Kick_9: 1726826791
+      Barbarian_Pixel_art_360_hurt_2_0: -1456106424
+      Barbarian_Pixel_art_360_hurt_2_1: 679544977
+      Barbarian_Pixel_art_360_hurt_2_10: -870090839
+      Barbarian_Pixel_art_360_hurt_2_11: 775493954
+      Barbarian_Pixel_art_360_hurt_2_12: -223681651
+      Barbarian_Pixel_art_360_hurt_2_13: 750164648
+      Barbarian_Pixel_art_360_hurt_2_14: 609575103
+      Barbarian_Pixel_art_360_hurt_2_15: -1689907094
+      Barbarian_Pixel_art_360_hurt_2_16: -1327830783
+      Barbarian_Pixel_art_360_hurt_2_17: 1964079502
+      Barbarian_Pixel_art_360_hurt_2_18: -977607457
+      Barbarian_Pixel_art_360_hurt_2_19: 763333023
+      Barbarian_Pixel_art_360_hurt_2_2: 1686111098
+      Barbarian_Pixel_art_360_hurt_2_20: -1541935596
+      Barbarian_Pixel_art_360_hurt_2_21: 1610053957
+      Barbarian_Pixel_art_360_hurt_2_22: 2146040709
+      Barbarian_Pixel_art_360_hurt_2_23: 827978631
+      Barbarian_Pixel_art_360_hurt_2_24: -1028276528
+      Barbarian_Pixel_art_360_hurt_2_25: 1692557129
+      Barbarian_Pixel_art_360_hurt_2_26: -126110904
+      Barbarian_Pixel_art_360_hurt_2_27: -1411869355
+      Barbarian_Pixel_art_360_hurt_2_28: 1692780107
+      Barbarian_Pixel_art_360_hurt_2_29: 801000918
+      Barbarian_Pixel_art_360_hurt_2_3: 1201032818
+      Barbarian_Pixel_art_360_hurt_2_30: -1514886687
+      Barbarian_Pixel_art_360_hurt_2_31: 1770681055
+      Barbarian_Pixel_art_360_hurt_2_32: 155428571
+      Barbarian_Pixel_art_360_hurt_2_33: 445370401
+      Barbarian_Pixel_art_360_hurt_2_34: 452635117
+      Barbarian_Pixel_art_360_hurt_2_35: 198829203
+      Barbarian_Pixel_art_360_hurt_2_36: 1455198716
+      Barbarian_Pixel_art_360_hurt_2_37: -1018377207
+      Barbarian_Pixel_art_360_hurt_2_38: 2053064024
+      Barbarian_Pixel_art_360_hurt_2_39: -145689092
+      Barbarian_Pixel_art_360_hurt_2_4: 250881240
+      Barbarian_Pixel_art_360_hurt_2_40: 664137432
+      Barbarian_Pixel_art_360_hurt_2_41: 174780053
+      Barbarian_Pixel_art_360_hurt_2_42: 373112617
+      Barbarian_Pixel_art_360_hurt_2_43: -1720104628
+      Barbarian_Pixel_art_360_hurt_2_44: 1203571535
+      Barbarian_Pixel_art_360_hurt_2_45: -340202936
+      Barbarian_Pixel_art_360_hurt_2_46: 584885689
+      Barbarian_Pixel_art_360_hurt_2_47: -1686098257
+      Barbarian_Pixel_art_360_hurt_2_48: 1272972623
+      Barbarian_Pixel_art_360_hurt_2_49: -446636815
+      Barbarian_Pixel_art_360_hurt_2_5: -1470209685
+      Barbarian_Pixel_art_360_hurt_2_50: -1942366422
+      Barbarian_Pixel_art_360_hurt_2_6: -1697916544
+      Barbarian_Pixel_art_360_hurt_2_7: 1358839474
+      Barbarian_Pixel_art_360_hurt_2_8: -790168909
+      Barbarian_Pixel_art_360_hurt_2_9: -239129586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
