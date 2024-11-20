@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Monster
   - Dummy
+  - PauseUI
   layers:
   - Default
   - TransparentFX

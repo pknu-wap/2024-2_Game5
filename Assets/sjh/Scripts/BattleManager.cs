@@ -46,6 +46,9 @@ public class BattleManager : MonoBehaviour
     public float limitTime;
     private Winner winner; // 열거형으로 변경
 
+    public GameObject pauseUI;
+    private bool isGamePaused;
+
     void Awake()
     {
 
@@ -59,18 +62,19 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        pauseUI.SetActive(false);
         if (isBossScene) monster = GameObject.FindWithTag("Monster");
         playerController = player.GetComponent<PlayerController>();
         monsterController = monster.GetComponent<MonsterController>();
         monsterHP = monsterController.monsterHP;
+        
         
         InitGame();
     }
 
     void InitGame()
     {
-        // 게임 상태를 Ready로 전환
-        ChangeState(State.Ready); 
+        ChangeState(State.Play); 
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
         player.transform.position = playerSpawnPos;
@@ -137,14 +141,27 @@ public class BattleManager : MonoBehaviour
         switch(curState)
         {
              case State.Ready:
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+                PauseUIDelay();
+                if (Input.GetKeyDown(KeyCode.Escape) && isGamePaused)
                 {
+                    Time.timeScale = 1;
+                    isGamePaused = false;
+                    Debug.Log("Pause Screen Closed");
+                    pauseUI.SetActive(false);
                     ChangeState(State.Play);
-                    Debug.Log("Pressed : Play");
-                    Debug.Log(curState);   
                 }
                   break;
             case State.Play:
+                if (Input.GetKeyDown(KeyCode.Escape) && !isGamePaused)
+                {
+                    isGamePaused = true;
+                    Debug.Log("Pause Screen Opened");
+                    pauseUI.SetActive(true);
+                    Time.timeScale = 0;
+                    PauseUIDelay();
+                    ChangeState(State.Ready);
+                    
+                }
                 TimeCount();
                 if (!isBossScene)playerController.AttackMonstersInRange();
                 if (curState != State.Play || playerController == null || playerController.isKnockedDown) return;
@@ -170,6 +187,15 @@ public class BattleManager : MonoBehaviour
                 break;
         }
     }
+
+    private IEnumerator PauseUIDelay()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
+
+
+
 
 
 }
