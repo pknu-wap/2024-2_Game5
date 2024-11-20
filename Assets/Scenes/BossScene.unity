@@ -2201,6 +2201,7 @@ MonoBehaviour:
   bossHP: 0
   attackRange: 7
   distance: 0
+  isAttacking: 0
 --- !u!95 &1023293668
 Animator:
   serializedVersion: 5
@@ -2257,8 +2258,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.55, y: 0.82}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 0.55, y: 0.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2421,8 +2422,8 @@ BoxCollider2D:
   m_Offset: {x: -0.009266585, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.55, y: 0.82}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 0.55, y: 0.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3610,7 +3611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be12f453715d23499e3a3250cf27a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraTransform: {fileID: 0}
+  CameraTransform: {fileID: 930617455}
 --- !u!4 &1963424559
 Transform:
   m_ObjectHideFlags: 0
