@@ -10,10 +10,11 @@ public class Boss : MonoBehaviour
     private int nextMove;                // 무작위 움직임 설정
     public float decisionTime = 2f;      // 행동 결정 주기
     public float bossHP;
-    public float attackRange = 5f;
+    public float attackRange = 7f;
     public float distance;
     public bool isAttacking = false;
     private int attackType;
+    private bool isDamaging = false;
 
     private Rigidbody2D bossRigidBody;
     private Animator bossAnimator;
@@ -73,39 +74,40 @@ public class Boss : MonoBehaviour
 
         if (collision == null) Debug.Log("collision is null");
 
-        if (collision.gameObject.CompareTag("Player") && !isAttacking) // 플레이어와의 충돌, 공격 중일 때
+        if (collision.gameObject.CompareTag("Player") && !isDamaging) // 플레이어와의 충돌, 공격 중일 때
         {
             Debug.Log("if entered");
-            Debug.Log("if문 들어옴 "+isAttacking);
+            Debug.Log("if문 들어옴 "+ isDamaging);
 
-            Debug.Log("in if  " + isAttacking);
+            Debug.Log("in if  " + isDamaging);
             Player player = collision.gameObject.GetComponent<Player>();
-            if (player != null && isAttacking == true)
+            if (player != null && isDamaging == true)
             {
                 player.TakeDamage(4f); // 플레이어에게 4 데미지 입힘
                 Debug.Log("Player HP -= 4");
             }
         }
+        isDamaging = false;
     }
     IEnumerator DelayedAttack() // 공격 코루틴(2초 딜레이 후 공격)
     {
         currentSpeed = 0f;
         isAttacking = true;  // 공격 중 상태로 변경
+        isDamaging = true;
         Attack();        // 무작위 공격
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.4f);
         isAttacking = false;
         bossAnimator.SetBool("isAttack", false);
-        bossAnimator.SetBool("isKick", false);
         bossAnimator.SetBool("isAttack2", false);
+        bossAnimator.SetBool("isAttack3", false);
         // 공격 완료 후 다시 공격 가능 상태로 변경
     }
     void Attack()
     {
-        if (bossHP >= 50f)
-            attackRange = Random.Range(0, 3);
-        else
-            attackType = Random.Range(0, 4);
+        Debug.Log(bossHP);
+
+        attackType = Random.Range(0, 4);
         Debug.Log(attackType);
         switch (attackType) // 무작위로 공격 애니메이션 선택
         {
@@ -114,11 +116,11 @@ public class Boss : MonoBehaviour
                 Debug.Log("Basic Attack");
                 break;
             case 1:
-                bossAnimator.SetBool("isKick", true);
+                bossAnimator.SetBool("isAttack2", true);
                 Debug.Log("Kick Attack");
                 break;
             case 2:
-                bossAnimator.SetBool("isAttack2", true);
+                bossAnimator.SetBool("isAttack3", true);
                 Debug.Log("Uppercut Attack");
                 break;
             case 3:
