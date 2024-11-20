@@ -251,7 +251,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage, Vector2 monsterPosition)
     {
         
-        if (isInvincible) return;
+        if (isInvincible || isKnockedDown) return;
         ApplyKnockBackDown(monsterPosition, knockBackForce);
 
         if(isGuarding)
