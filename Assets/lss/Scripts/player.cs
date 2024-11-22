@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class player : MonoBehaviour
 {
-    public float playerHP = 100f;  // ÇÃ·¹ÀÌ¾îÀÇ HP
+    public float playerHP = 100f;  // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ HP
 
-    // ÇÃ·¹ÀÌ¾îÀÇ HP¸¦ ±ð´Â ÇÔ¼ö
+    // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ HPï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     public void TakeDamage(float damage)
     {
         playerHP -= damage;
         Debug.Log("Player HP: " + playerHP);
 
-        if (playerHP <= 0) // HP°¡ 0ÀÌ µÇ¸é °ÔÀÓ ¿À¹ö
+        if (playerHP <= 0) // HPï¿½ï¿½ 0ï¿½ï¿½ ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             Debug.Log("Player is dead!");
         }
