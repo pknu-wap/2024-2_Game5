@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public Transform player;             // ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®ÀÇ Transform
-    public float walkSpeed = 2f;         // °È±â ¼Óµµ
-    private float currentSpeed = 0f;     // ÇöÀç ¼Óµµ (0ÀÏ ¶§ °¡¸¸È÷)
-    private int nextMove;                // ¹«ÀÛÀ§ ¿òÁ÷ÀÓ ¼³Á¤
-    public float decisionTime = 2f;      // Çàµ¿ °áÁ¤ ÁÖ±â
+    public GameObject player;             // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transform
+    private PlayerController playerController;
+
+    public float walkSpeed = 2f;         // ï¿½È±ï¿½ ï¿½Óµï¿½
+    private float currentSpeed = 0f;     // ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ (0ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+    private int nextMove;                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public float decisionTime = 2f;      // ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
     public float bossHP;
     public float attackRange = 7f;
     public float distance;
@@ -20,30 +22,31 @@ public class Boss : MonoBehaviour
     private Animator bossAnimator;
     private SpriteRenderer bossSpriteRenderer;
 
-    private bool isFacingLeft = true;    // ÀûÀÌ ¿ÞÂÊÀ» ¹Ù¶óº¸´ÂÁö ¿©ºÎ
+    private bool isFacingLeft = true;    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     void Start()
     {
         bossHP = 100f;
         Debug.Log(bossHP);
         bossRigidBody = GetComponent<Rigidbody2D>();
+        playerController = player.GetComponent<PlayerController>();
         bossAnimator = GetComponent<Animator>();
         bossSpriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Çàµ¿ °áÁ¤ ¹Ýº¹
+        // ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
         InvokeRepeating("DecideNextAction", 0f, decisionTime);
     }
 
     void Update()
     {
-        FacePlayer();  // ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÔ
+        FacePlayer();  // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½ï¿½
 
-        // ¾Ö´Ï¸ÞÀÌ¼Ç »óÅÂ ¾÷µ¥ÀÌÆ®
-        bossAnimator.SetBool("isGround", true);  // Ç×»ó Áö¸é¿¡ ÀÖ´Ù°í °¡Á¤
-        bossAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // °È±â ¾Ö´Ï¸ÞÀÌ¼Ç Á¶°Ç
+        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+        bossAnimator.SetBool("isGround", true);  // ï¿½×»ï¿½ ï¿½ï¿½ï¿½é¿¡ ï¿½Ö´Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½
+        bossAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // ï¿½È±ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
      
 
-        distance = Vector3.Distance(this.transform.position, player.position); // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸® °è»ê
+        distance = Vector3.Distance(this.transform.position, player.transform.position); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½
 
         if (distance <= attackRange && !isAttacking)
         {
@@ -59,14 +62,20 @@ public class Boss : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        // ÀÌµ¿
+        // ï¿½Ìµï¿½
         bossRigidBody.velocity = new Vector2(currentSpeed * (isFacingLeft ? -1 : 1), bossRigidBody.velocity.y);
     }
 
-    // ¹«ÀÛÀ§·Î Çàµ¿ °áÁ¤
+
+    public void TakeDamage(float damage, Vector2 monsterPosition)
+    {
+        //
+    }
+    
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½
     void DecideNextAction()
     {
-        nextMove = Random.Range(0, 2);  // 0: °¡¸¸È÷, 1: °È±â
+        nextMove = Random.Range(0, 2);  // 0: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 1: ï¿½È±ï¿½
         currentSpeed = nextMove == 1 ? walkSpeed : 0f;
     }
     void OnCollisionStay2D(Collision2D collision)
@@ -74,34 +83,34 @@ public class Boss : MonoBehaviour
 
         if (collision == null) Debug.Log("collision is null");
 
-        if (collision.gameObject.CompareTag("Player") && !isDamaging) // ÇÃ·¹ÀÌ¾î¿ÍÀÇ Ãæµ¹, °ø°Ý ÁßÀÏ ¶§
+        if (collision.gameObject.CompareTag("Player") && !isDamaging) // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         {
             Debug.Log("if entered");
-            Debug.Log("if¹® µé¾î¿È "+ isDamaging);
+            Debug.Log("ifï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ "+ isDamaging);
 
             Debug.Log("in if  " + isDamaging);
             Player player = collision.gameObject.GetComponent<Player>();
             if (player != null && isDamaging == true)
             {
-                player.TakeDamage(4f); // ÇÃ·¹ÀÌ¾î¿¡°Ô 4 µ¥¹ÌÁö ÀÔÈû
+                playerController.TakeDamage(4f, this.transform.position); // ï¿½Ã·ï¿½ï¿½Ì¾î¿¡ï¿½ï¿½ 4 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 Debug.Log("Player HP -= 4");
             }
         }
         isDamaging = false;
     }
-    IEnumerator DelayedAttack() // °ø°Ý ÄÚ·çÆ¾(2ÃÊ µô·¹ÀÌ ÈÄ °ø°Ý)
+    IEnumerator DelayedAttack() // ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½Æ¾(2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
     {
         currentSpeed = 0f;
-        isAttacking = true;  // °ø°Ý Áß »óÅÂ·Î º¯°æ
+        isAttacking = true;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
         isDamaging = true;
-        Attack();        // ¹«ÀÛÀ§ °ø°Ý
+        Attack();        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         yield return new WaitForSeconds(2.4f);
         isAttacking = false;
         bossAnimator.SetBool("isAttack", false);
         bossAnimator.SetBool("isAttack2", false);
         bossAnimator.SetBool("isAttack3", false);
-        // °ø°Ý ¿Ï·á ÈÄ ´Ù½Ã °ø°Ý °¡´É »óÅÂ·Î º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
     void Attack()
     {
@@ -109,7 +118,7 @@ public class Boss : MonoBehaviour
 
         attackType = Random.Range(0, 4);
         Debug.Log(attackType);
-        switch (attackType) // ¹«ÀÛÀ§·Î °ø°Ý ¾Ö´Ï¸ÞÀÌ¼Ç ¼±ÅÃ
+        switch (attackType) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             case 0:
                 bossAnimator.SetBool("isAttack", true);
@@ -128,17 +137,17 @@ public class Boss : MonoBehaviour
                 break;
         }
     }
-    void FacePlayer()// ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÏ´Â ÇÔ¼ö
+    void FacePlayer()// ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     {
         if (player != null)
         {
-            if (transform.position.x < player.position.x && isFacingLeft)
+            if (transform.position.x < player.transform.position.x && isFacingLeft)
                 Flip();
-            else if (transform.position.x > player.position.x && !isFacingLeft)
+            else if (transform.position.x > player.transform.position.x && !isFacingLeft)
                 Flip();
         }
     }
-    void Flip() // ¹æÇâÀ» ¹Ù²Ù´Â ÇÔ¼ö (½ºÇÁ¶óÀÌÆ® ¹ÝÀü)
+    void Flip() // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù´ï¿½ ï¿½Ô¼ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½)
     {
         isFacingLeft = !isFacingLeft;
         bossSpriteRenderer.flipX = !bossSpriteRenderer.flipX;
