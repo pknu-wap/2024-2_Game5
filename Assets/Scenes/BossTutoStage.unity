@@ -2975,6 +2975,7 @@ GameObject:
   - component: {fileID: 1562267539}
   - component: {fileID: 1562267538}
   - component: {fileID: 1562267544}
+  - component: {fileID: 1562267545}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Monster
@@ -3035,7 +3036,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07, y: 0.42}
+  m_Offset: {x: -0.07253339, y: 0.42000002}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -3046,7 +3047,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.85}
+  m_Size: {x: 0.57399887, y: 0.85}
   m_EdgeRadius: 0
 --- !u!50 &1562267540
 Rigidbody2D:
@@ -3155,7 +3156,7 @@ Transform:
   m_GameObject: {fileID: 1562267536}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.16, y: -2.22, z: 0}
+  m_LocalPosition: {x: 7.16, y: -2.22, z: -2}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3174,13 +3175,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d9bf7432e4f4634a904fc0501ebabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 966861857}
   walkSpeed: 2
   decisionTime: 2
   bossHP: 0
   attackRange: 7
   distance: 0
   isAttacking: 0
+--- !u!61 &1562267545
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562267536}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07000017, y: 0.42000002}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8020022, y: 0.85}
+  m_EdgeRadius: 0
 --- !u!1 &1565989143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,11 +3932,11 @@ SceneRoots:
   - {fileID: 930617455}
   - {fileID: 345355512}
   - {fileID: 482884953}
-  - {fileID: 1471434116}
-  - {fileID: 409400785}
+  - {fileID: 1562267543}
   - {fileID: 966861864}
   - {fileID: 2110207470}
   - {fileID: 1153579995}
   - {fileID: 173131642}
   - {fileID: 1963424559}
-  - {fileID: 1562267543}
+  - {fileID: 1471434116}
+  - {fileID: 409400785}
