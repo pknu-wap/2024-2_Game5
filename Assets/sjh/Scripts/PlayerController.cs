@@ -446,7 +446,7 @@ public class PlayerController : MonoBehaviour
             InitCommandArray();
         }
 
-        if (isStage3 && commandArray.SequenceEqual(new int[] { 1, 2, 3, 4}))
+        if (isStage3 && commandArray.SequenceEqual(new int[] { 2, 1, 4, 3}))
         {
             Debug.Log("커맨드 배열이 1234입니다.");
             isAttacking = true;
