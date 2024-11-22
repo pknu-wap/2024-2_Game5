@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class SceneTransition : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         spriteRenderer.enabled = true;
 
@@ -28,6 +29,11 @@ public class SceneTransition : MonoBehaviour
         {
             isFloating = true;
             StartCoroutine(FloatEffect());
+        }
+
+        if(collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.L))
+        {
+            SceneManager.LoadScene("BossScene");
         }
     }
 
