@@ -426,7 +426,7 @@ public class PlayerController : MonoBehaviour
         // 이미 공격 중이거나 스킬 사용 중이면 리턴
         if (isAttacking || isUsingSkill) return;
 
-        if (isStage1 && commandArray.SequenceEqual(new int[] { 2, 4, 2, 3 }))
+        if (isStage1 && commandArray.SequenceEqual(new int[] { 2, 4, 2, 4 }))
         {
             Debug.Log("커맨드 배열이 2424입니다.");
             isAttacking = true;
@@ -436,22 +436,24 @@ public class PlayerController : MonoBehaviour
             InitCommandArray();
         }
         
-        if (isStage2 && commandArray.SequenceEqual(new int[] { 2, 4, 2, 2 }))
+        if (isStage2 && commandArray.SequenceEqual(new int[] { 2, 4, 1, 3 }))
         {
             Debug.Log("커맨드 배열이 2422입니다.");
             isAttacking = true;
             isUsingSkill = true;
             playerAnimator.SetTrigger("Skill2");
             playerDamage = 20;
+            InitCommandArray();
         }
 
-        if (isStage3 && commandArray.SequenceEqual(new int[] { 1, 2, 3, 4}))
+        if (isStage3 && commandArray.SequenceEqual(new int[] { 2, 1, 4, 3}))
         {
             Debug.Log("커맨드 배열이 1234입니다.");
             isAttacking = true;
             isUsingSkill = true;
             playerAnimator.SetTrigger("Skill3");
             playerDamage = 25;
+            InitCommandArray();
         }
         playerAnimator.SetBool("IsUsingSkill", isUsingSkill);
     }
