@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
+    public void Jump() 
     {
         if (isJumping || isAttacking || isUsingSkill || !isBossScene) return;
 
