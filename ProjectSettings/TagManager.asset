@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Monster
+  - Dummy
+  - PauseUI
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - Monster
   - Water
   - UI
-  - 
-  - 
+  - Boss
+  - Ground
   - 
   - 
   - 

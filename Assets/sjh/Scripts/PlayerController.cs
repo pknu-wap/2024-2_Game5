@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D PlayerRigidBody;
-    private Vector3 movement;
     
     public float movePower = 8f;
     public float jumpPower = 8f;
@@ -18,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isWalking = false;
     private bool isJumping = false;
-    private bool isGround = false;
+    public bool isGround = false;
     public bool isAttacking = false;
     private bool isGuarding = false;
     private bool isUsingSkill = false;
@@ -50,11 +49,20 @@ public class PlayerController : MonoBehaviour
 
     public GameObject monster;
     private MonsterController monsterController;
-
+    private BossController bossController;
     private float attackRange = 1.6f;
     public LayerMask objectLayer;
 
     [SerializeField] private Slider _hpBar;
+
+    public GameObject gameOvereUI;
+    public GameObject gameClearUI;
+
+    public Vector3 minPos;
+    public Vector3 maxPos;
+
+    private GameObject dummy;
+    private bool isDummy=false;
 
 
     void Awake()
@@ -63,17 +71,19 @@ public class PlayerController : MonoBehaviour
         playerAnimator = this.GetComponent<Animator>();
         playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         battleManager = FindObjectOfType<BattleManager>();
+        dummy = GameObject.FindWithTag("Dummy");
 
     }
 
     void Start()
     {
+        gameOvereUI.SetActive(false);
         isBossScene = System.Convert.ToBoolean(PlayerPrefs.GetInt("isBossScene"));
         isStage1 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage1"));
         isStage2 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage2"));
         isStage3 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage3"));
 
-        if(isBossScene) monsterController = monster.GetComponent<MonsterController>();
+        if(isBossScene) bossController = monster.GetComponent<BossController>();
 
         playerHP = 100;
         _hpBar.maxValue = playerHP;
@@ -103,7 +113,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    void DummyCall()
+    {
+        Debug.Log("Dummy Hit");
+        DummyHit dummyHit = dummy.GetComponent<DummyHit>();
+        dummyHit.OnHit();
+        isDummy = false;
+    }
 
     public void Move()
     {   
@@ -127,12 +143,12 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.DownArrow) && !isBossScene)
         {
             isWalking = true;
-            moveVelocity = Vector3.back;
+            moveVelocity = Vector3.down;
         }
         else if (Input.GetKey(KeyCode.UpArrow) && !isBossScene)
         {
             isWalking = true;
-            moveVelocity = Vector3.forward;
+            moveVelocity = Vector3.up;
         }
         else
         {
@@ -141,19 +157,24 @@ public class PlayerController : MonoBehaviour
         
         playerAnimator.SetBool("isWalking", isWalking);
         transform.position += moveVelocity * movePower * Time.deltaTime;
-        Vector3 newPosition = transform.position;
+        
     
-        //float minY = -4.0f; // 예시로 설정한 최소값
-        //float maxY = -2.0f;  // 예시로 설정한 최대값
-        //newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+        if(!isBossScene)
+        {
+            Vector3 newPosition = transform.position;
+            newPosition.x= Mathf.Clamp(newPosition.x, minPos.x, maxPos.x);
+            newPosition.y = Mathf.Clamp(newPosition.y, minPos.y, maxPos.y);
 
-        // 새로운 위치로 이동
-        //transform.position = newPosition;
+            // 새로운 위치로 이동
+            transform.position = newPosition;
+        }
+        
+        
     }
 
     public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
     {
-        if (isJumping || isAttacking || isUsingSkill || isBossScene) return;
+        if (isJumping || isAttacking || isUsingSkill || !isBossScene) return;
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
@@ -197,18 +218,20 @@ public class PlayerController : MonoBehaviour
 
         // 데미지 계산
         playerDamage = !isGround ? 8 : 5;
+
         if(ishitting)
         {
-            monsterController.TakeDamage(5, transform.position);
+            if(isBossScene)bossController.TakeDamage(5, transform.position);
+            if(!isBossScene)monsterController.TakeDamage(5, transform.position);
             ishitting = false;
         }
+
         
         Debug.Log("공격 데미지: " + playerDamage);
     }
 
     public void Guard()
     {
-        if (!isAttacking) return;
 
         if (isJumping || isAttacking || isUsingSkill || isWalking) return;
 
@@ -228,7 +251,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage, Vector2 monsterPosition)
     {
         
-        if (isInvincible) return;
+        if (isInvincible || isKnockedDown) return;
         ApplyKnockBackDown(monsterPosition, knockBackForce);
 
         if(isGuarding)
@@ -257,6 +280,8 @@ public class PlayerController : MonoBehaviour
         if (playerHP <= 0)
         {
             playerAnimator.SetTrigger("Death");
+            gameOvereUI.SetActive(true);
+            
         }
     }
 
@@ -273,8 +298,13 @@ public class PlayerController : MonoBehaviour
         
         foreach (var monster in monsters)
         {
-            if (monster.CompareTag("Monster") && isAttacking)
+            if ((monster.CompareTag("Monster") || monster.CompareTag("Dummy"))&& isAttacking &&!isDummy)
             {
+                if (monster.CompareTag("Dummy"))
+                {
+                    isDummy = true;
+                    DummyCall();
+                }
                 // 몬스터에게 데미지 입히기
                 monsterController = monster.GetComponent<MonsterController>();
                 monsterController.TakeDamage(playerDamage, transform.position);
@@ -423,6 +453,7 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetTrigger("Skill3");
             playerDamage = 25;
         }
+        playerAnimator.SetBool("IsUsingSkill", isUsingSkill);
     }
 
 }

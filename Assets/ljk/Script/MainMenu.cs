@@ -9,14 +9,14 @@ public class MainMenu : MonoBehaviour
     public GameObject Start_Btn;
     public GameObject Load_Btn;
     public GameObject Exit_Btn;
-    //public GameObject mainMenu; ¿É¼Ç¸¸µé¸é ÀÌ°Å SetActive(false)ÇÏ¸é¼­
-    //public GameObject optionMenu;; ¿É¼Ç¸Þ´º SetActive(true)ÇÏ¸é µÊ
+    //public GameObject mainMenu; ï¿½É¼Ç¸ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ SetActive(false)ï¿½Ï¸é¼­
+    //public GameObject optionMenu;; ï¿½É¼Ç¸Þ´ï¿½ SetActive(true)ï¿½Ï¸ï¿½ ï¿½ï¿½
 
     // Start is called before the first frame update
     public void Start_Btn_click()
     {
-        
-        SceneManager.LoadScene(1);
+        //ï¿½ï¿½ï¿½Î¸Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½0ï¿½Ì¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        SceneManager.LoadScene("PrologueStory");
     }
 
 

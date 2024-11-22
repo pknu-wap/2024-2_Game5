@@ -33,7 +33,7 @@ public class GroundMaterial : MonoBehaviour
 
 
     // Update is called once per frame
-    private void LateUpdate()
+    private void Update()
     {
         //카메라가 이동한 거리 = 현재 위치 - 이전 위치
         Distance = CameraTransform.position.x - CameraLastPosition.x;
