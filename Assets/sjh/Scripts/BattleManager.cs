@@ -36,10 +36,10 @@ public class BattleManager : MonoBehaviour
 
     // 보스 변수 
     private GameObject monster;
-    private MonsterController monsterController;
-    public int  monsterHP;
+    private BossController bossController;
+    public float  bossHP;
     public int monsterDamage;
-    private Vector3 MonsterSpawnPos;
+    public Vector3 monsterSpawnPos;
 
     private State curState;
     public float defaultLimittime = 100.0f;
@@ -65,8 +65,8 @@ public class BattleManager : MonoBehaviour
         pauseUI.SetActive(false);
         if (isBossScene) monster = GameObject.FindWithTag("Monster");
         playerController = player.GetComponent<PlayerController>();
-        monsterController = monster.GetComponent<MonsterController>();
-        monsterHP = monsterController.monsterHP;
+        bossController = monster.GetComponent<BossController>();
+        bossHP = bossController.bossHP;
         
         
         InitGame();
@@ -78,6 +78,7 @@ public class BattleManager : MonoBehaviour
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
         player.transform.position = playerSpawnPos;
+        monster.transform.position = monsterSpawnPos;
         limitTime = defaultLimittime;
         if (isBossScene) playerController.playerAnimator.SetTrigger("Start");
     }
@@ -98,7 +99,7 @@ public class BattleManager : MonoBehaviour
 
         if (limitTime == 0) // TKO 판정
         {
-            winner = playerController.playerHP > monsterController.monsterHP ? Winner.Player : Winner.Monster;
+            winner = playerController.playerHP > bossController.bossHP ? Winner.Player : Winner.Monster;
             GameOver();
             ChangeState(State.TKO);
         }

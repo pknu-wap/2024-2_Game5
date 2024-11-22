@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     
     public float movePower = 8f;
     public float jumpPower = 8f;
-    public int playerHP;
+    public float playerHP;
     public int playerDamage;
     public Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void Jump() //점프 키 여러번 눌러야만 작동, 아마 update? 
+    public void Jump() 
     {
         if (isJumping || isAttacking || isUsingSkill || !isBossScene) return;
 
@@ -248,15 +248,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage, Vector2 monsterPosition)
+    public void TakeDamage(float damage, Vector2 playerPosition)
     {
         
         if (isInvincible || isKnockedDown) return;
-        ApplyKnockBackDown(monsterPosition, knockBackForce);
+        ApplyKnockBackDown(playerPosition, knockBackForce);
 
         if(isGuarding)
         {
-            ApplyKnockBackDown(monsterPosition, knockBackForce);
+            ApplyKnockBackDown(playerPosition, knockBackForce);
         }
         
         ishitted = true;
@@ -265,12 +265,12 @@ public class PlayerController : MonoBehaviour
 
         if(damage >= knockDownThreshold && !isKnockedDown)
         {
-            StartCoroutine(KnockDownSequence(monsterPosition));
+            StartCoroutine(KnockDownSequence(playerPosition));
         }
         else
         {
             playerAnimator.SetTrigger("Hit");
-            ApplyKnockBackDown(monsterPosition, knockBackForce);
+            ApplyKnockBackDown(playerPosition, knockBackForce);
         }
         Decision();
     }
@@ -321,23 +321,23 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    private IEnumerator KnockDownSequence(Vector2 monsterPosition)
+    private IEnumerator KnockDownSequence(Vector2 playerPosition)
     {
         isKnockedDown = true;
         isInvincible = true;
 
         playerAnimator.SetTrigger("KnockDown");
-        ApplyKnockBackDown(monsterPosition, knockBackForce * 10f);
+        ApplyKnockBackDown(playerPosition, knockBackForce * 10f);
 
         yield return new WaitForSeconds(knockDownDuration);
 
         playerAnimator.SetTrigger("GetUp");
     }
 
-    public void ApplyKnockBackDown(Vector2 monsterPosition, float force)
+    public void ApplyKnockBackDown(Vector2 playerPosition, float force)
     {
         // 몬스터가 오른쪽에서 때렸으면 왼쪽으로, 왼쪽에서 때렸으면 오른쪽으로
-        float direction = transform.position.x < monsterPosition.x ? -1f : 1f;
+        float direction = transform.position.x < playerPosition.x ? -1f : 1f;
         
         // x축으로만 속도 적용
         PlayerRigidBody.velocity = new Vector2(direction * force, 0f);

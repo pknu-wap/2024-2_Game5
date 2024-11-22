@@ -257,8 +257,9 @@ MonoBehaviour:
   defaultPlayerHP: 100
   playerHP: 0
   playerSpawnPos: {x: -5.9, y: 3, z: -2}
-  monsterHP: 0
+  bossHP: 0
   monsterDamage: 0
+  monsterSpawnPos: {x: 0, y: 0, z: 0}
   defaultLimittime: 100
   limitTime: 100
   pauseUI: {fileID: 2018475198}
