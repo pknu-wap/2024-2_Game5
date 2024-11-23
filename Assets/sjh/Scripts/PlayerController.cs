@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
         playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         battleManager = FindObjectOfType<BattleManager>();
         dummy = GameObject.FindWithTag("Dummy");
+        monster = GameObject.FindWithTag("Monster");
 
     }
 

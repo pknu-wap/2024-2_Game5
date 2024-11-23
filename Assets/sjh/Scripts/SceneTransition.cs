@@ -33,7 +33,7 @@ public class SceneTransition : MonoBehaviour
 
         if(collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.L))
         {
-            SceneManager.LoadScene("BossScene");
+            SceneManager.LoadScene("BossTutoStage");
         }
     }
 

@@ -63,10 +63,13 @@ public class BattleManager : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         pauseUI.SetActive(false);
-        if (isBossScene) monster = GameObject.FindWithTag("Monster");
         playerController = player.GetComponent<PlayerController>();
-        bossController = monster.GetComponent<BossController>();
-        bossHP = bossController.bossHP;
+        if (isBossScene) 
+        {
+            monster = GameObject.FindWithTag("Monster");
+            bossController = monster.GetComponent<BossController>();
+            bossHP = bossController.bossHP;
+        }
         
         
         InitGame();
@@ -74,7 +77,9 @@ public class BattleManager : MonoBehaviour
 
     void InitGame()
     {
+        
         ChangeState(State.Play); 
+        if (!isBossScene) return;
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
         player.transform.position = playerSpawnPos;
