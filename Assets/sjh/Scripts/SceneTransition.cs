@@ -12,6 +12,8 @@ public class SceneTransition : MonoBehaviour
     public float floatSpeed = 1f; 
     public float floatHeight = 2f; 
 
+    public string sceneName;
+
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -33,7 +35,7 @@ public class SceneTransition : MonoBehaviour
 
         if(collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.L))
         {
-            SceneManager.LoadScene("BossTutoStage");
+            SceneManager.LoadScene(sceneName);
         }
     }
 
