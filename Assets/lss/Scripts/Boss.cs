@@ -5,23 +5,24 @@ using UnityEngineInternal;
 
 public class Boss : MonoBehaviour
 {
-    public Transform player;             // �÷��̾� ������Ʈ�� Transform
-    public float walkSpeed = 2f;         // �ȱ� �ӵ�
-    private float currentSpeed = 0f;     // ���� �ӵ� (0�� �� ������)
-    private int nextMove;                // ������ ������ ����
-    public float decisionTime = 2f;      // �ൿ ���� �ֱ�
+    public Transform player;
+    public PlayerController player2;
+    public float walkSpeed = 2f;
+    private float currentSpeed = 0f;
+    private int nextMove;
+    public float decisionTime = 2f;
     public float bossHP;
     public float attackRange = 3f;
 
     public bool isAttacking = false;
     private int attackType;
     private bool isDamaging = false;
-
+    
     private Rigidbody2D bossRigidBody;
     private Animator bossAnimator;
     private SpriteRenderer bossSpriteRenderer;
 
-    private bool isFacingLeft = true;    // ���� ������ �ٶ󺸴��� ����
+    private bool isFacingLeft = true;
 
     private Vector2 bossRay;
 
@@ -32,24 +33,16 @@ public class Boss : MonoBehaviour
         bossRigidBody = GetComponent<Rigidbody2D>();
         bossAnimator = GetComponent<Animator>();
         bossSpriteRenderer = GetComponent<SpriteRenderer>();
-        // �ൿ ���� �ݺ�
+        
         InvokeRepeating("DecideNextAction", 0f, decisionTime);
     }
 
     void Update()
     {
-        FacePlayer();  // �÷��̾ �ٶ󺸰� ��
+        FacePlayer();
 
-        // �ִϸ��̼� ���� ������Ʈ
-        bossAnimator.SetBool("isGround", true);  // �׻� ���鿡 �ִٰ� ����
+        bossAnimator.SetBool("isGround", true);
 
-        if (!isAttacking && Ray())
-        {
-            currentSpeed = 0f;
-            StartCoroutine(DelayedAttack());
-        }
-        else
-            bossAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // �ȱ� �ִϸ��̼� ����
         if (bossHP == 0)
         {
             currentSpeed = 0f;
@@ -58,41 +51,21 @@ public class Boss : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Ray();
-        // �̵�
+        if (!isAttacking && Ray())
+        {
+            currentSpeed = 0f;
+            StartCoroutine(DelayedAttack());
+        }
+        else
+            bossAnimator.SetBool("isWalk", currentSpeed == walkSpeed);
+
         bossRigidBody.velocity = new Vector2(currentSpeed * (isFacingLeft ? -1 : 1), bossRigidBody.velocity.y);
     }
 
-    // �������� �ൿ ����
     void DecideNextAction()
     {
-        nextMove = Random.Range(0, 2);  // 0: ������, 1: �ȱ�
+        nextMove = Random.Range(0, 2);
         currentSpeed = nextMove == 1 ? walkSpeed : 0f;
-    }
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        if (collision == null) Debug.Log("collision is null");
-
-        if (collision.gameObject.CompareTag("Player")) // �÷��̾���� �浹, ���� ���� ��
-        {
-            Debug.Log("if�� ���� isDamaging : "+ isDamaging);
-            Player player = collision.gameObject.GetComponent<Player>();
-            if (player != null && isDamaging)
-            {
-                if (attackType == 3)
-                {
-                    player.TakeDamage(10);
-                    isDamaging = false;
-                }
-                else
-                {
-                    player.TakeDamage(4); // �÷��̾�� 4 ������ ����
-                    Debug.Log("Player HP -= 4");
-                    isDamaging = false;
-                }
-            }
-        }
     }
     bool Ray()
     {
@@ -101,26 +74,53 @@ public class Boss : MonoBehaviour
         else
             bossRay = Vector2.right;
 
-        Debug.DrawRay(transform.position, bossRay * attackRange, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, bossRay, attackRange, LayerMask.GetMask("Player"));
-        bool check = hit.collider != null;
-        return check;
+        Debug.DrawRay(transform.position + new Vector3(0, 0.1f, 0), bossRay * attackRange, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, 0.1f, 0), bossRay, attackRange, LayerMask.GetMask("Player"));
+        if(hit.collider != null)
+        {
+            player2 = hit.transform.GetComponent<PlayerController>();
+            return true;
+        }
+        else
+            return false;
     }
-    IEnumerator DelayedAttack() // ���� �ڷ�ƾ(2�� ������ �� ����)
+    public void TakeDamage(float damage, Vector2 monsterPosition)
     {
-        isAttacking = true;  // ���� �� ���·� ����
+        //
+    }
+    IEnumerator DelayedAttack()
+    {
+        isAttacking = true;
         isDamaging = true;
-        Attack();        // ������ ����
+        Attack();
 
         yield return new WaitForSeconds(0.01f);
         float bossAnimationTime = bossAnimator.GetCurrentAnimatorStateInfo(0).length;
-        yield return new WaitForSeconds(bossAnimationTime);
+
+        yield return new WaitForSeconds(bossAnimationTime / 2);
+
+        if (Ray() && player2 != null)
+        {
+            if(attackType == 3)
+            {
+                player2.TakeDamage(10, player2.transform.position);
+                Debug.Log("Damaged 10");
+                isDamaging = false;
+            }
+            else
+            {
+                player2.TakeDamage(4, player2.transform.position);
+                Debug.Log("Damaged 4");
+                isDamaging = false;
+            }
+        }
+
+        yield return new WaitForSeconds(bossAnimationTime / 2);
 
         bossAnimator.SetBool("isAttack", false);
         bossAnimator.SetBool("isAttack2", false);
         bossAnimator.SetBool("isAttack3", false);
         bossAnimator.SetBool("isSkill", false);
-        // ���� �Ϸ� �� �ٽ� ���� ���� ���·� ����
 
         isAttacking = false;
     }
@@ -130,7 +130,7 @@ public class Boss : MonoBehaviour
             attackType = Random.Range(0, 3);
         else
             attackType = Random.Range(0, 4);
-        switch (attackType) // �������� ���� �ִϸ��̼� ����
+        switch (attackType)
         {
             case 0:
                 bossAnimator.SetBool("isAttack", true);
@@ -146,7 +146,7 @@ public class Boss : MonoBehaviour
                 break;
         }
     }
-    void FacePlayer()// �÷��̾ �ٶ󺸰� �ϴ� �Լ�
+    void FacePlayer()
     {
         if (player != null)
         {
@@ -156,7 +156,7 @@ public class Boss : MonoBehaviour
                 Flip();
         }
     }
-    void Flip() // ������ �ٲٴ� �Լ� (��������Ʈ ����)
+    void Flip()
     {
         isFacingLeft = !isFacingLeft;
         bossSpriteRenderer.flipX = !bossSpriteRenderer.flipX;
