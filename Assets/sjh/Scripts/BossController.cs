@@ -1,54 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
-    public Transform player;             // �÷��̾� ������Ʈ�� Transform
-    public GameObject playerObject;
-    public PlayerController playerController;
+    public GameObject player;             // �÷��̾� ������Ʈ�� Transform
+    private PlayerController playerController;
 
     public float walkSpeed = 2f;         // �ȱ� �ӵ�
     private float currentSpeed = 0f;     // ���� �ӵ� (0�� �� ������)
     private int nextMove;                // ������ ������ ����
     public float decisionTime = 2f;      // �ൿ ���� �ֱ�
-    public int bossHP;
+    public float bossHP;
     public float attackRange = 7f;
     public float distance;
     public bool isAttacking = false;
-    public int monsterDamage = 10;
+    private int attackType;
+    private bool isDamaging = false;
 
-    private Rigidbody2D barbarianRigidBody;
-    private Animator barbarianAnimator;
-    private SpriteRenderer barbarianSpriteRenderer;
+    private Rigidbody2D bossRigidBody;
+    private Animator bossAnimator;
+    private SpriteRenderer bossSpriteRenderer;
 
     private bool isFacingLeft = true;    // ���� ������ �ٶ󺸴��� ����
 
-
-    public Slider HPslider;
-    public GameObject gameClearUI;
-
-
-
-
     void Start()
     {
-        bossHP = 100;
-        gameClearUI.SetActive(false);
-
-        playerObject = GameObject.FindWithTag("Player");
-        playerController = playerObject.GetComponent<PlayerController>();
-
-        barbarianRigidBody = GetComponent<Rigidbody2D>();
-        barbarianAnimator = GetComponent<Animator>();
-        barbarianSpriteRenderer = GetComponent<SpriteRenderer>();
+        bossHP = 100f;
+        Debug.Log(bossHP);
+        player = GameObject.FindWithTag("Player");
+        bossRigidBody = GetComponent<Rigidbody2D>();
+        playerController = player.GetComponent<PlayerController>();
+        bossAnimator = GetComponent<Animator>();
+        bossSpriteRenderer = GetComponent<SpriteRenderer>();
 
         // �ൿ ���� �ݺ�
         InvokeRepeating("DecideNextAction", 0f, decisionTime);
-
-        HPslider.maxValue = bossHP;
-        HPslider.value = bossHP;
     }
 
     void Update()
@@ -56,27 +43,28 @@ public class BossController : MonoBehaviour
         FacePlayer();  // �÷��̾ �ٶ󺸰� ��
 
         // �ִϸ��̼� ���� ������Ʈ
-        barbarianAnimator.SetBool("isGround", true);  // �׻� ���鿡 �ִٰ� ����
-        barbarianAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // �ȱ� �ִϸ��̼� ����
+        bossAnimator.SetBool("isGround", true);  // �׻� ���鿡 �ִٰ� ����
+        bossAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // �ȱ� �ִϸ��̼� ����
      
 
-        distance = Vector3.Distance(this.transform.position, player.position); // �÷��̾���� �Ÿ� ���
+        distance = Vector3.Distance(this.transform.position, player.transform.position); // �÷��̾���� �Ÿ� ���
 
         if (distance <= attackRange && !isAttacking)
         {
-            Debug.Log("Attack triggered!");
             StartCoroutine(DelayedAttack());
+            Debug.Log("Update " + isAttacking);
+
         }
-        else if(isAttacking)
+        if(bossHP == 0)
         {
-            ResetAttackAnimations();
+            currentSpeed = 0f;
+            bossAnimator.SetBool("isDeath", true);
         }
     }
-
     private void FixedUpdate()
     {
         // �̵�
-        barbarianRigidBody.velocity = new Vector2(currentSpeed * (isFacingLeft ? -1 : 1), barbarianRigidBody.velocity.y);
+        bossRigidBody.velocity = new Vector2(currentSpeed * (isFacingLeft ? -1 : 1), bossRigidBody.velocity.y);
     }
 
     // �������� �ൿ ����
@@ -84,89 +72,84 @@ public class BossController : MonoBehaviour
     {
         nextMove = Random.Range(0, 2);  // 0: ������, 1: �ȱ�
         currentSpeed = nextMove == 1 ? walkSpeed : 0f;
-    
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+
+        if (collision == null) Debug.Log("collision is null");
+
+        if (collision.gameObject.CompareTag("Player") && !isDamaging) // �÷��̾���� �浹, ���� ���� ��
+        {
+            Debug.Log("if entered");
+            Debug.Log("if�� ���� "+ isDamaging);
+
+            Debug.Log("in if  " + isDamaging);
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player != null && isDamaging == true)
+            {
+                playerController.TakeDamage(4f, this.transform.position); // �÷��̾�� 4 ������ ����
+                Debug.Log("Player HP -= 4");
+            }
+        }
+        isDamaging = false;
+    }
+ 
+    public void TakeDamage(float damage, Vector2 monsterPosition)
+    {
+        //
+    }
+    IEnumerator DelayedAttack() // ���� �ڷ�ƾ(2�� ������ �� ����)
+    {
+        currentSpeed = 0f;
+        isAttacking = true;  // ���� �� ���·� ����
+        isDamaging = true;
+        Attack();        // ������ ����
+
+        yield return new WaitForSeconds(2.4f);
+        isAttacking = false;
+        bossAnimator.SetBool("isAttack", false);
+        bossAnimator.SetBool("isAttack2", false);
+        bossAnimator.SetBool("isAttack3", false);
+        // ���� �Ϸ� �� �ٽ� ���� ���� ���·� ����
+    }
+    void Attack()
+    {
+        Debug.Log(bossHP);
+
+        attackType = Random.Range(0, 4);
+        Debug.Log(attackType);
+        switch (attackType) // �������� ���� �ִϸ��̼� ����
+        {
+            case 0:
+                bossAnimator.SetBool("isAttack", true);
+                Debug.Log("Basic Attack");
+                break;
+            case 1:
+                bossAnimator.SetBool("isAttack2", true);
+                Debug.Log("Kick Attack");
+                break;
+            case 2:
+                bossAnimator.SetBool("isAttack3", true);
+                Debug.Log("Uppercut Attack");
+                break;
+            case 3:
+                bossAnimator.SetBool("isSkill", true);
+                break;
+        }
     }
     void FacePlayer()// �÷��̾ �ٶ󺸰� �ϴ� �Լ�
     {
         if (player != null)
         {
-            if (transform.position.x < player.position.x && isFacingLeft)
+            if (transform.position.x < player.transform.position.x && isFacingLeft)
                 Flip();
-            else if (transform.position.x > player.position.x && !isFacingLeft)
+            else if (transform.position.x > player.transform.position.x && !isFacingLeft)
                 Flip();
         }
     }
-
     void Flip() // ������ �ٲٴ� �Լ� (��������Ʈ ����)
     {
         isFacingLeft = !isFacingLeft;
-        barbarianSpriteRenderer.flipX = !barbarianSpriteRenderer.flipX;
-    }
-    IEnumerator DelayedAttack() // ���� �ڷ�ƾ(2�� ������ �� ����)
-    {
-        isAttacking = true;  // ���� �� ���·� ����
-        Attack();        // ������ ����s
-
-        yield return new WaitForSeconds(2f);  // 1�� ���
-        isAttacking = false;  // ���� �Ϸ� �� �ٽ� ���� ���� ���·� ����
-    }
-    void Attack()
-    {
-        int attackType = Random.Range(0, 3);  // 0: �⺻ ����, 1: ű, 2: ������
-
-
-        switch (attackType) // �������� ���� �ִϸ��̼� ����
-        {
-            case 0:
-                barbarianAnimator.SetBool("isAttack2", true);
-                Debug.Log("Basic Attack");
-                break;
-            case 1:
-                barbarianAnimator.SetBool("isKick", true);
-                Debug.Log("Kick Attack");
-                break;
-            case 2:
-                barbarianAnimator.SetBool("isUppercut", true);
-                Debug.Log("Uppercut Attack");
-                break;
-        }
-    }
-    void ResetAttackAnimations()
-    {
-        barbarianAnimator.SetBool("isAttack2", false);
-        barbarianAnimator.SetBool("isKick", false);
-        barbarianAnimator.SetBool("isUppercut", false);
-    }
-
-   
-
-
-    public void TakeDamage(int damage, Vector2 playerPosition)
-    {
-        bossHP -= damage;
-        HPslider.value = bossHP;
-        
-        if(bossHP<=0)
-        {
-            Debug.Log("Boss : Dead");
-            gameClearUI.SetActive(true);
-        } 
-
-   
-    }
-    
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player") && isAttacking)
-        {
-            Debug.Log("플레이어와 공격 중 충돌");
-            Vector2 hitPosition = transform.position;
-
-            if (playerController != null)
-            {
-                playerController.TakeDamage(monsterDamage, hitPosition);
-            }
-        }
+        bossSpriteRenderer.flipX = !bossSpriteRenderer.flipX;
     }
 }
-

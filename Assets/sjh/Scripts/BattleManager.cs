@@ -36,15 +36,18 @@ public class BattleManager : MonoBehaviour
 
     // 보스 변수 
     private GameObject monster;
-    private MonsterController monsterController;
-    public int  monsterHP;
+    private BossController bossController;
+    public float  bossHP;
     public int monsterDamage;
-    private Vector3 MonsterSpawnPos;
+    public Vector3 monsterSpawnPos;
 
     private State curState;
     public float defaultLimittime = 100.0f;
     public float limitTime;
     private Winner winner; // 열거형으로 변경
+
+    public GameObject pauseUI;
+    private bool isGamePaused;
 
     void Awake()
     {
@@ -59,21 +62,28 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        if (isBossScene) monster = GameObject.FindWithTag("Monster");
+        pauseUI.SetActive(false);
         playerController = player.GetComponent<PlayerController>();
-        monsterController = monster.GetComponent<MonsterController>();
-        monsterHP = monsterController.monsterHP;
+        if (isBossScene) 
+        {
+            monster = GameObject.FindWithTag("Monster");
+            bossController = monster.GetComponent<BossController>();
+            bossHP = bossController.bossHP;
+        }
+        
         
         InitGame();
     }
 
     void InitGame()
     {
-        // 게임 상태를 Ready로 전환
-        ChangeState(State.Ready); 
+        
+        ChangeState(State.Play); 
+        if (!isBossScene) return;
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
         player.transform.position = playerSpawnPos;
+        monster.transform.position = monsterSpawnPos;
         limitTime = defaultLimittime;
         if (isBossScene) playerController.playerAnimator.SetTrigger("Start");
     }
@@ -94,7 +104,7 @@ public class BattleManager : MonoBehaviour
 
         if (limitTime == 0) // TKO 판정
         {
-            winner = playerController.playerHP > monsterController.monsterHP ? Winner.Player : Winner.Monster;
+            winner = playerController.playerHP > bossController.bossHP ? Winner.Player : Winner.Monster;
             GameOver();
             ChangeState(State.TKO);
         }
@@ -137,14 +147,27 @@ public class BattleManager : MonoBehaviour
         switch(curState)
         {
              case State.Ready:
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+                PauseUIDelay();
+                if (Input.GetKeyDown(KeyCode.Escape) && isGamePaused)
                 {
+                    Time.timeScale = 1;
+                    isGamePaused = false;
+                    Debug.Log("Pause Screen Closed");
+                    pauseUI.SetActive(false);
                     ChangeState(State.Play);
-                    Debug.Log("Pressed : Play");
-                    Debug.Log(curState);   
                 }
                   break;
             case State.Play:
+                if (Input.GetKeyDown(KeyCode.Escape) && !isGamePaused)
+                {
+                    isGamePaused = true;
+                    Debug.Log("Pause Screen Opened");
+                    pauseUI.SetActive(true);
+                    Time.timeScale = 0;
+                    PauseUIDelay();
+                    ChangeState(State.Ready);
+                    
+                }
                 TimeCount();
                 if (!isBossScene)playerController.AttackMonstersInRange();
                 if (curState != State.Play || playerController == null || playerController.isKnockedDown) return;
@@ -170,6 +193,15 @@ public class BattleManager : MonoBehaviour
                 break;
         }
     }
+
+    private IEnumerator PauseUIDelay()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
+
+
+
 
 
 }

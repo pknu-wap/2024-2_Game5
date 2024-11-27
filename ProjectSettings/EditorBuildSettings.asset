@@ -15,8 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/NormalScene1.unity
     guid: 619df4ff4a90043eaa25743cc640c0c5
   - enabled: 1
-    path: Assets/Scenes/BossScene.unity
+    path: Assets/Scenes/BossTutoStage.unity
     guid: 788f2bb92863b45f5a224c9e4c76d6e6
+  - enabled: 1
+    path: Assets/Scenes/BossStage1.unity
+    guid: 000ed95a5e08949dfa24c41b14e49111
+  - enabled: 1
+    path: Assets/Scenes/BossStage2.unity
+    guid: 8c6f5f97a0d934370a5576767de9db85
   - enabled: 0
     path: Assets/lss/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729

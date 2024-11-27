@@ -21,6 +21,6 @@ public class Camera_Belt : MonoBehaviour
 
     void LateUpdate()
     {
-        cam_transform.position = new Vector3(player_tr.transform.position.x + 5, 6, -15);
+        cam_transform.position = new Vector3(player_tr.transform.position.x + 5, 5, -15);
     }
 }
