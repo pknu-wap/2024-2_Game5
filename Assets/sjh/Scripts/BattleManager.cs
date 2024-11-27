@@ -93,6 +93,15 @@ public class BattleManager : MonoBehaviour
         curState = state;
     }
 
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        isGamePaused = false;
+        Debug.Log("Pause Screen Closed");
+        pauseUI.SetActive(false);
+        ChangeState(State.Play);
+    }
+
     void Decision() // 승자 판정
     {
         if (!isBossScene) return; 

@@ -28,7 +28,10 @@ public class Pause : MonoBehaviour
         
     }
     */
-
+    private void Awake()
+    {
+        Time.timeScale = 0;
+    }
 
     // Start is called before the first frame update
     void Start()
