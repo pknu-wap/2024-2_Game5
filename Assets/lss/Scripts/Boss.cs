@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngineInternal;
 
 public class Boss : MonoBehaviour
 {
-    public GameObject player;             // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transform
-    private PlayerController playerController;
-
-    public float walkSpeed = 2f;         // ï¿½È±ï¿½ ï¿½Óµï¿½
-    private float currentSpeed = 0f;     // ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ (0ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
-    private int nextMove;                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-    public float decisionTime = 2f;      // ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
+    public Transform player;             // ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®ÀÇ Transform
+    public float walkSpeed = 2f;         // °È±â ¼Óµµ
+    private float currentSpeed = 0f;     // ÇöÀç ¼Óµµ (0ÀÏ ¶§ °¡¸¸È÷)
+    private int nextMove;                // ¹«ÀÛÀ§ ¿òÁ÷ÀÓ ¼³Á¤
+    public float decisionTime = 2f;      // Çàµ¿ °áÁ¤ ÁÖ±â
     public float bossHP;
-    public float attackRange = 7f;
-    public float distance;
+    public float attackRange = 3f;
+
     public bool isAttacking = false;
     private int attackType;
     private bool isDamaging = false;
@@ -22,39 +21,36 @@ public class Boss : MonoBehaviour
     private Animator bossAnimator;
     private SpriteRenderer bossSpriteRenderer;
 
-    private bool isFacingLeft = true;    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private bool isFacingLeft = true;    // ÀûÀÌ ¿ÞÂÊÀ» ¹Ù¶óº¸´ÂÁö ¿©ºÎ
+
+    private Vector2 bossRay;
 
     void Start()
     {
         bossHP = 100f;
         Debug.Log(bossHP);
         bossRigidBody = GetComponent<Rigidbody2D>();
-        playerController = player.GetComponent<PlayerController>();
         bossAnimator = GetComponent<Animator>();
         bossSpriteRenderer = GetComponent<SpriteRenderer>();
-
-        // ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+        // Çàµ¿ °áÁ¤ ¹Ýº¹
         InvokeRepeating("DecideNextAction", 0f, decisionTime);
     }
 
     void Update()
     {
-        FacePlayer();  // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½ï¿½
+        FacePlayer();  // ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÔ
 
-        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
-        bossAnimator.SetBool("isGround", true);  // ï¿½×»ï¿½ ï¿½ï¿½ï¿½é¿¡ ï¿½Ö´Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½
-        bossAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // ï¿½È±ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
-     
+        // ¾Ö´Ï¸ÞÀÌ¼Ç »óÅÂ ¾÷µ¥ÀÌÆ®
+        bossAnimator.SetBool("isGround", true);  // Ç×»ó Áö¸é¿¡ ÀÖ´Ù°í °¡Á¤
 
-        distance = Vector3.Distance(this.transform.position, player.transform.position); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½
-
-        if (distance <= attackRange && !isAttacking)
+        if (!isAttacking && Ray())
         {
+            currentSpeed = 0f;
             StartCoroutine(DelayedAttack());
-            Debug.Log("Update " + isAttacking);
-
         }
-        if(bossHP == 0)
+        else
+            bossAnimator.SetBool("isWalk", currentSpeed == walkSpeed);  // °È±â ¾Ö´Ï¸ÞÀÌ¼Ç Á¶°Ç
+        if (bossHP == 0)
         {
             currentSpeed = 0f;
             bossAnimator.SetBool("isDeath", true);
@@ -62,92 +58,105 @@ public class Boss : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        // ï¿½Ìµï¿½
+        Ray();
+        // ÀÌµ¿
         bossRigidBody.velocity = new Vector2(currentSpeed * (isFacingLeft ? -1 : 1), bossRigidBody.velocity.y);
     }
 
-
-    public void TakeDamage(float damage, Vector2 monsterPosition)
-    {
-        //
-    }
-    
-    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½
+    // ¹«ÀÛÀ§·Î Çàµ¿ °áÁ¤
     void DecideNextAction()
     {
-        nextMove = Random.Range(0, 2);  // 0: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 1: ï¿½È±ï¿½
+        nextMove = Random.Range(0, 2);  // 0: °¡¸¸È÷, 1: °È±â
         currentSpeed = nextMove == 1 ? walkSpeed : 0f;
     }
     void OnCollisionStay2D(Collision2D collision)
     {
-
+        Debug.Log(collision.gameObject.name);
         if (collision == null) Debug.Log("collision is null");
 
-        if (collision.gameObject.CompareTag("Player") && !isDamaging) // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+        if (collision.gameObject.CompareTag("Player")) // ÇÃ·¹ÀÌ¾î¿ÍÀÇ Ãæµ¹, °ø°Ý ÁßÀÏ ¶§
         {
-            Debug.Log("if entered");
-            Debug.Log("ifï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ "+ isDamaging);
-
-            Debug.Log("in if  " + isDamaging);
+            Debug.Log("if¹® µé¾î¿È isDamaging : "+ isDamaging);
             Player player = collision.gameObject.GetComponent<Player>();
-            if (player != null && isDamaging == true)
+            if (player != null && isDamaging)
             {
-                playerController.TakeDamage(4f, this.transform.position); // ï¿½Ã·ï¿½ï¿½Ì¾î¿¡ï¿½ï¿½ 4 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-                Debug.Log("Player HP -= 4");
+                if (attackType == 3)
+                {
+                    player.TakeDamage(10f);
+                    isDamaging = false;
+                }
+                else
+                {
+                    player.TakeDamage(4f); // ÇÃ·¹ÀÌ¾î¿¡°Ô 4 µ¥¹ÌÁö ÀÔÈû
+                    Debug.Log("Player HP -= 4");
+                    isDamaging = false;
+                }
             }
         }
-        isDamaging = false;
     }
-    IEnumerator DelayedAttack() // ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½Æ¾(2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+    bool Ray()
     {
-        currentSpeed = 0f;
-        isAttacking = true;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
-        isDamaging = true;
-        Attack();        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (isFacingLeft)
+            bossRay = Vector2.left;
+        else
+            bossRay = Vector2.right;
 
-        yield return new WaitForSeconds(2.4f);
-        isAttacking = false;
+        Debug.DrawRay(transform.position, bossRay * attackRange, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, bossRay, attackRange, LayerMask.GetMask("Player"));
+        bool check = hit.collider != null;
+        return check;
+    }
+    IEnumerator DelayedAttack() // °ø°Ý ÄÚ·çÆ¾(2ÃÊ µô·¹ÀÌ ÈÄ °ø°Ý)
+    {
+        isAttacking = true;  // °ø°Ý Áß »óÅÂ·Î º¯°æ
+        isDamaging = true;
+        Attack();        // ¹«ÀÛÀ§ °ø°Ý
+
+        yield return new WaitForSeconds(0.01f);
+        float bossAnimationTime = bossAnimator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(bossAnimationTime);
+
         bossAnimator.SetBool("isAttack", false);
         bossAnimator.SetBool("isAttack2", false);
         bossAnimator.SetBool("isAttack3", false);
-        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
+        bossAnimator.SetBool("isSkill", false);
+        // °ø°Ý ¿Ï·á ÈÄ ´Ù½Ã °ø°Ý °¡´É »óÅÂ·Î º¯°æ
+
+        isAttacking = false;
     }
     void Attack()
     {
-        Debug.Log(bossHP);
-
-        attackType = Random.Range(0, 4);
-        Debug.Log(attackType);
-        switch (attackType) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+        if(bossHP > 50)
+            attackType = Random.Range(0, 3);
+        else
+            attackType = Random.Range(0, 4);
+        switch (attackType) // ¹«ÀÛÀ§·Î °ø°Ý ¾Ö´Ï¸ÞÀÌ¼Ç ¼±ÅÃ
         {
             case 0:
                 bossAnimator.SetBool("isAttack", true);
-                Debug.Log("Basic Attack");
                 break;
             case 1:
                 bossAnimator.SetBool("isAttack2", true);
-                Debug.Log("Kick Attack");
                 break;
             case 2:
                 bossAnimator.SetBool("isAttack3", true);
-                Debug.Log("Uppercut Attack");
                 break;
             case 3:
                 bossAnimator.SetBool("isSkill", true);
                 break;
         }
     }
-    void FacePlayer()// ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
+    void FacePlayer()// ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÏ´Â ÇÔ¼ö
     {
         if (player != null)
         {
-            if (transform.position.x < player.transform.position.x && isFacingLeft)
+            if (transform.position.x < player.position.x && isFacingLeft)
                 Flip();
-            else if (transform.position.x > player.transform.position.x && !isFacingLeft)
+            else if (transform.position.x > player.position.x && !isFacingLeft)
                 Flip();
         }
     }
-    void Flip() // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù´ï¿½ ï¿½Ô¼ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½)
+    void Flip() // ¹æÇâÀ» ¹Ù²Ù´Â ÇÔ¼ö (½ºÇÁ¶óÀÌÆ® ¹ÝÀü)
     {
         isFacingLeft = !isFacingLeft;
         bossSpriteRenderer.flipX = !bossSpriteRenderer.flipX;
