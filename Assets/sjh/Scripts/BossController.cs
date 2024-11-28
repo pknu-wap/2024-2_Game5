@@ -5,7 +5,7 @@ using UnityEngineInternal;
 
 public class BossController : MonoBehaviour
 {
-    public Transform player;
+    public GameObject playerObject;
     public PlayerController player2;
     public float walkSpeed = 2f;
     private float currentSpeed = 0f;
@@ -129,7 +129,7 @@ public class BossController : MonoBehaviour
         isAttacking = false;
     }
     void Attack()
-    {
+    {   
         if (bossHP > 50)
             attackType = Random.Range(0, 3);
         else
@@ -152,11 +152,11 @@ public class BossController : MonoBehaviour
     }
     void FacePlayer()
     {
-        if (player != null)
+        if (playerObject != null)
         {
-            if (transform.position.x < player.position.x && isFacingLeft)
+            if (transform.position.x < playerObject.transform.position.x && isFacingLeft)
                 Flip();
-            else if (transform.position.x > player.position.x && !isFacingLeft)
+            else if (transform.position.x > playerObject.transform.position.x && !isFacingLeft)
                 Flip();
         }
     }
