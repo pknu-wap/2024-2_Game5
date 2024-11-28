@@ -253,6 +253,7 @@ public class PlayerController : MonoBehaviour
     {
         
         if (isInvincible || isKnockedDown) return;
+        
         ApplyKnockBackDown(playerPosition, knockBackForce);
 
         if(isGuarding) return;

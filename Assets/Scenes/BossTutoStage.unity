@@ -2091,7 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc389a0eb1c8b4a38b9e589bd27921bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePower: 6
+  movePower: 7
   jumpPower: 50
   playerHP: 100
   playerDamage: 0
@@ -2696,6 +2696,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381963761}
   m_CullTransparentMesh: 1
+--- !u!114 &1384377869 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7491033885602867621, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+  m_PrefabInstance: {fileID: 1524900901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1421822914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,9 +3343,11 @@ MonoBehaviour:
   walkSpeed: 2
   decisionTime: 2
   bossHP: 0
+  defaultBossHp: 100
   attackRange: 3.5
   isAttacking: 0
   ishitted: 0
+  _hpBar: {fileID: 1384377869}
 --- !u!61 &1562267545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3472,7 +3485,7 @@ GameObject:
   - component: {fileID: 1604145619}
   m_Layer: 0
   m_Name: Ground 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4079,7 +4092,7 @@ GameObject:
   - component: {fileID: 1993314262}
   m_Layer: 0
   m_Name: Ground 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
