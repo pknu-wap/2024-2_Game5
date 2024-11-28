@@ -28,7 +28,10 @@ public class Pause : MonoBehaviour
         
     }
     */
-
+    private void Awake()
+    {
+        Time.timeScale = 0;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +39,7 @@ public class Pause : MonoBehaviour
         Seen = SceneManager.GetActiveScene();
     }
 
-    public void Resume_Btn_click()
+    public void Resume_Btn_click()  //안 쓰고, BattleManager - Resume 함수 사용
     {
         Time.timeScale = 1;
         PauseScreen.gameObject.SetActive(false);
@@ -44,11 +47,13 @@ public class Pause : MonoBehaviour
 
     public void Restart_Btn_click()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(Seen.buildIndex);
     }
 
     public void Main_Btn_clik()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
