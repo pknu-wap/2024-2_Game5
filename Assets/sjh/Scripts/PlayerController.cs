@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {   
         // 공격 중에는 이동 불가
-        if (isAttacking) return;
+        if (isAttacking || ishitted) return;
 
         Vector3 moveVelocity = Vector3.zero;
 
@@ -253,13 +253,11 @@ public class PlayerController : MonoBehaviour
     {
         
         if (isInvincible || isKnockedDown) return;
+        
         ApplyKnockBackDown(playerPosition, knockBackForce);
 
-        if(isGuarding)
-        {
-            ApplyKnockBackDown(playerPosition, knockBackForce);
-        }
-        
+        if(isGuarding) return;
+
         ishitted = true;
         playerHP -= damage;
         _hpBar.value = playerHP;
@@ -378,6 +376,7 @@ public class PlayerController : MonoBehaviour
     public void OnHitFinished()
     {
         ishitted = false;
+        isAttacking = false;
     }
 
     public void InitCommandArray()

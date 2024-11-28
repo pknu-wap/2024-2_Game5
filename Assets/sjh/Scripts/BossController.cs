@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngineInternal;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class BossController : MonoBehaviour
     private int nextMove;
     public float decisionTime = 2f;
     public float bossHP;
+    public float defaultBossHp = 100f;
     public float attackRange = 3.5f;
 
     public bool isAttacking = false;
@@ -27,15 +29,19 @@ public class BossController : MonoBehaviour
 
     private Vector2 bossRay;
 
+    [SerializeField] private Slider _hpBar;
+
     void Start()
     {
-        bossHP = 100f;
+        bossHP = defaultBossHp;
         Debug.Log(bossHP);
         bossRigidBody = GetComponent<Rigidbody2D>();
         bossAnimator = GetComponent<Animator>();
         bossSpriteRenderer = GetComponent<SpriteRenderer>();
 
         InvokeRepeating("DecideNextAction", 0f, decisionTime);
+        _hpBar.maxValue = bossHP;
+        _hpBar.value = bossHP;
     }
 
     void Update()
@@ -89,6 +95,7 @@ public class BossController : MonoBehaviour
     {
         ishitted = true;
         bossHP-=damage;
+        _hpBar.value = bossHP;
         Debug.Log("bossHP:"+bossHP);
         ishitted = false;
     }
