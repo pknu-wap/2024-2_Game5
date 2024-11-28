@@ -369,9 +369,8 @@ MonoBehaviour:
   sprite_DialogueBox: {fileID: 1779272614}
   txt_Dialogue: {fileID: 1322574803}
   dialogue:
-  - dialogue: "\uB2F9\uC2E0\uC740 \uAC8C\uC784\uC138\uACC4\uB85C \uD758\uB7EC\uB4E4\uC5B4\uC624\uAC8C
-      \uB418\uC5C8\uC2B5\uB2C8\uB2E4"
-  - dialogue: "\uC54C\uC544\uC11C \uC0B4\uC544\uAC00\uBCF4\uC138\uC694 \u314E\u314E"
+  - dialogue: "\uD6C4.. \uB054\uCC0D\uD55C \uBCF4\uC2A4\uC600\uAD6C\uB9CC"
+  - dialogue: "\uC794\uCC59\uC774\uB4E4\uC740 \uC774\uC81C \uC27D\uC9C0 \u314B"
 --- !u!114 &81112879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2097,7 +2096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBossScene: 0
-  isStage1: 1
+  isStage1: 0
   isStage2: 0
   isStage3: 0
 --- !u!4 &482884953
@@ -2154,8 +2153,8 @@ MonoBehaviour:
   defaultLimittime: 100
   limitTime: 100
   pauseUI: {fileID: 868786010}
-  gameOverUI: {fileID: 0}
-  gameClearUI: {fileID: 0}
+  gameOverUI: {fileID: 1011161456}
+  gameClearUI: {fileID: 1653395694}
 --- !u!4 &502812429
 Transform:
   m_ObjectHideFlags: 0
