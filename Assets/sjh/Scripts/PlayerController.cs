@@ -339,7 +339,7 @@ public class PlayerController : MonoBehaviour
         float direction = transform.position.x < playerPosition.x ? -1f : 1f;
         
         // x축으로만 속도 적용
-        PlayerRigidBody.velocity = new Vector2(direction * force, 0f);
+        PlayerRigidBody.velocity = new Vector2(direction * force, 3f);
         
         // 짧은 시간 후에 속도를 0으로 만들어서 미끄러지지 않게 함
         StartCoroutine(StopKnockback());
