@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
     public enum State
@@ -50,6 +51,8 @@ public class BattleManager : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject gameClearUI;
     private bool isGamePaused;
+
+    public string sceneName;
 
     void Awake()
     {
@@ -203,9 +206,10 @@ public class BattleManager : MonoBehaviour
                 break;
             case State.KO: case State.TKO:
                 Debug.Log(curState+ "THE WINNER IS " + winner);
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+                
+                if(winner == Winner.Player)
                 {
-                    InitGame();
+                    if (Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene(sceneName);
                 }
                 break;
         }
