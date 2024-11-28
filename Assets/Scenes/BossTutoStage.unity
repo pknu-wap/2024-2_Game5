@@ -560,6 +560,8 @@ MonoBehaviour:
   defaultLimittime: 99.7
   limitTime: 100
   pauseUI: {fileID: 913705283}
+  gameOverUI: {fileID: 2100839709}
+  gameClearUI: {fileID: 1372560326}
 --- !u!4 &345355512
 Transform:
   m_ObjectHideFlags: 0
@@ -2121,14 +2123,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc389a0eb1c8b4a38b9e589bd27921bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePower: 6
+  movePower: 8
   jumpPower: 50
   playerHP: 100
   playerDamage: 0
   playerAnimator: {fileID: 0}
   isGround: 0
   isAttacking: 0
-  ishitted: 1
+  ishitted: 0
   isKnockedDown: 0
   monster: {fileID: 1562267536}
   objectLayer:
@@ -2609,7 +2611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68160a9f61a955448cf6e3b6c0cde3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 966861857}
 --- !u!114 &1372560329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3070,6 +3071,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+--- !u!114 &1524900902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7491033885602867621, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+  m_PrefabInstance: {fileID: 1524900901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1533126760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3161,7 +3173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1562267543}
   - component: {fileID: 1562267542}
-  - component: {fileID: 1562267541}
   - component: {fileID: 1562267540}
   - component: {fileID: 1562267539}
   - component: {fileID: 1562267538}
@@ -3267,24 +3278,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1562267541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562267536}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d2f0808dfe8834d8ba796dd4636c06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 966861864}
-  walkSpeed: 2
-  decisionTime: 2
-  bossHP: 0
-  attackRange: 7
-  isAttacking: 0
 --- !u!212 &1562267542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3365,13 +3358,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d9bf7432e4f4634a904fc0501ebabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 966861857}
+  playerObject: {fileID: 966861857}
+  player2: {fileID: 966861861}
   walkSpeed: 2
   decisionTime: 2
   bossHP: 0
+  defaultBossHp: 100
   attackRange: 7
-  distance: 0
   isAttacking: 0
+  ishitted: 0
+  _hpBar: {fileID: 1524900902}
 --- !u!61 &1562267545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3509,7 +3505,7 @@ GameObject:
   - component: {fileID: 1604145619}
   m_Layer: 0
   m_Name: Ground 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4116,7 +4112,7 @@ GameObject:
   - component: {fileID: 1993314262}
   m_Layer: 0
   m_Name: Ground 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4454,7 +4450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68160a9f61a955448cf6e3b6c0cde3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 966861857}
 --- !u!114 &2100839711
 MonoBehaviour:
   m_ObjectHideFlags: 0
