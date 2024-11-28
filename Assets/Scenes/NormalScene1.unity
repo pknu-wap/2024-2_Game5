@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 5
   floatHeight: 0.1
-  sceneName: BossTutoStage
+  sceneName: BossStage1
 --- !u!212 &445434734
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2155,6 +2155,7 @@ MonoBehaviour:
   pauseUI: {fileID: 868786010}
   gameOverUI: {fileID: 1011161456}
   gameClearUI: {fileID: 1653395694}
+  sceneName: 
 --- !u!4 &502812429
 Transform:
   m_ObjectHideFlags: 0

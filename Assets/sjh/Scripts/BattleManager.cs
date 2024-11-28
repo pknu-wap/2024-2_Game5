@@ -207,7 +207,7 @@ public class BattleManager : MonoBehaviour
             case State.KO: case State.TKO:
                 Debug.Log(curState+ "THE WINNER IS " + winner);
                 
-                if(winner == Winner.Player)
+                if(winner == Winner.Player && isBossScene)
                 {
                     if (Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene(sceneName);
                 }
