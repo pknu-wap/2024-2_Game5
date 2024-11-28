@@ -5,31 +5,31 @@ using UnityEngine;
 
 public class MobAI : MonoBehaviour
 {
-    public Transform player; // ÇÃ·¹ÀÌ¾îÀÇ Transform
-    public float detectionRadius = 5f; // °¨Áö ¹Ý°æ
-    public float moveSpeed = 2f; // ÀÌµ¿ ¼Óµµ
-    public float attackRange = 1f; // °ø°Ý ¹üÀ§
-    public Animator animator; // ¾Ö´Ï¸ÞÀÌÅÍ
+    public Transform player; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ Transform
+    public float detectionRadius = 5f; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ý°ï¿½
+    public float moveSpeed = 2f; // ï¿½Ìµï¿½ ï¿½Óµï¿½
+    public float attackRange = 1f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public Animator animator; // ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    public int health = 100; // ¸÷ÀÇ Ã¼·Â
-    public int attackPower = 10; // ¸÷ÀÇ °ø°Ý·Â
-    public float attackCooldown = 1f; // °ø°Ý ÄðÅ¸ÀÓ
+    public int health = 100; // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½
+    public int attackPower = 10; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½
+    public float attackCooldown = 1f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½
     private float lastAttackTime;
 
-    private bool canTakeDamage = true; // µ¥¹ÌÁö¸¦ ¹ÞÀ» ¼ö ÀÖ´Â »óÅÂÀÎÁö È®ÀÎ
-    public float invulnerabilityDuration = 1f; // µ¥¹ÌÁö ¹«½Ã ½Ã°£
-    private bool isDead = false; // ¸÷ÀÇ »ý»ç »óÅÂ
+    private bool canTakeDamage = true; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+    public float invulnerabilityDuration = 1f; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+    private bool isDead = false; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private void Update()
     {
-        if (isDead) return; // ¸÷ÀÌ Á×¾úÀ¸¸é ¸ðµç È°µ¿À» ¸ØÃã
+        if (isDead) return; // ï¿½ï¿½ï¿½ï¿½ ï¿½×¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸® °è»ê
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         if (distanceToPlayer < detectionRadius)
         {
-            // ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ÇÏ±â
+            // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½Ï±ï¿½
             LookAtPlayer();
 
             if (distanceToPlayer > attackRange)
@@ -50,71 +50,71 @@ public class MobAI : MonoBehaviour
 
     private void MoveTowardsPlayer()
     {
-        // ÇÃ·¹ÀÌ¾î¸¦ ÇâÇØ ÀÌµ¿
+        // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
         Vector3 direction = (player.position - transform.position).normalized;
         transform.position += direction * moveSpeed * Time.deltaTime;
 
-        // ¾Ö´Ï¸ÞÀÌ¼Ç »óÅÂ º¯°æ
+        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         animator.SetBool("isMoving", true);
     }
 
     private void StopMoving()
     {
-        // ¾Ö´Ï¸ÞÀÌ¼Ç »óÅÂ º¯°æ
+        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         animator.SetBool("isMoving", false);
     }
 
     private void Attack()
     {
-        // °ø°Ý ÄðÅ¸ÀÓ Ã¼Å©
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ Ã¼Å©
         if (Time.time >= lastAttackTime + attackCooldown)
         {
-            Debug.Log("°ø°Ý! °ø°Ý·Â: " + attackPower);
-            player.GetComponent<Player>().TakeDamage(attackPower);
-            lastAttackTime = Time.time; // ¸¶Áö¸· °ø°Ý ½Ã°£ ¾÷µ¥ÀÌÆ®
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½! ï¿½ï¿½ï¿½Ý·ï¿½: " + attackPower);
+            player.GetComponent<PlayerController>().TakeDamage(attackPower,player.transform.position);
+            lastAttackTime = Time.time; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         }
     }
 
     private void LookAtPlayer()
     {
-        // ÇÃ·¹ÀÌ¾îÀÇ ¹æÇâ °è»ê
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         Vector3 direction = player.position - transform.position;
-        direction.Normalize(); // ¹æÇâÀ» Á¤±ÔÈ­ÇÏ¿© »ç¿ë
+        direction.Normalize(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½
 
-        // YÃà È¸Àü
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 180f; // -180µµ È¸Àü º¸Á¤
-        transform.rotation = Quaternion.Euler(0f, angle, 0f); // YÃà¸¸ È¸Àü
+        // Yï¿½ï¿½ È¸ï¿½ï¿½
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 180f; // -180ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        transform.rotation = Quaternion.Euler(0f, angle, 0f); // Yï¿½à¸¸ È¸ï¿½ï¿½
     }
 
     public void TakeDamage(int damage)
     {
-        if (!canTakeDamage || isDead) return; // Á×¾ú°Å³ª µ¥¹ÌÁö¸¦ ¹ÞÀ» ¼ö ¾ø´Â »óÅÂÀÏ °æ¿ì ¹«½Ã
+        if (!canTakeDamage || isDead) return; // ï¿½×¾ï¿½ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        Debug.Log("¸÷ÀÌ µ¥¹ÌÁö¸¦ ¹ÞÀ½: " + damage);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + damage);
         health -= damage;
-        Debug.Log("³²Àº Ã¼·Â: " + health);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½: " + health);
 
         if (health <= 0)
         {
-            Die(); // Á×À½ Ã³¸®
+            Die(); // ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
         }
         else
         {
-            StartCoroutine(ResetDamage()); // ÀÏÁ¤ ½Ã°£ ÈÄ µ¥¹ÌÁö¸¦ ¹ÞÀ» ¼ö ÀÖ°Ô ¼³Á¤
+            StartCoroutine(ResetDamage()); // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
 
     public void Die()
     {
-        isDead = true; // ¸÷ÀÌ Á×¾úÀ½À» Ç¥½Ã
-        Debug.Log("¸÷ÀÌ Á×¾ú½À´Ï´Ù.");
-        animator.SetBool("isDead", true); // Á×¾úÀ» ¶§ ¾Ö´Ï¸ÞÀÌ¼Ç »óÅÂ º¯°æ
-        Destroy(gameObject, 2f); // 2ÃÊ ÈÄ¿¡ »èÁ¦
+        isDead = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½×¾ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½×¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+        animator.SetBool("isDead", true); // ï¿½×¾ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        Destroy(gameObject, 2f); // 2ï¿½ï¿½ ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     private IEnumerator ResetDamage()
     {
-        yield return new WaitForSeconds(invulnerabilityDuration); // Æ¯Á¤ ½Ã°£ ´ë±â
-        canTakeDamage = true; // ´Ù½Ã µ¥¹ÌÁö¸¦ ¹ÞÀ» ¼ö ÀÖ´Â »óÅÂ·Î º¹±¸
+        yield return new WaitForSeconds(invulnerabilityDuration); // Æ¯ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½
+        canTakeDamage = true; // ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 }
