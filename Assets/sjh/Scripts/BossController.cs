@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngineInternal;
 using UnityEngine.UI;
@@ -108,7 +110,36 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         float bossAnimationTime = bossAnimator.GetCurrentAnimatorStateInfo(0).length;
 
-        yield return new WaitForSeconds(bossAnimationTime / 2);
+        if (gameObject.name == "Mage")
+        {
+            if (attackType == 2)
+                yield return new WaitForSeconds(bossAnimationTime / 2f);
+            else if (attackType == 3)
+                yield return new WaitForSeconds(bossAnimationTime * 3 / 7f);
+            else
+                yield return new WaitForSeconds(bossAnimationTime * 2 / 5f);
+
+        }
+        else if (gameObject.name == "Barbarian")
+        {
+            if (attackType == 3)
+            {
+                yield return new WaitForSeconds(bossAnimationTime / 2f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(bossAnimationTime / 4f);
+            }
+        }
+        else
+        {
+            if(attackType == 1)
+            {
+                yield return new WaitForSeconds(bossAnimationTime * 3 / 5f);
+            }
+            else
+                yield return new WaitForSeconds(bossAnimationTime / 2f);
+        }
 
         if (Ray() && player2 != null)
         {
@@ -125,8 +156,36 @@ public class BossController : MonoBehaviour
                 isDamaging = false;
             }
         }
+        if (gameObject.name == "Mage")
+        {
+            if (attackType == 2)
+                yield return new WaitForSeconds(bossAnimationTime / 2f);
+            else if (attackType == 3)
+                yield return new WaitForSeconds(bossAnimationTime * 4 / 7f);
+            else
+                yield return new WaitForSeconds(bossAnimationTime * 3 / 5f);
+        }
+        else if (gameObject.name == "Barbarian")
+        {
+            if (attackType == 3)
+            {
+                yield return new WaitForSeconds(bossAnimationTime / 2f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(bossAnimationTime * 3/ 4f);
+            }
+        }
+        else
+        {
+            if (attackType == 1)
+            {
+                yield return new WaitForSeconds(bossAnimationTime * 2 / 5f);
+            }
+            else
+                yield return new WaitForSeconds(bossAnimationTime / 2f);
+        }
 
-        yield return new WaitForSeconds(bossAnimationTime / 2);
 
         bossAnimator.SetBool("isAttack", false);
         bossAnimator.SetBool("isAttack2", false);
