@@ -63,7 +63,7 @@ public class Dialog : MonoBehaviour
                 else
                 {
                     ONOFF(false); //��簡 ����
-                    SceneManager.LoadScene("NormalScene1"); //���� ���� ���̵�ƿ� �־��ְ� �ε�� õõ�� �ϸ� ���� ��
+                    SceneManager.LoadScene("NormalSceneTuto"); //���� ���� ���̵�ƿ� �־��ְ� �ε�� õõ�� �ϸ� ���� ��
                 }
             }
         }

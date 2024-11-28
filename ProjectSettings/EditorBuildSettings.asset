@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PrologueStory.unity
     guid: 82fcca55516a440649a685e594f41b88
   - enabled: 1
-    path: Assets/Scenes/NormalScene1.unity
+    path: Assets/Scenes/NormalSceneTuto.unity
     guid: 619df4ff4a90043eaa25743cc640c0c5
   - enabled: 1
     path: Assets/Scenes/BossTutoStage.unity
