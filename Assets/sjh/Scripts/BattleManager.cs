@@ -74,8 +74,6 @@ public class BattleManager : MonoBehaviour
             bossController = monster.GetComponent<BossController>();
             bossHP = bossController.bossHP;
         }
-        
-        
         InitGame();
     }
 
