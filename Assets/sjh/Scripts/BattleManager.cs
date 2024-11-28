@@ -47,6 +47,8 @@ public class BattleManager : MonoBehaviour
     private Winner winner; // 열거형으로 변경
 
     public GameObject pauseUI;
+    public GameObject gameOverUI;
+    public GameObject gameClearUI;
     private bool isGamePaused;
 
     void Awake()
@@ -63,6 +65,8 @@ public class BattleManager : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         pauseUI.SetActive(false);
+        gameOverUI.SetActive(false);
+        gameClearUI.SetActive(false);
         playerController = player.GetComponent<PlayerController>();
         if (isBossScene) 
         {
@@ -95,10 +99,19 @@ public class BattleManager : MonoBehaviour
 
     void Decision() // 승자 판정
     {
-        if (!isBossScene) return; 
-
         if (playerController.playerHP <= 0)
         {
+            winner = Winner.Monster;
+            GameOver();
+            ChangeState(State.KO);
+        }
+
+        if (!isBossScene) return; 
+
+        if (bossController.bossHP <= 0)
+        {
+            winner = Winner.Player;
+            GameOver();
             ChangeState(State.KO);
         }
 
@@ -108,19 +121,17 @@ public class BattleManager : MonoBehaviour
             GameOver();
             ChangeState(State.TKO);
         }
-
-        
     }
 
     void GameOver()
     {
         if (winner == Winner.Monster)
         {
-            Debug.Log("Monster Wins! Game Over." + curState);
+            gameOverUI.SetActive(true);
         }
         else if (winner == Winner.Player)
         {
-            Debug.Log("Player Wins! Congratulations!" + curState);
+            gameClearUI.SetActive(true);
         }
     }
 
@@ -128,16 +139,16 @@ public class BattleManager : MonoBehaviour
     {
         if (!isBossScene) return;
 
-        int previousTime = Mathf.FloorToInt(limitTime);
         limitTime -= Time.deltaTime;
         int currentTime = Mathf.FloorToInt(limitTime);
         timeText.text = currentTime.ToString();
-        if (limitTime <= 0)
+        if (currentTime <= 0)
         {
             limitTime = 0;
             Debug.Log("Time is Over.");
             Decision();
         }
+        
     }
 
 
@@ -147,7 +158,7 @@ public class BattleManager : MonoBehaviour
         switch(curState)
         {
              case State.Ready:
-                PauseUIDelay();
+    
                 if (Input.GetKeyDown(KeyCode.Escape) && isGamePaused)
                 {
                     Time.timeScale = 1;
@@ -164,7 +175,6 @@ public class BattleManager : MonoBehaviour
                     Debug.Log("Pause Screen Opened");
                     pauseUI.SetActive(true);
                     Time.timeScale = 0;
-                    PauseUIDelay();
                     ChangeState(State.Ready);
                     
                 }
@@ -194,10 +204,6 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    private IEnumerator PauseUIDelay()
-    {
-        yield return new WaitForSeconds(1f);
-    }
 
 
 

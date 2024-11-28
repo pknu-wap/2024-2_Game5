@@ -5,25 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public GameObject Player;
-    private Scene Seen; //ÇöÀç ¾À ÀúÀåÇÒ º¯¼ö
+    private Scene Seen; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    // Start is called before the first frame update
     void Start()
     {
         Seen = SceneManager.GetActiveScene();
-    }
-
-    void Awake()
-    {
-        Player.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(Seen.buildIndex); //ÇöÀç¾À ´Ù½Ã ½ÃÀÛÇÏ±â
+            SceneManager.LoadScene(Seen.buildIndex); //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
         }
     }
+
+
 }
