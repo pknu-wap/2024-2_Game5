@@ -2612,8 +2612,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   _hpBar: {fileID: 18900199}
-  gameOvereUI: {fileID: 2100839709}
-  gameClearUI: {fileID: 1372560326}
   minPos: {x: -30, y: -30, z: 0}
   maxPos: {x: 30, y: 30, z: 0}
 --- !u!95 &966861862
@@ -3572,7 +3570,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: dd1ae49838cecd44d89b66d59c740676, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 50
     m_Alignment: 4
@@ -4260,6 +4258,8 @@ MonoBehaviour:
   dialogue:
   - dialogue: "(\uBCF4\uC2A4) \uB208 \uB9C8\uC8FC\uCE58\uBA74 \uC8FD\uC778\uB2E4.."
   - dialogue: "\uB09C \uC548 \uBCF4\uACE0 \uB584\uB824."
+  - dialogue: "\uC0C8\uB85C\uC6B4 \uC2A4\uD0AC \uC0AC\uC6A9 \uAC00\uB2A5 :\n\uB3CC\uB824\uCC28\uAE30
+      ( A D W S )"
 --- !u!114 &1601071009
 MonoBehaviour:
   m_ObjectHideFlags: 0

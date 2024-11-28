@@ -18,6 +18,7 @@ public class Dialog : MonoBehaviour
 
     private bool isDialogue = false; //��ȭ�� ���������� �˷��� ����
     private int count = 0; //��簡 �󸶳� ����ƴ��� �˷��� ����
+    public string sceneName = "NormalSceneTuto";
 
     
 
@@ -63,7 +64,7 @@ public class Dialog : MonoBehaviour
                 else
                 {
                     ONOFF(false); //��簡 ����
-                    SceneManager.LoadScene("NormalSceneTuto"); //���� ���� ���̵�ƿ� �־��ְ� �ε�� õõ�� �ϸ� ���� ��
+                    SceneManager.LoadScene(sceneName); //���� ���� ���̵�ƿ� �־��ְ� �ε�� õõ�� �ϸ� ���� ��
                 }
             }
         }

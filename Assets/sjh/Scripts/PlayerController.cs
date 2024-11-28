@@ -48,15 +48,14 @@ public class PlayerController : MonoBehaviour
     private BattleManager battleManager;
 
     public GameObject monster;
-    private MonsterController monsterController;
+    private MobAI monsterController;
     private BossController bossController;
     private float attackRange = 1.6f;
     public LayerMask objectLayer;
 
     [SerializeField] private Slider _hpBar;
 
-    public GameObject gameOvereUI;
-    public GameObject gameClearUI;
+  
 
     public Vector3 minPos;
     public Vector3 maxPos;
@@ -78,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        gameOvereUI.SetActive(false);
+
         isBossScene = System.Convert.ToBoolean(PlayerPrefs.GetInt("isBossScene"));
         isStage1 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage1"));
         isStage2 = System.Convert.ToBoolean(PlayerPrefs.GetInt("isStage2"));
@@ -95,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        Decision();
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -222,8 +221,8 @@ public class PlayerController : MonoBehaviour
 
         if(ishitting)
         {
-            if(isBossScene)bossController.TakeDamage(5, transform.position);
-            if(!isBossScene)monsterController.TakeDamage(5, transform.position);
+            if(isBossScene)bossController.TakeDamage(playerDamage, transform.position);
+            if(!isBossScene)monsterController.TakeDamage(playerDamage);
             ishitting = false;
         }
 
@@ -271,7 +270,7 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetTrigger("Hit");
             ApplyKnockBackDown(playerPosition, knockBackForce);
         }
-        Decision();
+        
     }
 
     private void Decision()
@@ -279,7 +278,6 @@ public class PlayerController : MonoBehaviour
         if (playerHP <= 0)
         {
             playerAnimator.SetTrigger("Death");
-            gameOvereUI.SetActive(true);
             
         }
     }
@@ -304,10 +302,12 @@ public class PlayerController : MonoBehaviour
                     isDummy = true;
                     DummyCall();
                 }
-                // 몬스터에게 데미지 입히기
-                monsterController = monster.GetComponent<MonsterController>();
-                monsterController.TakeDamage(playerDamage, transform.position);
-                //battleManager.HandleCombatCollision(this.gameObject, monster.gameObject,playerDamage, Vector2.zero);
+                else
+                {
+                    monsterController = monster.GetComponent<MobAI>();
+                    monsterController.TakeDamage(playerDamage);
+                }
+                
             }
         }
 

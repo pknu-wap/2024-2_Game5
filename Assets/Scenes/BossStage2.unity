@@ -989,8 +989,9 @@ MonoBehaviour:
   defaultLimittime: 100
   limitTime: 100
   pauseUI: {fileID: 913705283}
-  gameOverUI: {fileID: 0}
-  gameClearUI: {fileID: 0}
+  gameOverUI: {fileID: 2100839709}
+  gameClearUI: {fileID: 1372560326}
+  sceneName: EndingCredit
 --- !u!4 &345355512
 Transform:
   m_ObjectHideFlags: 0
@@ -1256,7 +1257,7 @@ GameObject:
   - component: {fileID: 400423185}
   m_Layer: 0
   m_Name: GroundCollider(invisible) (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2578,22 +2579,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc389a0eb1c8b4a38b9e589bd27921bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePower: 6
+  movePower: 8
   jumpPower: 50
   playerHP: 100
   playerDamage: 0
   playerAnimator: {fileID: 0}
   isGround: 0
   isAttacking: 0
-  ishitted: 1
+  ishitted: 0
   isKnockedDown: 0
   monster: {fileID: 1068002340}
   objectLayer:
     serializedVersion: 2
     m_Bits: 0
   _hpBar: {fileID: 18900199}
-  gameOvereUI: {fileID: 2100839709}
-  gameClearUI: {fileID: 1372560326}
   minPos: {x: -30, y: -30, z: 0}
   maxPos: {x: 30, y: 30, z: 0}
 --- !u!95 &966861862
