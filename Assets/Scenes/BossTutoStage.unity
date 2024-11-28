@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1732828372149852858, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1865329377499890967, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -237,6 +241,30 @@ PrefabInstance:
     - target: {fileID: 2485539795451288686, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
       propertyPath: m_Name
       value: HealthBar_Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485539795451288686, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300451550883312, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159971131469130384, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725890790799557773, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656541514498033884, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090563869995355553, guid: 1fa17a4028383aa46aa1591519635078, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -355,7 +383,7 @@ GameObject:
   - component: {fileID: 303196672}
   - component: {fileID: 303196671}
   - component: {fileID: 303196670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerHealthBarCanva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,6 +596,8 @@ MonoBehaviour:
   defaultLimittime: 99.7
   limitTime: 100
   pauseUI: {fileID: 913705283}
+  gameOverUI: {fileID: 2100839709}
+  gameClearUI: {fileID: 1372560326}
 --- !u!4 &345355512
 Transform:
   m_ObjectHideFlags: 0
@@ -1925,7 +1955,7 @@ GameObject:
   - component: {fileID: 966861860}
   - component: {fileID: 966861859}
   - component: {fileID: 966861858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2068,7 +2098,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 0}
   isGround: 0
   isAttacking: 0
-  ishitted: 1
+  ishitted: 0
   isKnockedDown: 0
   monster: {fileID: 1562267536}
   objectLayer:
@@ -2549,7 +2579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68160a9f61a955448cf6e3b6c0cde3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 966861857}
 --- !u!114 &1372560329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3113,7 +3142,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1562267543}
   - component: {fileID: 1562267542}
-  - component: {fileID: 1562267541}
   - component: {fileID: 1562267540}
   - component: {fileID: 1562267539}
   - component: {fileID: 1562267538}
@@ -3219,24 +3247,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1562267541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562267536}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d2f0808dfe8834d8ba796dd4636c06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 966861864}
-  walkSpeed: 2
-  decisionTime: 2
-  bossHP: 0
-  attackRange: 7
-  isAttacking: 0
 --- !u!212 &1562267542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3317,13 +3327,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d9bf7432e4f4634a904fc0501ebabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 966861857}
+  player: {fileID: 966861864}
+  player2: {fileID: 966861861}
   walkSpeed: 2
   decisionTime: 2
   bossHP: 0
-  attackRange: 7
-  distance: 0
+  attackRange: 3.5
   isAttacking: 0
+  ishitted: 0
 --- !u!61 &1562267545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4406,7 +4417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68160a9f61a955448cf6e3b6c0cde3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 966861857}
 --- !u!114 &2100839711
 MonoBehaviour:
   m_ObjectHideFlags: 0
