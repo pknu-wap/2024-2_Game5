@@ -176,8 +176,12 @@ public class BattleManager : MonoBehaviour
         switch(curState)
         {
              case State.Ready:
-                isDialogueFinished = middleDialog.isDialogueFinished;
-                if (isDialogueFinished) ChangeState(State.Play);
+                if (middleDialog.isDialogueFinished)
+                {
+                    isDialogueFinished = true;
+                    middleDialog.isDialogueFinished = false; // 다시 업데이트 되지 않도록 설정
+                    ChangeState(State.Play);
+                }
                 if (Input.GetKeyDown(KeyCode.Escape) && isGamePaused)
                 {
                     Time.timeScale = 1;
