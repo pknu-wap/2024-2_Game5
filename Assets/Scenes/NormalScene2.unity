@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 81112878}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Dialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -542,6 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite_DialogueBox: {fileID: 1779272614}
   txt_Dialogue: {fileID: 1322574803}
+  isDialogueFinished: 0
   dialogue:
   - dialogue: "(\uAE30\uACC4\uC74C) \uBAAC\uC2A4\uD130\uB97C \uBB3C\uB9AC\uCE58\uC138\uC694."
   - dialogue: "\uB3C4\uB07C \uB4E4\uACE0 \uC788\uB294\uB370 \uC774\uAC70 \uB9DE\uB0D0?"
