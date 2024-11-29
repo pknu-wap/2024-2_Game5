@@ -1093,7 +1093,6 @@ GameObject:
   - component: {fileID: 226659337}
   - component: {fileID: 226659336}
   - component: {fileID: 226659335}
-  - component: {fileID: 226659334}
   m_Layer: 2
   m_Name: BackGround (2)
   m_TagString: Ground
@@ -1116,18 +1115,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1986675286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &226659334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226659332}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfec673f76e572b44808511e646713f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &226659335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3498,7 +3485,6 @@ GameObject:
   - component: {fileID: 694030096}
   - component: {fileID: 694030095}
   - component: {fileID: 694030094}
-  - component: {fileID: 694030093}
   m_Layer: 2
   m_Name: BackGround (1)
   m_TagString: Ground
@@ -3521,18 +3507,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1986675286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &694030093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694030091}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfec673f76e572b44808511e646713f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &694030094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6821,7 +6795,6 @@ GameObject:
   - component: {fileID: 1395720181}
   - component: {fileID: 1395720180}
   - component: {fileID: 1395720179}
-  - component: {fileID: 1395720178}
   m_Layer: 2
   m_Name: BackGround (4)
   m_TagString: Ground
@@ -6844,18 +6817,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1986675286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1395720178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395720176}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfec673f76e572b44808511e646713f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1395720179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7788,7 +7749,6 @@ GameObject:
   - component: {fileID: 1595926849}
   - component: {fileID: 1595926848}
   - component: {fileID: 1595926847}
-  - component: {fileID: 1595926846}
   m_Layer: 2
   m_Name: BackGround (3)
   m_TagString: Ground
@@ -7811,18 +7771,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1986675286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1595926846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595926844}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfec673f76e572b44808511e646713f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1595926847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9793,7 +9741,6 @@ GameObject:
   - component: {fileID: 2110110388}
   - component: {fileID: 2110110387}
   - component: {fileID: 2110110386}
-  - component: {fileID: 2110110385}
   m_Layer: 2
   m_Name: BackGround
   m_TagString: Ground
@@ -9816,18 +9763,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1986675286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2110110385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110110383}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfec673f76e572b44808511e646713f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2110110386
 MonoBehaviour:
   m_ObjectHideFlags: 0
