@@ -348,8 +348,8 @@ GameObject:
   - component: {fileID: 81112879}
   - component: {fileID: 81112883}
   m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
+  m_Name: DialogCanvas
+  m_TagString: Dialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,6 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite_DialogueBox: {fileID: 1779272614}
   txt_Dialogue: {fileID: 1322574803}
+  isDialogueFinished: 0
   dialogue:
   - dialogue: "\uC751..? \uC5EC\uAE34 \uC5B4\uB514\uC9C0?"
   - dialogue: "\uC544 \u314B\u314B \uAFC8\uC774\uB124. \uC694\uC998 \uC870\uAE08
@@ -3940,6 +3941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d4f25e7f6974ad19d1aab32483dfff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsters: {fileID: 0}
 --- !u!4 &1081066912
 Transform:
   m_ObjectHideFlags: 0
@@ -4192,8 +4194,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _hpBar: {fileID: 1243891764}
-  gameOvereUI: {fileID: 1283570674}
-  gameClearUI: {fileID: 0}
   minPos: {x: -10, y: 2.5, z: 0}
   maxPos: {x: 20, y: 4.6, z: 0}
 --- !u!61 &1117354057
