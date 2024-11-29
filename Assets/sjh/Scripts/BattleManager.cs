@@ -51,6 +51,10 @@ public class BattleManager : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject gameClearUI;
     private bool isGamePaused;
+    
+    private GameObject dialogBox;
+    private MiddleDialog middleDialog;
+    private bool isDialogueFinished;
 
     public string sceneName;
 
@@ -70,6 +74,10 @@ public class BattleManager : MonoBehaviour
         pauseUI.SetActive(false);
         gameOverUI.SetActive(false);
         gameClearUI.SetActive(false);
+        dialogBox = GameObject.FindWithTag("Dialog");
+        middleDialog = dialogBox.GetComponent<MiddleDialog>();
+        
+
         playerController = player.GetComponent<PlayerController>();
         if (isBossScene) 
         {
@@ -83,7 +91,6 @@ public class BattleManager : MonoBehaviour
     void InitGame()
     {
         
-        ChangeState(State.Play); 
         if (!isBossScene) return;
         playerHP = defaultPlayerHP;
         playerController.InitCommandArray();
@@ -91,6 +98,7 @@ public class BattleManager : MonoBehaviour
         monster.transform.position = monsterSpawnPos;
         limitTime = defaultLimittime;
         if (isBossScene) playerController.playerAnimator.SetTrigger("Start");
+        ChangeState(State.Ready); 
     }
 
     public void ChangeState(State state)
@@ -168,7 +176,8 @@ public class BattleManager : MonoBehaviour
         switch(curState)
         {
              case State.Ready:
-    
+                isDialogueFinished = middleDialog.isDialogueFinished;
+                if (isDialogueFinished) ChangeState(State.Play);
                 if (Input.GetKeyDown(KeyCode.Escape) && isGamePaused)
                 {
                     Time.timeScale = 1;

@@ -1208,7 +1208,7 @@ GameObject:
   - component: {fileID: 627271275}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Dialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1227,13 +1227,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite_DialogueBox: {fileID: 180917988}
   txt_Dialogue: {fileID: 450677828}
+  isDialogueFinished: 0
   dialogue:
   - dialogue: "\uAC11\uC790\uAE30 \uC7A5\uB974\uAC00 \uB2EC\uB77C\uC84C\uB294\uB370..?"
   - dialogue: "(\uAE30\uACC4\uC74C) \uACA9\uD22C \uAC8C\uC784 \uB7AD\uD0B9 1\uB4F1.."
   - dialogue: "(\uAE30\uACC4\uC74C) \uB2F9\uC2E0\uC758 \uC2E4\uB825\uC744 \uBCF4\uC5EC\uC8FC\uC138\uC694."
   - dialogue: "\uB124..?"
-  - dialogue: "\uC0C8\uB85C\uC6B4 \uAE30\uC220 : \uB77C\uC774\uD2B8 \uD6C5 ( A D
-      A D )"
+  - dialogue: "\uC0C8\uB85C\uC6B4 \uAE30\uC220 : \uB77C\uC774\uD2B8 \uC2A4\uD2B8\uB808\uC774\uD2B8
+      ( A D A D )"
 --- !u!114 &627271276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,6 +1916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d4f25e7f6974ad19d1aab32483dfff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsters: {fileID: 0}
 --- !u!4 &857939543
 Transform:
   m_ObjectHideFlags: 0
@@ -2459,8 +2461,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   _hpBar: {fileID: 18900199}
-  gameOvereUI: {fileID: 2100839709}
-  gameClearUI: {fileID: 1372560326}
   minPos: {x: -30, y: -30, z: 0}
   maxPos: {x: 30, y: 30, z: 0}
 --- !u!95 &966861862
@@ -3106,7 +3106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1372560327
 RectTransform:
   m_ObjectHideFlags: 0
