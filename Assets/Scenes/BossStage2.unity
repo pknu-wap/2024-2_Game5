@@ -1267,7 +1267,7 @@ MonoBehaviour:
   pauseUI: {fileID: 913705283}
   gameOverUI: {fileID: 2100839709}
   gameClearUI: {fileID: 1372560326}
-  sceneName: NormalScene2
+  sceneName: EndingCredit
 --- !u!4 &345355512
 Transform:
   m_ObjectHideFlags: 0
