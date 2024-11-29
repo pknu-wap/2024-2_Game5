@@ -496,6 +496,34 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\uC774\uC138\uACC4 \uD30C\uC774\uD130"
       objectReference: {fileID: 0}
+    - target: {fileID: 4472930706351572897, guid: d77f63a34514d144f9024a319ccb1a8b, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381026721725541455, guid: d77f63a34514d144f9024a319ccb1a8b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381026721725541455, guid: d77f63a34514d144f9024a319ccb1a8b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381026721725541455, guid: d77f63a34514d144f9024a319ccb1a8b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381026721725541455, guid: d77f63a34514d144f9024a319ccb1a8b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381026721725541455, guid: d77f63a34514d144f9024a319ccb1a8b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381026721725541455, guid: d77f63a34514d144f9024a319ccb1a8b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 106
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
